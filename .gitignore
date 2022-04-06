@@ -1,3 +1,6 @@
+skitunes/skitunes/spotify/spotify_config.py
+skitunes/skitunes/config.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

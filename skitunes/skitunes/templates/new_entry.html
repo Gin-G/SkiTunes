@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}" type="text/css">
+    <body>
+        <h1>Add new entry</h1>
+        <div class="bubble">
+            <form action="{{  request.path  }}" method="post">
+                <p>Song Title : <input type="text" name="song_name" placeholder="It's a Long Way to the Top (If You Wanna Rock 'N' Roll)" /></p>
+                <p>Artist : <input type="text" name="song_artist" placeholder="AC/DC" /></p>
+                <p>Skier Name : <input type="text" name="skier_name" placeholder="Chris Benchhetler" /></p>
+                <p>Movie Title : <input type="text" name="movie_name" placeholder="Balls Deep" /></p>
+                <p>Primary Ski style : <input type="text" name="ski_type" placeholder="Powder" /></p>
+                <p>Link to segment : <input type="text" name="video_link" placeholder="https://www.youtube.com/" /></p>
+                <hr>
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+</html>

@@ -1,0 +1,45 @@
+body {
+    background-image: url(background.jpeg);
+    background-color: #cccccc;
+    text-align: center;
+}
+
+.bubble {
+    margin: 20px auto;
+    width: 50%;
+    background-color: #FFFFFF;
+    color: #454545;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    justify-content: space-between
+}
+
+h1 {
+    margin: 20px auto;
+    width: 50%;
+    background-color: #454545;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+table {
+    text-align: center;
+    margin: 0 auto;
+    vertical-align: middle;
+    width: 80%;
+}
+
+th, td {
+    text-align: center;
+    margin: 0 auto;
+    vertical-align: middle;
+    padding: 7.5px;
+}
+
+caption {
+    font-size: 150%;
+    padding: 5px;
+}

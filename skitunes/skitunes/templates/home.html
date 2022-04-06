@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}"
+    <body>
+        <h1>
+            Ski Movie Tunes
+        </h1>
+        <div class="bubble">
+            
+            <a href="{{url_for('new_entry')}}"> New Entry</a>
+            
+            <table border="4">
+                <caption style="font-size: 150%;">Ski Tunes Database</caption>
+                
+                <thead>
+                    <tr>
+                        <th>Song Name</th>
+                        <th>Artist</th>
+                        <th>Skier</th>
+                        <th>Movie Title</th>
+                        <th>Primary style of skiing</th>
+                        <th>Link to segment</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for track in tracks %}
+                    <tr>
+                        <th>{{ track.song_name }}</th>
+                        <th>{{ track.song_artist }}</th>
+                        <th>{{ track.skier_name }}</th>
+                        <th>{{ track.movie_name }}</th>
+                        <th>{{ track.ski_type }}</th>
+                        <th>{{ track.video_link }}</th>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+        </div>
+    </body>
+
+</html>
