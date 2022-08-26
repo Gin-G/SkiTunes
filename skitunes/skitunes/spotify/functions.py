@@ -63,5 +63,3 @@ def get_playlist_info():
         offset+=100
     playlist_info = json.dumps(playlist_info, indent=2)
     print(playlist_info)
-
-get_playlist_info()

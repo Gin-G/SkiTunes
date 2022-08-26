@@ -17,6 +17,12 @@ def home():
     tracks = ski_movie_song_info.query.all()
     return render_template('home.html', tracks = tracks)
 
+@app.route('/filterskier')
+def filter():
+    query = request.args.get('query')
+    filter_info = ski_movie_song_info.query.filter(ski_movie_song_info.skier_name == query)
+    return render_template('home.html', tracks = filter_info)
+
 @app.route('/new_entry', methods=['GET', 'POST'])
 def new_entry():
     if request.method == 'POST':
@@ -33,14 +39,22 @@ def new_entry():
 
 @app.route('/bulkImport', methods=['GET', 'POST'])
 def bulk_import():
-    json_playlist = open('playlist.json')
+    json_playlist = open('clean_data.json')
     json_playlist = json.load(json_playlist)
     for track in json_playlist:
-        track_name = track['track']['name']
-        track_id = track['track']['id']
-        song_artist = track['track']['artists'][0]['name']
-        skier_name = movie_name = ski_type = video_link = None
-        movie_song_info = ski_movie_song_info(song_name = track_name, song_artist = song_artist, spotify_id = track_id, skier_name = skier_name, movie_name = movie_name, ski_type = ski_type, video_link = video_link)
+        movie_name = track["Movie Name"]
+        movie_year = track["Movie Year"]
+        movie_co = track["Production Co."]
+        song_num = track["Song Number"]
+        song_artist = track["Artist"]
+        song_name = track["Song Name"]
+        song_album = track["Song Album"]
+        spotify_link = track["Spotify Link"]
+        ski_type = track["Skiing type"]
+        skier_name = track["Skier Name(s)"]
+        location = track["Location"]
+        video_link  = 'None'
+        movie_song_info = ski_movie_song_info(song_name = song_name, song_artist = song_artist, song_album = song_album, song_num=song_num, spotify_id=spotify_link, skier_name = skier_name, movie_name = movie_name, movie_year=movie_year, movie_co=movie_co, ski_type = ski_type, location=location, video_link = video_link)
         db.session.add(movie_song_info)
         db.session.commit()
     return jsonify(json_playlist)
