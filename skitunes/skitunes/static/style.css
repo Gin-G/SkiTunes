@@ -7,6 +7,7 @@ body {
 .bubble {
     margin: 20px auto;
     width: 50%;
+    font: 15px Arial;
     background-color: #FFFFFF;
     color: #454545;
     text-align: center;
@@ -42,4 +43,34 @@ th, td {
 caption {
     font-size: 150%;
     padding: 5px;
+}
+
+.italic-mid {
+    font-size: 125%;
+    font-style: italic;
+    text-align: center;
+}
+
+.italic-left {
+    font-size: 125%;
+    font-style: italic;
+    text-align: left;
+}
+
+.italic-right {
+    font-size: 125%;
+    font-style: italic;
+    text-align: right;
+}
+
+.big-bold {
+    font-size: 150%;
+    font-weight: bold;
+    display: inline
+}
+
+.mid-bold {
+    font-size: 115%;
+    font-weight: bold;
+    display: inline
 }
