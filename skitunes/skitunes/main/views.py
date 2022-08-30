@@ -14,14 +14,30 @@ def create_tables():
 
 @app.route('/')
 def home():
+    return render_template('home.html')
+
+@app.route('/fahrtbags')
+def fart():
+    return render_template('fahrtbags.html')
+
+@app.route('/fahrtbags/one-piece')
+def one_piece():
+    return render_template('one-piece.html')
+
+@app.route('/fahrtbags/about')
+def about_fart():
+    return render_template('about.html')
+
+@app.route('/skitunes')
+def skitunes():
     tracks = ski_movie_song_info.query.all()
-    return render_template('home.html', tracks = tracks)
+    return render_template('skitunes.html', tracks = tracks)
 
 @app.route('/filterskier')
 def filter():
     query = request.args.get('query')
     filter_info = ski_movie_song_info.query.filter(ski_movie_song_info.skier_name == query)
-    return render_template('home.html', tracks = filter_info)
+    return render_template('skitunes.html', tracks = filter_info)
 
 @app.route('/new_entry', methods=['GET', 'POST'])
 def new_entry():
@@ -34,7 +50,7 @@ def new_entry():
             db.session.commit()
 
             flash('Record was successfully added')
-            return redirect(url_for('home'))
+            return redirect(url_for('skitunes'))
     return render_template('new_entry.html')
 
 @app.route('/bulkImport', methods=['GET', 'POST'])
