@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}">
+    <body>
+        <a href="{{url_for('new_entry')}}"> New Entry</a><br>
+    <form action="/filterskier">
+        Filter Skier:<input type="text" value="" placeholder="Shane McConkey" name="query">
+    </form>
+            <table border="4">
+                <caption style="font-size: 150%;">Ski Tunes Database</caption>
+                
+                <thead>
+                    <tr>
+                        <th>Song Name</th>
+                        <th>Artist</th>
+                        <th>Movie Title</th>
+                        <th>Production Company</th>
+                        <th>Spotify Link</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for track in tracks %}
+                    <tr>
+                        <th>{{ track.song_name }}</th>
+                        <th>{{ track.song_artist }}</th>
+                        <th>{{ track.movie_name }}</th>
+                        <th>{{ track.movie_co }}</th>
+                        <th><a  href={{ track.spotify_id }}>{{ track.spotify_id }}</a></th>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+    </body>
+
+</html>

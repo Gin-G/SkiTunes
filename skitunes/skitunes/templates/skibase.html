@@ -2,6 +2,7 @@
 <html lang = "en">
     <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}">
     <body>
+        <a href="{{url_for('new_entry')}}"> New Entry</a><br>
     <form action="/filterskier">
         Filter Skier:<input type="text" value="" placeholder="Shane McConkey" name="query">
     </form>
