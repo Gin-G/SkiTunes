@@ -33,7 +33,19 @@ def skitunes():
     tracks = ski_movie_song_info.query.all()
     return render_template('skitunes.html', tracks = tracks)
 
-@app.route('/filterskier')
+@app.route('/skitunes/skibase')
+def skibase():
+    tracks = ski_movie_song_info.query.all()
+    return render_template('skibase.html', tracks = tracks)
+
+@app.route('/skitunes/findmovie')
+def findmovie():
+    song_name = request.args.get('song_name')
+    song_artist = request.args.get('song_artist')
+    filter_info = ski_movie_song_info.query.filter(ski_movie_song_info.song_name.like(song_name),ski_movie_song_info.song_artist.like(song_artist))
+    return render_template('skibase.html', tracks = filter_info)
+
+@app.route('/skitunes/filterskier')
 def filter():
     query = request.args.get('query')
     filter_info = ski_movie_song_info.query.filter(ski_movie_song_info.skier_name == query)
