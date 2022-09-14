@@ -14,7 +14,7 @@ def create_tables():
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return redirect(url_for('skitunes'))
 
 @app.route('/fahrtbags')
 def fart():
