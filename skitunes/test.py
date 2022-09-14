@@ -28,10 +28,11 @@ with open('playlist.json') as my_json:
                 if artist_name == song_artist:
                     if track_name == song_name:
                         spotify_link = 'https://open.spotify.com/track/' + spotify_id
-                        entry = {"Movie Name" : movie_name,"Movie Year" :  movie_year,"Production Co." : movie_co, "Song Number" : song_num, "Artist" : song_artist, "Song Name"  : song_name, "Song Album" : song_album, "Spotify Link": spotify_link, "Skiing type":ski_type, "Skier Name(s)":skier_name, "Location":location}
-                        master_list.append(entry)
                 else:
                     pass
+            entry = {"Movie Name" : movie_name,"Movie Year" :  movie_year,"Production Co." : movie_co, "Song Number" : song_num, "Artist" : song_artist, "Song Name"  : song_name, "Song Album" : song_album, "Spotify Link": spotify_link, "Skiing type":ski_type, "Skier Name(s)":skier_name, "Location":location}
+            master_list.append(entry)
+
 with open('clean_data.json', 'w') as outfile:
     json.dump(master_list, outfile)
 '''

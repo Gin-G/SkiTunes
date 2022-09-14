@@ -20,11 +20,10 @@
             the opening segment of MSP's Seven Sunny Days…</div><br>
 
             <form action="/skitunes/findmovie">
-                Song Name : <input type="text" id="song_name" name="song_name"><br>
-                Song Artist : <input type="text" id="song_artist" name="song_artist"><br>
+                Song Name : <input type="text" id="song_name" name="song_name" placeholder="Come Alive"><br>
+                Song Artist : <input type="text" id="song_artist" name="song_artist" placeholder="Foo Fighters"><br>
                 <input type="submit" value="Search!">
             </form>
-            <div class="big-bold"><a href="{{url_for('like_what')}}"> A lot in store? Like what?</a></div><br>
 
             <a href="{{url_for('skibase_lite')}}"> Small Database</a><br>
             <a href="{{url_for('skibase')}}"> Full Database</a>
