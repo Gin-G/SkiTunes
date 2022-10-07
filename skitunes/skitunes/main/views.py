@@ -16,18 +16,6 @@ def create_tables():
 def home():
     return redirect(url_for('skitunes'))
 
-@app.route('/fahrtbags')
-def fart():
-    return render_template('fahrtbags.html')
-
-@app.route('/fahrtbags/one-piece')
-def one_piece():
-    return render_template('one-piece.html')
-
-@app.route('/fahrtbags/about')
-def about_fart():
-    return render_template('about.html')
-
 @app.route('/skitunes')
 def skitunes():
     tracks = ski_movie_song_info.query.all()
