@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}" type="text/css">
+    <body>
+        {% for entry in song_data %}
+        
+        <h1>Delete {{ entry.song_name }}?</h1>
+        <div class="bubble">
+            This will permenantly delete {{ entry.song_name }} and all the corresponding info from the database.<br>
+            Are you sure you want to delete {{ entry.song_name }}?<br>
+            <form method="post" action="{{url_for('delete_entry',  entry=entry.db_id)}}">
+                <input type="submit" value="Delete" />
+            </form>
+            <a href="{{url_for('home')}}"><input type="button" value="Home" /></a>
+        {% endfor %}
+        </div>
+</html>

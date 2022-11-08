@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}" type="text/css">
+    <body>
+        {% for entry in song_data %}
+        
+        <h1>Edit {{ entry.song_name }}</h1>
+        <div class="bubble">
+            <form action="{{  request.path  }}" method="post">
+                <p>Song Title : <input type="text" name="song_name" value="{{ entry.song_name }}"/></p>
+                <p>Artist : <input type="text" name="song_artist" value="{{ entry.song_artist }}"/></p>
+                <p>Album : <input type="text" name="song_album" value="{{ entry.song_album }}"/></p>
+                <p>Song Number : <input type="text" name="song_num" value="{{ entry.song_num }}"/></p>
+                <p>Spotify Link : <input type="text" name="spotify_id" value="{{ entry.spotify_id }}"/></p>
+                <p>Skier Name : <input type="text" name="skier_name" value="{{ entry.skier_name }}"/></p>
+                {% for movie in entry.movie_details %}
+                    <p>Movie Title : <input type="text" name="movie_name" value="{{ movie.movie_name }}"/></p>
+                    <p>Movie Year : <input type="text" name="movie_year" value="{{ movie.movie_year }}"/></p>
+                    <p>Production Company : <input type="text" name="movie_co" value="{{ movie.movie_co }}"/></p>
+                {% endfor %}
+                <p>Primary Ski style : <input type="text" name="ski_type" value="{{ entry.ski_type }}"/></p>
+                <p>Location : <input type="text" name="location" value="{{ entry.location }}"/></p>
+                <p>Link to segment : <input type="text" name="video_link" value="{{ entry.video_link }}"/></p>
+                <hr>
+                <input type="submit" value="Submit" />
+                <a href="{{url_for('home')}}">Home</a>
+        {% endfor %}
+            </form>
+        </div>
+</html>

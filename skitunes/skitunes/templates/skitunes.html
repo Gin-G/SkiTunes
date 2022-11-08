@@ -2,9 +2,25 @@
 <html lang = "en">
     <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}">
     <body>
+        {% if name %}
+        <h1>
+            Welcome to SkiMovieSongs.com {{ name }}!
+        </h1>
+        <img src="{{ profile_pic }}"> <br>
+        {% else %}
         <h1>
             Welcome to SkiMovieSongs.com!
         </h1>
+        {% endif %}
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
         <div class="big-bold">You've discovered a Massive database of soundtracks for nearly every ski movie ever produced. </div><br>
             Our snowboard movies database is coming soon and we look forward to expanding into all of your other favorite extreme sports.<br>
             <br>
@@ -27,6 +43,13 @@
 
             <a href="{{url_for('skibase_lite')}}"> Small Database</a><br>
             <a href="{{url_for('skibase')}}"> Full Database</a>
-    </body>
-
+            <br>
+            <br>
+            {% if name %}
+                <a href="{{url_for('new_entry')}}"> New Entry</a><br>
+                <a href="{{url_for('logout')}}"> Logout</a>
+            {% else %}
+                <a href="{{url_for('login')}}"> Login</a>
+            {% endif %}
+            </body>
 </html>

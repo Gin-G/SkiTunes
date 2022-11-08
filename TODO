@@ -1,28 +1,28 @@
-New import - Again - with every movie
+New import - Again - with every movie - DONE
 
 Database
 -Movie Name DONE
--Movie Year
--Production Company
--Song #
+-Movie Year DONE
+-Production Company DONE
+-Song # DONE
 -Song Artist DONE
 -Song Name DONE
--Album
--Spotify Link (Have Spotify ID)
+-Album DONE
+-Spotify Link (Have Spotify ID) DONE
 -Segment Type DONE
 -Skiers/Riders DONE
--Locations
+-Locations DONE
 
 Filter/Search
 -Skier  DONE
--Song Name
--Song Artist
--Movie Name
--Locations
--Segment Type
+-Song Name DONE
+-Song Artist DONE
+-Movie Name DONE
+-Locations DONE
+-Segment Type DONE
 
 Group:
--Movie
+-Movie DONE
 
 Select/Select All (When Filtered)
 Create Playlist based on selections
@@ -31,3 +31,4 @@ Donation Link/Setup
 Email
 Contribute
 
+Search on just song name or artist DONE

@@ -9,7 +9,7 @@
                 <p>Artist : <input type="text" name="song_artist" placeholder="AC/DC" value="Unknown"/></p>
                 <p>Album : <input type="text" name="song_album" placeholder="High Voltage" value="Unknown"/></p>
                 <p>Song Number : <input type="text" name="song_num" placeholder="1" value="Unknown"/></p>
-                <p>Spotify Link : <input type="text" name="spotify_link" placeholder="https://open.spotify.com/track/7nemcVsXVFZF01iqpIIo2Y?si=1a5a5a7b533244ee" value="Unknown"/></p>
+                <p>Spotify Link : <input type="text" name="spotify_id" placeholder="https://open.spotify.com/track/7nemcVsXVFZF01iqpIIo2Y?si=1a5a5a7b533244ee" value="Unknown"/></p>
                 <p>Skier Name : <input type="text" name="skier_name" placeholder="Chris Benchetler" value="Unknown"/></p>
                 <p>Movie Title : <input type="text" name="movie_name" placeholder="Balls Deep" value="Unknown"/></p>
                 <p>Movie Year : <input type="text" name="movie_year" placeholder="2022" value="Unknown"/></p>
@@ -19,6 +19,7 @@
                 <p>Link to segment : <input type="text" name="video_link" placeholder="https://www.youtube.com/" value="Unknown"/></p>
                 <hr>
                 <input type="submit" value="Submit" />
+                <a href="{{url_for('home')}}">Home</a>
             </form>
         </div>
 </html>

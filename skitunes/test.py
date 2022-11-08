@@ -1,44 +1,111 @@
 import json
-
+from skitunes.spotify.functions import spotify_search_song
 from matplotlib.font_manager import json_dump
+import csv
 # Let's finese some data
 
 master_list = []
-with open('playlist.json') as my_json:
-    json_info = json.load(my_json)
-    with open('Steve_data.csv') as file:
-        for line in file:
-            line = line.replace('\n','').split(',')
-            movie_name = line[0]
-            movie_year = line[1]
-            movie_co = line[2]
-            song_num = line[3]
-            song_artist = line[4]
-            song_name = line[5]
-            song_album = line[6]
-            spotify_link = line[7]
-            ski_type = line[8]
-            skier_name = line[9]
-            location = line[10]
-            for key in json_info:
-                artist_name = key['track']['artists'][0]['name']
-                track_name = key['track']['name']
-                spotify_id = key['track']['id']
-                #print(movie_name, movie_year, movie_co, song_num, song_artist, song_name, song_album, spotify_link, ski_type, skier_name, location)
-                if artist_name == song_artist:
-                    if track_name == song_name:
-                        spotify_link = 'https://open.spotify.com/track/' + spotify_id
+with open('Steve_data.csv') as file:
+    for line in file:
+        line = line.replace('\n','').split(',')
+        movie_name = line[0]
+        movie_year = line[1]
+        movie_co = line[2]
+        song_num = line[3]
+        song_artist = line[4]
+        song_name = line[5]
+        song_album = line[6]
+        spotify_link = line[7]
+        ski_type = line[8]
+        skier_name = line[9]
+        location = line[10]
+        search = song_name.strip() + " " + song_artist.strip()
+        try:
+            url,album,spt_name,spt_art = spotify_search_song(search)
+            if spt_name == "Not Found":
+                entry = {"Movie Name" : movie_name,"Movie Year" :  movie_year,"Production Co." : movie_co, "Song Number" : song_num, "Artist" : song_artist, "Song Name"  : song_name, "Song Album" : song_album, "Spotify Link": url, "Skiing type":ski_type, "Skier Name(s)":skier_name, "Location":location}
+                master_list.append(entry)
+            else:
+                if spt_art.lower() in song_artist.lower():
+                    if spt_name.lower() in song_name.lower():
+                        entry = {"Movie Name" : movie_name,"Movie Year" :  movie_year,"Production Co." : movie_co, "Song Number" : song_num, "Artist" : spt_art, "Song Name"  : spt_name, "Song Album" : album, "Spotify Link": url, "Skiing type":ski_type, "Skier Name(s)":skier_name, "Location":location}
+                        master_list.append(entry)
+                    elif song_name.lower() in spt_name.lower():
+                        entry = {"Movie Name" : movie_name,"Movie Year" :  movie_year,"Production Co." : movie_co, "Song Number" : song_num, "Artist" : spt_art, "Song Name"  : spt_name, "Song Album" : album, "Spotify Link": url, "Skiing type":ski_type, "Skier Name(s)":skier_name, "Location":location}
+                        master_list.append(entry)
+                    else:
+                        url = album = spt_name = spt_art = "Not Found"
+                        entry = {"Movie Name" : movie_name,"Movie Year" :  movie_year,"Production Co." : movie_co, "Song Number" : song_num, "Artist" : song_artist, "Song Name"  : song_name, "Song Album" : song_album, "Spotify Link": url, "Skiing type":ski_type, "Skier Name(s)":skier_name, "Location":location}
+                        master_list.append(entry)
+                elif song_artist.lower() in spt_art.lower():
+                    if spt_name.lower() in song_name.lower():
+                        entry = {"Movie Name" : movie_name,"Movie Year" :  movie_year,"Production Co." : movie_co, "Song Number" : song_num, "Artist" : spt_art, "Song Name"  : spt_name, "Song Album" : album, "Spotify Link": url, "Skiing type":ski_type, "Skier Name(s)":skier_name, "Location":location}
+                        master_list.append(entry)
+                    elif song_name.lower() in spt_name.lower():
+                        entry = {"Movie Name" : movie_name,"Movie Year" :  movie_year,"Production Co." : movie_co, "Song Number" : song_num, "Artist" : spt_art, "Song Name"  : spt_name, "Song Album" : album, "Spotify Link": url, "Skiing type":ski_type, "Skier Name(s)":skier_name, "Location":location}
+                        master_list.append(entry)
+                    else:
+                        url = album = spt_name = spt_art = "Not Found"
+                        entry = {"Movie Name" : movie_name,"Movie Year" :  movie_year,"Production Co." : movie_co, "Song Number" : song_num, "Artist" : song_artist, "Song Name"  : song_name, "Song Album" : song_album, "Spotify Link": url, "Skiing type":ski_type, "Skier Name(s)":skier_name, "Location":location}
+                        master_list.append(entry)
                 else:
-                    pass
-            entry = {"Movie Name" : movie_name,"Movie Year" :  movie_year,"Production Co." : movie_co, "Song Number" : song_num, "Artist" : song_artist, "Song Name"  : song_name, "Song Album" : song_album, "Spotify Link": spotify_link, "Skiing type":ski_type, "Skier Name(s)":skier_name, "Location":location}
+                    url = album = spt_name = spt_art = "Not Found"
+                    entry = {"Movie Name" : movie_name,"Movie Year" :  movie_year,"Production Co." : movie_co, "Song Number" : song_num, "Artist" : song_artist, "Song Name"  : song_name, "Song Album" : song_album, "Spotify Link": url, "Skiing type":ski_type, "Skier Name(s)":skier_name, "Location":location}
+                    master_list.append(entry)
+        except:
+            url = album = spt_name = spt_art = "Not Found"
+            entry = {"Movie Name" : movie_name,"Movie Year" :  movie_year,"Production Co." : movie_co, "Song Number" : song_num, "Artist" : song_artist, "Song Name"  : song_name, "Song Album" : song_album, "Spotify Link": url, "Skiing type":ski_type, "Skier Name(s)":skier_name, "Location":location}
             master_list.append(entry)
+
 
 with open('clean_data.json', 'w') as outfile:
     json.dump(master_list, outfile)
-'''
 
+
+
+'''
 json_playlist = open('clean_data.json')
 json_playlist = json.load(json_playlist)
 for track in json_playlist:
     print(track['Movie Name'])
+
+
+
+file = open('songs.csv')
+list = csv.reader(file)
+with open('out.csv','w+') as out:
+    writer = csv.writer(out)
+    for item in list:
+        track = item[0].strip()
+        artist = item[1].strip()
+        search = track + " " + artist
+        try:
+            url,album,spt_name,spt_art = spotify_search_song(search)
+            if spt_name == "Not Found":
+                writer.writerow([track,artist,url,album,spt_name,spt_art])
+            else:
+                if spt_art.lower() in artist.lower():
+                    if spt_name.lower() in track.lower():
+                        writer.writerow([track,artist,url,album,spt_name,spt_art])
+                    elif track.lower() in spt_name.lower():
+                        writer.writerow([track,artist,url,album,spt_name,spt_art])
+                    else:
+                        url = album = spt_name = spt_art = "Not Found"
+                        writer.writerow([track,artist,url,album,spt_name,spt_art])
+                elif artist.lower() in spt_art.lower():
+                    if spt_name.lower() in track.lower():
+                        writer.writerow([track,artist,url,album,spt_name,spt_art])
+                    elif track.lower() in spt_name.lower():
+                        writer.writerow([track,artist,url,album,spt_name,spt_art])
+                    else:
+                        url = album = spt_name = spt_art = "Not Found"
+                        writer.writerow([track,artist,url,album,spt_name,spt_art])
+                else:
+                    url = album = spt_name = spt_art = "Not Found"
+                    writer.writerow([track,artist,url,album,spt_name,spt_art])
+        except:
+            url = album = spt_name = spt_art = "Not Found"
+            writer.writerow([track,artist,url,album,spt_name,spt_art])
 '''
+
+        

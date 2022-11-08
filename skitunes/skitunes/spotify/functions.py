@@ -1,10 +1,14 @@
 from email.mime import base
 
 from matplotlib.pyplot import get
-from spotify_config import *
 import requests
 import json
 import os
+
+AUTH_URL = "https://accounts.spotify.com/api/token"
+client_id = os.environ.get("SPOTIFY_CLIENT_ID", None)
+client_secret = os.environ.get("SPOTIFY_CLIENT_SECRET", None)
+base_spotify_url = 'https://api.spotify.com/v1/'
 
 def spotify_auth():
     auth_response = requests.post(AUTH_URL, {
@@ -24,6 +28,23 @@ def spotify_auth():
 
     return headers
 
+def spotify_search_song(track):
+    headers = spotify_auth()
+    params = {'q' : track, 'type' : 'track,artist', 'limit' : 1}
+    # actual GET request with proper header
+    track_info = requests.get(base_spotify_url + 'search?', headers=headers, params=params)
+    track_info = track_info.json()
+    try:
+        url = track_info['tracks']['items'][0]['external_urls']['spotify']
+        album = track_info['tracks']['items'][0]['album']['name']
+        name = track_info['tracks']['items'][0]['name']
+        artist = track_info['tracks']['items'][0]['artists'][0]['name']
+        return url, album, name, artist
+    except IndexError:
+        return "Not Found", "Not Found", "Not Found", "Not Found"
+    except TypeError:
+        return "Not Found", "Not Found", "Not Found", "Not Found"
+
 def get_track_info():
     headers = spotify_auth()
     # Track ID from the URI
@@ -31,6 +52,8 @@ def get_track_info():
 
     # actual GET request with proper header
     track_info = requests.get(base_spotify_url + 'audio-features/' + track_id, headers=headers)
+    return track_info.json()
+
 
 def get_artist_albums():
     headers = spotify_auth()

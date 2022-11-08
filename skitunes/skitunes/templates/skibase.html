@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang = "en">
     <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="{{url_for('static',  filename='app.js')}}"></script>
     <body>
-        <a href="{{url_for('new_entry')}}"> New Entry</a><br>
+        <a href="{{url_for('home')}}">Home</a>
+        <a href="{{url_for('create_playlist')}}">Create Playlist</a>
     <table border="4">
         <caption style="font-size: 150%;">Ski Tunes Database</caption>
         <thead>
             <tr>
+                <th><input type="checkbox" id="select_all"/></th>
                 <th>Song Name</th>
                 <th>Artist</th>
                 <th>Album</th>
@@ -19,11 +23,14 @@
                 <th>Primary style of skiing</th>
                 <th>Spotify Link</th>
                 <th>Link to segment</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
 
         <tbody>
             <tr>
+                <th></th>
                 <th>
                     <form action="/skitunes/filtersong"><input type="text" value="" placeholder="Filter Song Name" name="song_name"></form>
                 </th>
@@ -64,21 +71,30 @@
                         <input type="text" value="" placeholder="Filter Segment Type" name="ski_type">
                     </form>
                 </th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
             {% for track in tracks %}
             <tr>
-                <th>{{ track.song_name }}</th>
-                <th>{{ track.song_artist }}</th>
-                <th>{{ track.song_album }}</th>
-                <th>{{ track.movie_name }}</th>
-                <th>{{ track.movie_co }}</th>
-                <th>{{ track.movie_year}}</th>
-                <th>{{ track.song_num }}</th>
-                <th>{{ track.skier_name }}</th>
-                <th>{{ track.location }}</th>
-                <th>{{ track.ski_type }}</th>
-                <th><a  href={{ track.spotify_id }}>{{ track.spotify_id }}</a></th>
-                <th><a  href={{ track.video_link }}>{{ track.video_link }}</a></th>
+                <td><input type="checkbox" class="checkbox" name="check[]" value="{{ track.db_id }}"></td>
+                <td>{{ track.song_name }}</td>
+                <td>{{ track.song_artist }}</td>
+                <td>{{ track.song_album }}</td>
+                {% for movie in track.movie_details %}
+                    <td><a  href="{{url_for('ski_movie',  name=movie.movie_name)}}">{{ movie.movie_name }}</a></td>
+                    <td>{{ movie.movie_co }}</td>
+                    <td>{{ movie.movie_year}}</td>
+                {% endfor %}
+                <td>{{ track.song_num }}</td>
+                <td>{{ track.skier_name }}</td>
+                <td>{{ track.location }}</td>
+                <td>{{ track.ski_type }}</td>
+                <td><a href={{ track.spotify_id }}>{{ track.spotify_id }}</a></td>
+                <td><a href={{ track.video_link }}>{{ track.video_link }}</a></td>
+                <td><a href="{{url_for('edit_entry',  entry=track.db_id)}}">Edit</a></td>
+                <td><a href="{{url_for('delete_entry',  entry=track.db_id)}}">Delete</a></td>
             </tr>
             {% endfor %}
         </tbody>

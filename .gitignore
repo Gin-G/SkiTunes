@@ -1,4 +1,5 @@
 skitunes/skitunes/spotify/spotify_config.py
+*client_secret*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
