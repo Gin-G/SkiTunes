@@ -26,16 +26,19 @@ def home():
         return redirect(url_for('skitunes'))
 
 @app.route('/skitunes')
+@login_required
 def skitunes():
     tracks = ski_movie_song_info.query.all()
     return render_template('skitunes.html', tracks = tracks)
 
 @app.route('/skitunes/skibase')
+@login_required
 def skibase():
     tracks = ski_movie_song_info.query.all()
     return render_template('skibase.html', tracks = tracks)
 
 @app.route('/skitunes/skibase/movie/company/<name>')
+@login_required
 def prod_co(name):
     movie_co = db.session.query(Movie).filter(Movie.movie_co.contains(name)).all()
     prod_list = []
@@ -45,6 +48,7 @@ def prod_co(name):
     return render_template('movie_co.html', movie_co = prod_list)
 
 @app.route('/skitunes/skibase/movie/year/<year>', methods=["POST","GET"])
+@login_required
 def year(year):
     if request.method == 'POST':
         track_list = []

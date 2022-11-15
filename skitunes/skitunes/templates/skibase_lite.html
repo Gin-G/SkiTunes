@@ -4,7 +4,8 @@
     <script src="{{url_for('static',  filename='app.js')}}"></script>
     <body>
         <a href="{{url_for('home')}}">Home</a>
-        <a href="{{url_for('create_playlist')}}">Create Playlist</a>
+        <form action="" method="post">
+            <button type="submit" name="submit-button" value="Create">Create Playlist</button>
             <table border="4">
                 <caption style="font-size: 150%;">Ski Tunes Database</caption>
                 
@@ -63,7 +64,7 @@
                     {% endfor %}
                 </tbody>
             </table>
-            
+        </form>
     </body>
 
 </html>
