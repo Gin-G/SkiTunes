@@ -26,7 +26,6 @@ def home():
         return redirect(url_for('skitunes'))
 
 @app.route('/skitunes')
-@login_required
 def skitunes():
     tracks = ski_movie_song_info.query.all()
     return render_template('skitunes.html', tracks = tracks)
