@@ -131,7 +131,7 @@ def spotify_auth():
         # "show_dialog": SHOW_DIALOG_str,
         "client_id": client_id,
     }
-    URL_ARGS = "&".join(["{}={}".format(key, urllibparse.quote(val))
+    URL_ARGS = "&".join(["{}={}".format(key, urllibparse.quote(str(val)))
                     for key, val in list(auth_query_parameters.items())])
     AUTH_URL = "{}/?{}".format(SPOTIFY_AUTH_URL, URL_ARGS)
     
