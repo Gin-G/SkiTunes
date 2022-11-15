@@ -41,7 +41,7 @@ def authorize(auth_token):
     }
     
     auth_response = requests.post(AUTH_URL, data=payload)
-    auth_response_data = json.loads(auth_response.text)
+    auth_response_data = auth_response.json()
 
     # save the access token
     access_token = auth_response_data['access_token']
