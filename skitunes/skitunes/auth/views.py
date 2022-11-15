@@ -1,11 +1,13 @@
-from flask import Blueprint, render_template, flash, url_for, redirect, request
+from flask import Blueprint, render_template, flash, url_for, redirect, request, session
 from flask_login import current_user, LoginManager, login_required, login_user, logout_user
 from skitunes import app
 import requests
 from oauthlib.oauth2 import WebApplicationClient
 from skitunes.account.models import User
+from skitunes.spotify.functions import authorize
 import os
 import json
+import urllib.parse as urllibparse
 
 # User session management setup
 # https://flask-login.readthedocs.io/en/latest
@@ -22,6 +24,8 @@ GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET", None)
 GOOGLE_DISCOVERY_URL = (
     "https://accounts.google.com/.well-known/openid-configuration"
 )
+
+redirect_uri_url = "https://www.skimoviesongs.com/login/callback"
 
 # OAuth 2 client setup
 client = WebApplicationClient(GOOGLE_CLIENT_ID)
@@ -43,7 +47,7 @@ def login():
     # scopes that let you retrieve user's profile from Google
     request_uri = client.prepare_request_uri(
         authorization_endpoint,
-        redirect_uri=request.base_url + "/callback",
+        redirect_uri=redirect_uri_url,
         scope=["openid", "email", "profile"],
     )
     return redirect(request_uri)
@@ -60,7 +64,7 @@ def callback():
     token_url, headers, body = client.prepare_token_request(
         token_endpoint,
         authorization_response=request.url,
-        redirect_url=request.base_url,
+        redirect_url="https://www.skimoviesongs.com/login",
         code=code
     )
     token_response = requests.post(
@@ -111,4 +115,31 @@ def callback():
 @login_required
 def logout():
     logout_user()
+    return redirect(url_for("home"))
+
+@app.route('/spotfy/auth')
+def spotify_auth():
+    SPOTIFY_AUTH_BASE_URL = "https://accounts.spotify.com/{}"
+    SPOTIFY_AUTH_URL = SPOTIFY_AUTH_BASE_URL.format('authorize')
+    SCOPE = "playlist-modify-public playlist-modify-private user-read-recently-played user-top-read"
+    client_id = os.environ.get("SPOTIFY_CLIENT_ID", None)
+    auth_query_parameters = {
+        "response_type": "code",
+        "redirect_uri": 'https://www.skimoviesongs.com/spotify/login/q',
+        "scope": SCOPE,
+        # "state": STATE,
+        # "show_dialog": SHOW_DIALOG_str,
+        "client_id": client_id,
+    }
+    URL_ARGS = "&".join(["{}={}".format(key, urllibparse.quote(val))
+                    for key, val in list(auth_query_parameters.items())])
+    AUTH_URL = "{}/?{}".format(SPOTIFY_AUTH_URL, URL_ARGS)
+    
+    return redirect(AUTH_URL)
+
+@app.route('/spotfy/login/q')
+def spotify_login():
+    auth_token = request.args['code']
+    header = authorize(auth_token)
+    session['auth_header'] = header['header']
     return redirect(url_for("home"))

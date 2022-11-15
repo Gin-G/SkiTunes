@@ -1,5 +1,5 @@
 body {
-    background-color: ##D6DBDF;
+    background-color: #f2f6f8;
     text-align: center;
 }
 
@@ -77,4 +77,16 @@ caption {
     font-size: 115%;
     font-weight: bold;
     display: inline
+}
+
+.select_all{
+    background: #ccc;
+}
+
+.select-option {
+    background: #ccc;
+}
+
+input[type="checkbox"] {
+    vertical-align: middle;
 }

@@ -5,7 +5,8 @@
     <script src="{{url_for('static',  filename='app.js')}}"></script>
     <body>
         <a href="{{url_for('home')}}">Home</a>
-        <a href="{{url_for('create_playlist')}}">Create Playlist</a>
+    <form action="" method="post">
+        <button type="submit" name="submit-button" value="Create">Create Playlist</button>
     <table border="4">
         <caption style="font-size: 150%;">Ski Tunes Database</caption>
         <thead>
@@ -80,11 +81,12 @@
                 <th></th>
                 <th></th>
             </tr>
-            {% for track in tracks %}
+            {% for movie in movie_year %}
+            {% for track in movie %}
             <tr>
                 <td>
                     <label class="select-option" for="chkbx{{ track.db_id }}">
-                        <input type="checkbox" class="select-option" id="chkbx{{ track.db_id }}" value="{{ track.db_id }}">
+                        <input type="checkbox" class="select-option" name='check' id="chkbx{{ track.db_id }}" value="{{ track.db_id }}">
                     </label>
                 </td>
                 <td>{{ track.song_name }}</td>
@@ -105,9 +107,10 @@
                 <td><a href="{{url_for('delete_entry',  entry=track.db_id)}}">Delete</a></td>
             </tr>
             {% endfor %}
+            {% endfor %}
         </tbody>
     </table>
-
+    </form>
 </body>
 
 </html>

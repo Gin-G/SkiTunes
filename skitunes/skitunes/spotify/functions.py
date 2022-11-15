@@ -1,14 +1,17 @@
 from email.mime import base
-
+from flask import redirect
 from matplotlib.pyplot import get
 import requests
 import json
 import os
+import base64
 
 AUTH_URL = "https://accounts.spotify.com/api/token"
 client_id = os.environ.get("SPOTIFY_CLIENT_ID", None)
 client_secret = os.environ.get("SPOTIFY_CLIENT_SECRET", None)
 base_spotify_url = 'https://api.spotify.com/v1/'
+redirect_uri = 'https://www.skimoviesongs.com/spotify/login/q'
+USER_AUTH_URL = 'https://accounts.spotify.com/authorize?'
 
 def spotify_auth():
     auth_response = requests.post(AUTH_URL, {
@@ -27,6 +30,29 @@ def spotify_auth():
     }
 
     return headers
+
+def authorize(auth_token):
+    payload = {
+        "grant_type": "authorization_code",
+        "code": str(auth_token),
+        "redirect_uri": redirect_uri,
+        "client_id": client_id,
+        "client_secret": client_secret
+    }
+    
+    auth_response = requests.post(AUTH_URL, data=payload)
+    auth_response_data = json.loads(auth_response.text)
+
+    # save the access token
+    access_token = auth_response_data['access_token']
+    headers = {"Authorization": f"Bearer {access_token}"}
+    return dict(
+            access_token=auth_response_data["access_token"],
+            refresh_token=auth_response_data["refresh_token"],
+            token_type=auth_response_data["token_type"],
+            expires_in=auth_response_data["expires_in"],
+            header=headers,
+        )
 
 def spotify_search_song(track):
     headers = spotify_auth()
@@ -66,7 +92,7 @@ def get_artist_albums():
                     params={'include_groups': 'album', 'limit': 50})
 
 def get_playlist_info():
-    headers = spotify_auth();
+    headers = spotify_auth()
     #playlist_id = '4SJybMaIGipeMLrtiNamXD'
     playlist_id = '18go8B8q3kzmw6QhE9BBlk'
     tracks = requests.get(base_spotify_url + 'playlists/' + playlist_id + "/tracks?fields=items(track.id),total", headers=headers)
@@ -86,3 +112,15 @@ def get_playlist_info():
         offset+=100
     playlist_info = json.dumps(playlist_info, indent=2)
     print(playlist_info)
+
+def create_playlist(username, playlist_name):
+    headers = spotify_auth()
+    url = 	'https://api.spotify.com/v1/users/' + username + '/playlists'
+    description = "Created by skimoviesongs.com based on " + username + "'s input" 
+    json_body = {
+        "name": playlist_name,
+        "description": description,
+        "public": 'false'
+    }
+    created = requests.post(url, headers=headers, params=json_body)
+    print(created)

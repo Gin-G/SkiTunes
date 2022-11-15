@@ -31,10 +31,38 @@ def skitunes():
     return render_template('skitunes.html', tracks = tracks)
 
 @app.route('/skitunes/skibase')
-@login_required
 def skibase():
     tracks = ski_movie_song_info.query.all()
     return render_template('skibase.html', tracks = tracks)
+
+@app.route('/skitunes/skibase/movie/company/<name>')
+def prod_co(name):
+    movie_co = db.session.query(Movie).filter(Movie.movie_co.contains(name)).all()
+    prod_list = []
+    for id in movie_co:
+        filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
+        prod_list.append(filter_info)
+    return render_template('movie_co.html', movie_co = prod_list)
+
+@app.route('/skitunes/skibase/movie/year/<year>', methods=["POST","GET"])
+def year(year):
+    if request.method == 'POST':
+        track_list = []
+        for checkbox in request.form.getlist('check'):
+            playlist = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id == checkbox).first()
+            spotify = playlist.spotify_id
+            if spotify == 'Not Found':
+                pass
+            else:
+                spotify = spotify.replace('https://open.spotify.com/track/','')
+                track_list.append(spotify)
+        print(track_list)
+    movie_year = db.session.query(Movie).filter(Movie.movie_year == year).all()
+    year_list = []
+    for id in movie_year:
+        filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
+        year_list.append(filter_info)
+    return render_template('movie_year.html', movie_year = year_list)
 
 @app.route('/skitunes/skibase/movie/<name>')
 @login_required

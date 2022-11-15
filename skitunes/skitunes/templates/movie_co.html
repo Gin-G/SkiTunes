@@ -80,7 +80,8 @@
                 <th></th>
                 <th></th>
             </tr>
-            {% for track in tracks %}
+            {% for movie in movie_co %}
+            {% for track in movie %}
             <tr>
                 <td>
                     <label class="select-option" for="chkbx{{ track.db_id }}">
@@ -104,6 +105,7 @@
                 <td><a href="{{url_for('edit_entry',  entry=track.db_id)}}">Edit</a></td>
                 <td><a href="{{url_for('delete_entry',  entry=track.db_id)}}">Delete</a></td>
             </tr>
+            {% endfor %}
             {% endfor %}
         </tbody>
     </table>
