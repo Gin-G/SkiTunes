@@ -2,8 +2,20 @@
 <html lang = "en">
     <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}">
     <script src="{{url_for('static',  filename='app.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $('#header').load("{{ url_for('header') }}")
+        })
+    </script>
+    <script>
+        $(function(){
+            $('#navbar').load("{{ url_for('navbar') }}")
+        })
+    </script>
     <body>
-        <a href="{{url_for('home')}}">Home</a>
+        <div id="header"></div>
+        <div id="navbar"></div>
         <form action="" method="post">
             <button type="submit" name="submit-button" value="Create">Create Playlist</button>
             <table border="4">
@@ -48,18 +60,26 @@
                     </tr>
                     {% for track in tracks %}
                     <tr>
+                        {% if 'Not Found' in track.spotify_id %}
+                        <td></td>
+                        {% else %}
                         <td>
                             <label class="select-option" for="chkbx{{ track.db_id }}">
                                 <input type="checkbox" class="select-option" id="chkbx{{ track.db_id }}" value="{{ track.db_id }}">
                             </label>
                         </td>
+                        {% endif %}
                         <th>{{ track.song_name }}</th>
                         <th>{{ track.song_artist }}</th>
                             {% for movie in track.movie_details %}
                                 <th><a href="{{url_for('ski_movie',  name=movie.movie_name)}}">{{ movie.movie_name }}</a></th>
                                 <th>{{ movie.movie_co }}</th>
                             {% endfor %}
+                    {% if 'Not Found' in track.spotify_id %}
+                        <th>{{ track.spotify_id }}</th>
+                    {% else %}
                     <th><a  href={{ track.spotify_id }}>{{ track.spotify_id }}</a></th>
+                    {% endif %}
                     </tr>
                     {% endfor %}
                 </tbody>

@@ -2,7 +2,20 @@
 <html lang = "en">
     <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}">
     <script src="static/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $('#header').load("{{ url_for('header') }}")
+        })
+    </script>
+    <script>
+        $(function(){
+            $('#navbar').load("{{ url_for('navbar') }}")
+        })
+    </script>
     <body>
+        <div id="header"></div>
+        <div id="navbar"></div>
         {% if name %}
         <h1>
             Welcome to SkiMovieSongs.com {{ name }}!
@@ -34,11 +47,12 @@
             <div class="italic-right">"Isn't this from that pow scene in...?"</div><br> 
             <div class="mid-bold">Now you can find out with ease! I have a lot in store for this site but for now you can use <br>
             the search fields below to figure out if that song currently stuck in your head really was in<br>
-            the opening segment of MSP's Seven Sunny Days…</div><br>
+            the opening segment of MSP's Seven Sunny Days…</div><br><br>
 
             <form action="/skitunes/findmovie">
-                Song Name : <input type="text" id="song_name" name="song_name" placeholder="Come Alive"><br>
-                Song Artist : <input type="text" id="song_artist" name="song_artist" placeholder="Foo Fighters"><br>
+                Song Name : <input type="text" id="song_name" name="song_name" placeholder="Come Alive"><br><br>
+                Song Artist : <input type="text" id="song_artist" name="song_artist" placeholder="Foo Fighters"><br><br>
+                Movie Year : <input type="text" id="movie_year" name="movie_year" placeholder="1999"><br><br>
                 <input type="submit" value="Search!">
             </form>
 

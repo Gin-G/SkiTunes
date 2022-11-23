@@ -1,0 +1,40 @@
+<div class="navbar">
+    <a href="{{url_for('home')}}">Home</a>
+    <div class="dropdown">
+        <button class="dropbtn">Production Companies
+        <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            {% for track in tracks %}
+            {% if 'Production Company' in track %}
+            {% else %}
+                <a href="{{url_for('prod_co', name=track)}}">{{ track }}</a>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Segment Type
+        <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Skier Name
+        <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Skier Gender
+        <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+
+        </div>
+    </div>
+</div>

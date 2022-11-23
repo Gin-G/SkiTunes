@@ -5,6 +5,7 @@ import requests
 from oauthlib.oauth2 import WebApplicationClient
 from skitunes.account.models import User
 from skitunes.spotify.functions import authorize
+from skitunes.auth.variables import *
 import os
 import json
 import urllib.parse as urllibparse
@@ -18,14 +19,6 @@ login_manager.init_app(app)
 @login_manager.user_loader
 def load_user(user_id):
     return User.get(user_id)
-
-GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", None)
-GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET", None)
-GOOGLE_DISCOVERY_URL = (
-    "https://accounts.google.com/.well-known/openid-configuration"
-)
-
-redirect_uri_url = "https://www.skimoviesongs.com/login/callback"
 
 # OAuth 2 client setup
 client = WebApplicationClient(GOOGLE_CLIENT_ID)
@@ -47,7 +40,7 @@ def login():
     # scopes that let you retrieve user's profile from Google
     request_uri = client.prepare_request_uri(
         authorization_endpoint,
-        redirect_uri=redirect_uri_url,
+        redirect_uri=google_redirect_uri_url,
         scope=["openid", "email", "profile"],
     )
     return redirect(request_uri)
@@ -64,7 +57,7 @@ def callback():
     token_url, headers, body = client.prepare_token_request(
         token_endpoint,
         authorization_response=request.url,
-        redirect_url="https://www.skimoviesongs.com/login/callback",
+        redirect_url=google_redirect_uri_url,
         code=code
     )
     token_response = requests.post(
@@ -119,13 +112,9 @@ def logout():
 
 @app.route('/spotfy/auth')
 def spotify_auth():
-    SPOTIFY_AUTH_BASE_URL = "https://accounts.spotify.com/{}"
-    SPOTIFY_AUTH_URL = SPOTIFY_AUTH_BASE_URL.format('authorize')
-    SCOPE = "playlist-modify-public playlist-modify-private user-read-recently-played user-top-read"
-    client_id = os.environ.get("SPOTIFY_CLIENT_ID", None)
     auth_query_parameters = {
         "response_type": "code",
-        "redirect_uri": 'https://www.skimoviesongs.com/spotify/login/q',
+        "redirect_uri": spotify_redirect_uri_url,
         "scope": SCOPE,
         # "state": STATE,
         # "show_dialog": SHOW_DIALOG_str,
@@ -142,4 +131,4 @@ def spotify_login():
     auth_token = request.args['code']
     header = authorize(auth_token)
     session['auth_header'] = header['header']
-    return redirect(url_for("home"))
+    return render_template('skitunes.html')

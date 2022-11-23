@@ -25,6 +25,27 @@ def home():
     else:
         return redirect(url_for('skitunes'))
 
+@app.route('/templates/header.html')
+def header():
+    return render_template('header.html')
+
+@app.route('/templates/navbar.html')
+def navbar():
+    tracks = db.session.query(Movie.movie_co).all()
+    track_list = []
+    for track in tracks:
+        track = str(track)
+        track = track.replace("',","")
+        track = track.replace('",',"")
+        track = track.replace(')',"")
+        track = track.replace('"',"")
+        track = track.replace("('","")
+        track = track.replace('("',"")
+        if track not in track_list:
+            track_list.append(track)
+    track_list.sort()
+    return render_template('navbar.html', tracks = track_list)
+
 @app.route('/skitunes')
 def skitunes():
     tracks = ski_movie_song_info.query.all()
@@ -88,14 +109,25 @@ def skibase_lite():
 def findmovie():
     song_name = request.args.get('song_name')
     song_artist = request.args.get('song_artist')
-    print(song_name,song_artist)
-    if len(song_artist) == 0:
+    movie_year = request.args.get('movie_year')
+    print(movie_year)
+    if len(song_artist) != 0:
+        if len(song_name) != 0:
+            filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_name.contains(song_name),ski_movie_song_info.song_artist.contains(song_artist)).all()
+            return render_template('skibase.html', tracks = filter_info)
+        else:
+            filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_artist.contains(song_artist)).all()
+        return render_template('skibase.html', tracks = filter_info)
+    elif len(song_name) != 0:
         filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_name.contains(song_name)).all()
-    elif len(song_name) == 0:
-        filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_artist.contains(song_artist)).all()
-    else:
-        filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_name.contains(song_name),ski_movie_song_info.song_artist.contains(song_artist)).all()
-    return render_template('skibase.html', tracks = filter_info)
+        return render_template('skibase.html', tracks = filter_info)
+    elif len(movie_year) != 0:
+        movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == movie_year).all()
+        year_list = []
+        for id in movie_filter_info:
+            filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
+            year_list.append(filter_info)
+        return render_template('movie_year.html', movie_year = year_list)
 
 @app.route('/skitunes/filtermovie')
 @login_required

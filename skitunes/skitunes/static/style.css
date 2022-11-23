@@ -41,7 +41,8 @@ th, td, tr {
     vertical-align: middle;
     color: #454545;
     padding: 2.5px;
-    font-size: 10px;
+    font-size: 12px;
+    height: 15px;
 }
 
 caption {
@@ -90,3 +91,88 @@ caption {
 input[type="checkbox"] {
     vertical-align: middle;
 }
+
+.header-image {
+    float:left;
+    width:318px;
+    height:90px;
+    position: relative; 
+    top: 20%; 
+    left: 31%;
+}
+
+/* Navbar container */
+.navbar {
+    overflow: hidden;
+    background-color: #393f44;
+    font-family: Arial;
+    height: 50px;
+    width: 100%;
+  }
+  
+  /* Links inside the navbar */
+  .navbar a {
+    float: left;
+    font-size: 14px;
+    color: white;
+    padding: 17px 6px;
+    text-decoration: none;
+    margin-left: 31%;
+  }
+  
+  /* The dropdown container */
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    font-size: 14px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 17px 6px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+  
+  /* Add a red background color to navbar links on hover */
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: darkblue;
+  }
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 2px 4px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 12px;
+    height: auto;
+    margin-left: 0%;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+ 

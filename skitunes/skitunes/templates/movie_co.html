@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang = "en">
     <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}">
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="{{url_for('static',  filename='app.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $('#header').load("{{ url_for('header') }}")
+        })
+    </script>
+    <script>
+        $(function(){
+            $('#navbar').load("{{ url_for('navbar') }}")
+        })
+    </script>
     <body>
-        <a href="{{url_for('home')}}">Home</a>
+        <div id="header"></div>
+        <div id="navbar"></div>
         <form action="" method="post">
             <button type="submit" name="submit-button" value="Create">Create Playlist</button>
     <table border="4">
@@ -84,11 +95,15 @@
             {% for movie in movie_co %}
             {% for track in movie %}
             <tr>
+                {% if 'Not Found' in track.spotify_id %}
+                <td></td>
+                {% else %}
                 <td>
                     <label class="select-option" for="chkbx{{ track.db_id }}">
                         <input type="checkbox" class="select-option" id="chkbx{{ track.db_id }}" value="{{ track.db_id }}">
                     </label>
                 </td>
+                {% endif %}
                 <td>{{ track.song_name }}</td>
                 <td>{{ track.song_artist }}</td>
                 <td>{{ track.song_album }}</td>
@@ -101,8 +116,16 @@
                 <td>{{ track.skier_name }}</td>
                 <td>{{ track.location }}</td>
                 <td>{{ track.ski_type }}</td>
-                <td><a href={{ track.spotify_id }}>{{ track.spotify_id }}</a></td>
-                <td><a href={{ track.video_link }}>{{ track.video_link }}</a></td>
+                {% if 'Not Found' in track.spotify_id %}
+                    <th>{{ track.spotify_id }}</th>
+                {% else %}
+                <th><a  href={{ track.spotify_id }}>{{ track.spotify_id }}</a></th>
+                {% endif %}
+                {% if 'Unknown' in track.video_link %}
+                    <th>{{ track.video_link }}</th>
+                {% else %}
+                    <td><a href={{ track.video_link }}>{{ track.video_link }}</a></td>
+                {% endif %}
                 <td><a href="{{url_for('edit_entry',  entry=track.db_id)}}">Edit</a></td>
                 <td><a href="{{url_for('delete_entry',  entry=track.db_id)}}">Delete</a></td>
             </tr>

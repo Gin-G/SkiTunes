@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html lang = "en">
     <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $('#header').load("{{ url_for('header') }}")
+        })
+    </script>
+    <script>
+        $(function(){
+            $('#navbar').load("{{ url_for('navbar') }}")
+        })
+    </script>
     <body>
+        <div id="header"></div>
+        <div id="navbar"></div>
         <h1>
             {{ movie_name }} : {{ movie_co.movie_co }} : {{ movie_co.movie_year}}
         </h1>
@@ -32,8 +45,16 @@
                 <th>{{ movie.skier_name }}</th>
                 <th>{{ movie.location }}</th>
                 <th>{{ movie.skit_type }}</th>
+                {% if 'Not Found' in movie.spotify_id %}
+                    <th>{{ movie.spotify_id }}</th>
+                {% else %}
                 <th><a  href={{ movie.spotify_id }}>{{ movie.spotify_id }}</a></th>
-                <th><a  href={{ movie.video_link }}>{{ movie.video_link }}</a></th>
+                {% endif %}
+                {% if 'Unknown' in movie.video_link %}
+                    <th>{{ movie.video_link }}</th>
+                {% else %}
+                    <td><a href={{ movie.video_link }}>{{ movie.video_link }}</a></td>
+                {% endif %}
             </tr>
             {% endfor %}
         {% endfor %}
