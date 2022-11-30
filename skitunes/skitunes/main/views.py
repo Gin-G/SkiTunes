@@ -31,7 +31,7 @@ def header():
 
 @app.route('/static/logo.png')
 def logo():
-    filename = 'skitunes/static/logo.png'
+    filename = 'static/logo.png'
     return send_file(filename)
 
 @app.route('/templates/navbar.html')
