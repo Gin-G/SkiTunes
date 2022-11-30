@@ -29,9 +29,9 @@ def home():
 def header():
     return render_template('header.html')
 
-@app.route('/static/logo.png')
+@app.route('/static/Logo.png')
 def logo():
-    filename = 'static/logo.png'
+    filename = 'static/Logo.png'
     return send_file(filename)
 
 @app.route('/templates/navbar.html')
