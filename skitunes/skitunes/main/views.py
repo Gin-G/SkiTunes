@@ -1,7 +1,7 @@
 from crypt import methods
 from textwrap import indent
 
-from flask import request, flash, redirect, url_for, jsonify
+from flask import request, flash, redirect, url_for, jsonify, send_file
 from flask_login import current_user, LoginManager, login_required, login_user, logout_user
 from matplotlib.font_manager import json_load
 from skitunes import app, db
@@ -28,6 +28,11 @@ def home():
 @app.route('/templates/header.html')
 def header():
     return render_template('header.html')
+
+@app.route('/static/logo.png')
+def logo():
+    filename = '/static/logo.png'
+    return send_file(filename)
 
 @app.route('/templates/navbar.html')
 def navbar():
