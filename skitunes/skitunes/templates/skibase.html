@@ -16,7 +16,8 @@
     <body>
         <div id="header"></div>
         <div id="navbar"></div>
-        <form action="" method="post">
+        <form action="/skitunes/create_playlist" method="post">
+            Playlist Name : <input type="text" id="playlist_name" name="playlist_name" placeholder="My Awesome Playlist"><br>
             <button type="submit" name="submit-button" value="Create">Create Playlist</button>
     <table border="4">
         <caption style="font-size: 150%;">Ski Tunes Database</caption>
@@ -99,7 +100,7 @@
                 {% else %}
                 <td>
                     <label class="select-option" for="chkbx{{ track.db_id }}">
-                        <input type="checkbox" class="select-option" id="chkbx{{ track.db_id }}" value="{{ track.db_id }}">
+                        <input type="checkbox" name="selected_track" class="select-option" id="chkbx{{ track.db_id }}" value="{{ track.spotify_id }}">
                     </label>
                 </td>
                 {% endif %}

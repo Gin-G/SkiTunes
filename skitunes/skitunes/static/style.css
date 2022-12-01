@@ -74,6 +74,13 @@ caption {
     display: inline
 }
 
+.big-bold-italic {
+  font-size: 150%;
+  font-weight: bold;
+  font-style: italic;
+  display: inline
+}
+
 .mid-bold {
     font-size: 115%;
     font-weight: bold;

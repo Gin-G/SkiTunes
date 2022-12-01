@@ -4,11 +4,12 @@ from skitunes import app
 import requests
 from oauthlib.oauth2 import WebApplicationClient
 from skitunes.account.models import User
-from skitunes.spotify.functions import authorize
-from skitunes.auth.variables import *
+from skitunes.spotify.functions import authorize, get_user
+from skitunes.variables.variables import *
 import os
 import json
 import urllib.parse as urllibparse
+from urllib.parse import urlencode
 
 # User session management setup
 # https://flask-login.readthedocs.io/en/latest
@@ -110,25 +111,38 @@ def logout():
     logout_user()
     return redirect(url_for("home"))
 
-@app.route('/spotfy/auth')
+@app.route('/spotify/auth', methods=["GET", "POST"])
 def spotify_auth():
-    auth_query_parameters = {
+    auth_query_parameters = urlencode({
         "response_type": "code",
         "redirect_uri": spotify_redirect_uri_url,
         "scope": SCOPE,
-        # "state": STATE,
-        # "show_dialog": SHOW_DIALOG_str,
+        "state": STATE,
+        "show_dialog": 'true',
         "client_id": client_id,
-    }
-    URL_ARGS = "&".join(["{}={}".format(key, urllibparse.quote(str(val)))
-                    for key, val in list(auth_query_parameters.items())])
-    AUTH_URL = "{}/?{}".format(SPOTIFY_AUTH_URL, URL_ARGS)
+    })
+    url = SPOTIFY_AUTH_URL + auth_query_parameters
     
-    return redirect(AUTH_URL)
+    return redirect(url)
 
-@app.route('/spotfy/login/q')
-def spotify_login():
-    auth_token = request.args['code']
-    header = authorize(auth_token)
-    session['auth_header'] = header['header']
-    return render_template('skitunes.html')
+@app.route('/spotify/callback', methods=["GET", "POST"])
+def spotify_callback():
+    code = request.args.get("code")
+    state =  request.args.get("state")
+    response = authorize(code)
+    try:
+        access_token = response['access_token']
+        session['spotify_access_token'] = access_token
+        expires = response['expires_in']
+        refresh_token = response['refresh_token']
+        session['spotify_refresh_token'] = refresh_token
+    except KeyError:
+        pass
+    user = get_user()
+    user = user.json()
+    try:
+        spotify_user_id = user['id']
+        session['spotify_user_id'] = spotify_user_id
+    except KeyError:
+        pass    
+    return redirect(url_for('home'))

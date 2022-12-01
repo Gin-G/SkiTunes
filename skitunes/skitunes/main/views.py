@@ -1,11 +1,12 @@
 from crypt import methods
 from textwrap import indent
 
-from flask import request, flash, redirect, url_for, jsonify, send_file
+from flask import request, flash, redirect, url_for, jsonify, send_file, session
 from flask_login import current_user, LoginManager, login_required, login_user, logout_user
 from matplotlib.font_manager import json_load
 from skitunes import app, db
 from skitunes.spotify.models import ski_movie_song_info, Movie
+from skitunes.spotify.functions import create_playlist, add_tracks
 from flask.templating import render_template
 import requests
 import os
@@ -137,9 +138,14 @@ def findmovie():
 @app.route('/skitunes/filtermovie')
 @login_required
 def filter_movie():
-    movie_name = request.args.get("movie_name")
-    filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.movie_name.contains(movie_name)).all()
-    return render_template('skibase.html', tracks = filter_info)
+    name = request.args.get("movie_name")
+    movie_info = db.session.query(Movie).filter(Movie.movie_name.contains(name)).all()
+    movie_co = db.session.query(Movie).filter(Movie.movie_name.contains(name)).first()
+    track_list = []
+    for id in movie_info:
+        filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
+        track_list.append(filter_info)
+    return render_template('movie_co.html', movie_co = track_list)
 
 @app.route('/skitunes/filterskier')
 @login_required
@@ -172,9 +178,13 @@ def filter_album():
 @app.route('/skitunes/filtermovieco')
 @login_required
 def filter_movieco():
-    movie_co = request.args.get("movie_co")
-    filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.movie_co.contains(movie_co)).all()
-    return render_template('skibase.html', tracks = filter_info)
+    name = request.args.get("movie_co")
+    movie_co = db.session.query(Movie).filter(Movie.movie_co.contains(name)).all()
+    prod_list = []
+    for id in movie_co:
+        filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
+        prod_list.append(filter_info)
+    return render_template('movie_co.html', movie_co = prod_list)
 
 @app.route('/skitunes/filterlocation')
 @login_required
@@ -195,10 +205,46 @@ def filter_type():
 def like_what():
     return render_template('likewhat.html')
 
-@app.route('/skitunes/create_playlist')
+@app.route('/skitunes/create_playlist', methods=['GET', 'POST'])
 @login_required
-def create_playlist():
-    return render_template('likewhat.html')
+def create_playlist_url():
+    spotify_id = session['spotify_user_id']
+    playlist_name = request.form['playlist_name']
+    track_list = []
+    for spotify_link in request.form.getlist('selected_track'):
+        spotify_track_id = spotify_link.replace("https://open.spotify.com/track/","")
+        playlist_value = "spotify:track:" + spotify_track_id
+        if playlist_value in track_list:
+            pass
+        else:
+            track_list.append(playlist_value)
+    response = create_playlist(spotify_id, playlist_name)
+    create_code = response.status_code
+    response = response.json()
+    try:
+        new_playlist_uri = response['uri']
+    except KeyError:
+        flash('Issue creating playlist. Try logging back in to Spotify')
+        return redirect(url_for('skitunes'))
+    new_playlist_uri = new_playlist_uri.replace('spotify:playlist:','')
+    if len(track_list) > 100:
+        step = 100
+        for i in range(0,len(track_list),step):
+            x = i
+            short_list = track_list[x:x+step]
+            add_track_response = add_tracks(new_playlist_uri, short_list)
+    else:
+        add_track_response = add_tracks(new_playlist_uri, track_list)
+    add_track_response_code = add_track_response.status_code
+    if create_code == 201 and add_track_response_code == 201:
+        flash('Playlist ' + playlist_name + ' was created and ' + str(len(track_list)) + ' tracks were added.')
+        return redirect(url_for('home'))
+    elif create_code != 201:
+        flash('Error creating new playlist')
+        return redirect(url_for('home'))
+    elif add_track_response_code != 201:
+        flash('Error adding tracks, the playlist was created but is most likely empty')
+        return redirect(url_for('home'))
 
 @app.route('/new_entry', methods=['GET', 'POST'])
 @login_required
