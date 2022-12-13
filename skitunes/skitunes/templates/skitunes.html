@@ -16,11 +16,10 @@
     <body>
         <div id="header"></div>
         <div id="navbar"></div>
-        {% if name %}
+        {% if current_user.is_authenticated %}
         <h1>
             Welcome to SkiMovieSongs.com {{ name }}!
         </h1>
-        <img src="{{ profile_pic }}"> <br>
         {% else %}
         <h1>
             Welcome to SkiMovieSongs.com!
@@ -36,16 +35,11 @@
         {% endif %}
         {% endwith %}
         <div class="big-bold">You've discovered a Massive database of soundtracks for nearly every ski movie ever produced. </div><br>
-            Our snowboard movies database is coming soon and we look forward to expanding into all of your other favorite extreme sports.<br>
             <br>
             <div class="mid-bold">The idea started with the simple recognition that many of us listen to, learn about, share,<br> 
             and enjoy the music that's featured in our favorite ski and snowboard films. <br>
-            Think of how many times you've heard a friend say or asked the following yourself:</div><br>
             <br>
-            <div class="italic-left">"What movie was this song in??"</div><br>                                                          
-            <div class="italic-mid">"This song would be great in a ski movie!"</div><br>                                                                               
-            <div class="italic-right">"Isn't this from that pow scene in...?"</div><br> 
-            <div class="mid-bold">Now you can find out with ease! I have a lot in store for this site but for now you can use <br>
+            <div class="mid-bold">I have a lot in store for this site but for now you can use <br>
             the search fields below to figure out if that song currently stuck in your head really was in<br>
             the opening segment of MSP's Seven Sunny Days…</div><br><br>
 
@@ -56,16 +50,9 @@
                 <input type="submit" value="Search!">
             </form>
 
-            {% if name %}
-                <a href="{{url_for('skibase_lite')}}"> Small Database</a><br>
-                <a href="{{url_for('skibase')}}"> Full Database</a>
-                <br>
-                <br>
-                <a href="{{url_for('new_entry')}}"> New Entry</a><br>
-                <a href="{{url_for('spotify_auth')}}">Spotify Login</a><br>
-                <a href="{{url_for('logout')}}"> Logout</a>
-            {% else %}
-                <a href="{{url_for('login')}}">Admin Login</a>
+            {% if current_user.is_authenticated %}
+                <a href="{{url_for('skibase_lite')}}">View Small Database</a><br>
+                <a href="{{url_for('skibase')}}">View Full Database</a>
             {% endif %}
             </body>
 </html>

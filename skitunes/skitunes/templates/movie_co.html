@@ -13,12 +13,18 @@
             $('#navbar').load("{{ url_for('navbar') }}")
         })
     </script>
+    <script>
+        $(function(){
+            $('#create_playlist').load("{{ url_for('create_playlist') }}")
+        })
+    </script>
     <body>
         <div id="header"></div>
         <div id="navbar"></div>
-        <form action="/skitunes/create_playlist" method="post">
-            Playlist Name : <input type="text" id="playlist_name" name="playlist_name" placeholder="My Awesome Playlist"><br>
-            <button type="submit" name="submit-button" value="Create">Create Playlist</button>
+        <br>
+        {% if current_user.is_authenticated %}
+            <div id="create_playlist"></div>
+        {% endif %}
     <table border="4">
         <caption style="font-size: 150%;">Ski Tunes Database</caption>
         <thead>

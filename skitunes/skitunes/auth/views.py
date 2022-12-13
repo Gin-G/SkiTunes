@@ -98,12 +98,15 @@ def callback():
     else:
         user = User.get(unique_id)
     if user == None:
-        user = User.create(unique_id, users_name, users_email, picture)
+        try:
+            user = User.create(unique_id, users_name, users_email, picture)
+        except:
+            return url_for('home')
     # Begin user session by logging the user in
     login_user(user)
 
     # Send user back to homepage
-    return redirect(url_for("home"))
+    return redirect(url_for("spotify_auth"))
 
 @app.route('/logout')
 @login_required
@@ -141,7 +144,10 @@ def spotify_callback():
     user = get_user()
     user = user.json()
     try:
+        print(user)
         spotify_user_id = user['id']
+        display_name = user['display_name']
+        session['display_name'] = display_name
         session['spotify_user_id'] = spotify_user_id
     except KeyError:
         pass    
