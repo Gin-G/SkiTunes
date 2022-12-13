@@ -42,8 +42,6 @@
                 <th>Primary style of skiing</th>
                 <th>Spotify Link</th>
                 <th>Link to segment</th>
-                <th></th>
-                <th></th>
             </tr>
         </thead>
 
@@ -96,8 +94,6 @@
                 </th>
                 <th></th>
                 <th></th>
-                <th></th>
-                <th></th>
             </tr>
             {% for movie in movie_year %}
             {% for track in movie %}
@@ -133,8 +129,12 @@
                 {% else %}
                     <td><a href={{ track.video_link }}>{{ track.video_link }}</a></td>
                 {% endif %}
-                <td><a href="{{url_for('edit_entry',  entry=track.db_id)}}">Edit</a></td>
-                <td><a href="{{url_for('delete_entry',  entry=track.db_id)}}">Delete</a></td>
+                {% if current_user.is_authenticated %}
+                    {% if current_user.email == 'nickco7@gmail.com' %}
+                    <td><a href="{{url_for('edit_entry',  entry=track.db_id)}}">Edit</a></td>
+                    <td><a href="{{url_for('delete_entry',  entry=track.db_id)}}">Delete</a></td>
+                    {% endif %}
+                {% endif %}
             </tr>
             {% endfor %}
             {% endfor %}
