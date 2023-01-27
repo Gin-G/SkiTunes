@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $('#header').load("{{ url_for('header') }}")
+        })
+    </script>
+    <script>
+        $(function(){
+            $('#navbar').load("{{ url_for('navbar') }}")
+        })
+    </script>
+    <body>
+        <div id="header"></div>
+        <div id="navbar"></div>
+        {% for entry in song_data %}
+        
+        <h1>Edit {{ entry.song_name }}</h1>
+        <div class="bubble">
+            <form action="{{  request.path  }}" method="post">
+            <div class="column">
+                <div class="left">
+                    <div class="big-bold">Current</div>
+                <p>Song Title : <input type="text" name="orig_song_name" value="{{ entry.song_name }}"  readonly="readonly"/></p>
+                <p>Artist : <input type="text" name="orig_song_artist" value="{{ entry.song_artist }}"  readonly="readonly"/></p>
+                <p>Album : <input type="text" name="orig_song_album" value="{{ entry.song_album }}"  readonly="readonly"/></p>
+                <p>Song Number : <input type="text" name="orig_song_num" value="{{ entry.song_num }}"  readonly="readonly"/></p>
+                <p>Spotify Link : <input type="text" name="orig_spotify_id" value="{{ entry.spotify_id }}"  readonly="readonly"/></p>
+                <p>Skier Name : <input type="text" name="orig_skier_name" value="{{ entry.skier_name }}"  readonly="readonly"/></p>
+                {% for movie in entry.movie_details %}
+                    <p>Movie Title : <input type="text" name="orig_movie_name" value="{{ movie.movie_name }}"  readonly="readonly"/></p>
+                    <p>Movie Year : <input type="text" name="orig_movie_year" value="{{ movie.movie_year }}"  readonly="readonly"/></p>
+                    <p>Production Company : <input type="text" name="orig_movie_co" value="{{ movie.movie_co }}"  readonly="readonly"/></p>
+                {% endfor %}
+                <p>Primary Ski style : <input type="text" name="orig_ski_type" value="{{ entry.ski_type }}"  readonly="readonly"/></p>
+                <p>Location : <input type="text" name="orig_location" value="{{ entry.location }}"  readonly="readonly"/></p>
+                <p>Link to segment : <input type="text" name="orig_video_link" value="{{ entry.video_link }}"  readonly="readonly"/></p>
+            </div>
+            </div>
+            <div class="column">
+                <div class="right">
+                <div class="big-bold">Corrections</div>
+                <p><input type="text" name="song_name" value="{{ entry.song_name }}"/></p>
+                <p><input type="text" name="song_artist" value="{{ entry.song_artist }}"/></p>
+                <p><input type="text" name="song_album" value="{{ entry.song_album }}"/></p>
+                <p><input type="text" name="song_num" value="{{ entry.song_num }}"/></p>
+                <p><input type="text" name="spotify_id" value="{{ entry.spotify_id }}"/></p>
+                <p><input type="text" name="skier_name" value="{{ entry.skier_name }}"/></p>
+                {% for movie in entry.movie_details %}
+                    <p><input type="text" name="movie_name" value="{{ movie.movie_name }}"/></p>
+                    <p><input type="text" name="movie_year" value="{{ movie.movie_year }}"/></p>
+                    <p><input type="text" name="movie_co" value="{{ movie.movie_co }}"/></p>
+                {% endfor %}
+                <p><input type="text" name="ski_type" value="{{ entry.ski_type }}"/></p>
+                <p><input type="text" name="location" value="{{ entry.location }}"/></p>
+                <p><input type="text" name="video_link" value="{{ entry.video_link }}"/></p>
+            </div>
+            </div>
+                <hr>
+                <input type="submit" value="Submit" />
+        {% endfor %}
+            </form>
+        </div>
+</html>

@@ -4,14 +4,18 @@ from textwrap import indent
 from flask import request, flash, redirect, url_for, jsonify, send_file, session
 from flask_login import current_user, LoginManager, login_required, login_user, logout_user
 from matplotlib.font_manager import json_load
-from skitunes import app, db
+import logging
+from skitunes import app, db, mail
 from skitunes.spotify.models import ski_movie_song_info, Movie
 from skitunes.spotify.functions import create_playlist, add_tracks
 from flask.templating import render_template
+from flask_mail import Message
+import smtplib
 import requests
 import os
 import json
 
+logger = logging.getLogger(__name__)
 
 @app.before_first_request
 def create_tables():
@@ -116,15 +120,23 @@ def findmovie():
     movie_year = request.args.get('movie_year')
     if len(song_artist) != 0:
         if len(song_name) != 0:
+            log_info = "SEARCH - SONG_NAME : " + song_name + " SONG_ARTIST : " + song_artist
+            logger.info('%s', log_info)
             filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_name.contains(song_name),ski_movie_song_info.song_artist.contains(song_artist)).all()
             return render_template('skibase.html', tracks = filter_info)
         else:
+            log_info = "SEARCH - SONG_ARTIST : " + song_artist
+            logger.info('%s', log_info)
             filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_artist.contains(song_artist)).all()
         return render_template('skibase.html', tracks = filter_info)
     elif len(song_name) != 0:
+        log_info = "SEARCH - SONG_NAME : " + song_name
+        logger.info('%s', log_info)
         filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_name.contains(song_name)).all()
         return render_template('skibase.html', tracks = filter_info)
     elif len(movie_year) != 0:
+        log_info = "SEARCH - MOVIE_YEAR : " + movie_year
+        logger.info('%s', log_info)
         movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == movie_year).all()
         year_list = []
         for id in movie_filter_info:
@@ -277,6 +289,82 @@ def edit_entry(entry):
             flash('Record was successfully added')
             return redirect(url_for('skitunes'))
     return render_template('edit_entry.html', song_data=song_data)
+
+@app.route('/correct_entry/<entry>', methods=['GET', 'POST'])
+def submit_correction(entry):
+    song_data = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id == entry)
+    if request.method == 'POST':
+        diff_list = []
+        song_name = request.form['song_name']
+        song_artist = request.form['song_artist']
+        song_album = request.form['song_album']
+        song_num=request.form['song_num']
+        spotify_id=request.form['spotify_id']
+        skier_name = request.form['skier_name']
+        movie_name = request.form['movie_name']
+        movie_year=request.form['movie_year']
+        movie_co=request.form['movie_co']
+        ski_type = request.form['ski_type']
+        location=request.form['location']
+        video_link = request.form['video_link']
+        orig_song_name = request.form['orig_song_name']
+        orig_song_artist = request.form['orig_song_artist']
+        orig_song_album = request.form['orig_song_album']
+        orig_song_num=request.form['orig_song_num']
+        orig_spotify_id=request.form['orig_spotify_id']
+        orig_skier_name = request.form['orig_skier_name']
+        orig_movie_name = request.form['orig_movie_name']
+        orig_movie_year=request.form['orig_movie_year']
+        orig_movie_co=request.form['orig_movie_co']
+        orig_ski_type = request.form['orig_ski_type']
+        orig_location=request.form['orig_location']
+        orig_video_link = request.form['orig_video_link']       
+        if song_name != orig_song_name:
+            song_name_update = "Original name : " + orig_song_name + " was suggested to be changed to : " + song_name 
+            diff_list.append(str(song_name_update))      
+        if song_artist != orig_song_artist:
+            song_artist_update = "Original artist : " + orig_song_artist + " was suggested to be changed to : " + song_artist 
+            diff_list.append(str(song_artist_update))      
+        if song_album != orig_song_album:
+            song_album_update = "Original album : " + orig_song_album + " was suggested to be changed to : " + song_album 
+            diff_list.append(str(song_album_update))      
+        if song_num != orig_song_num:
+            song_num_update = "Original song # : " + orig_song_num + " was suggested to be changed to : " + song_num 
+            diff_list.append(str(song_num_update))      
+        if spotify_id != orig_spotify_id:
+            spotify_id_update = "Original Spotify link : " + orig_spotify_id + " was suggested to be changed to : " + spotify_id 
+            diff_list.append(str(spotify_id_update))      
+        if skier_name != orig_skier_name:
+            skier_name_update = "Original Skier name : " + orig_skier_name + " was suggested to be changed to : " + skier_name 
+            diff_list.append(str(skier_name_update))      
+        if movie_name != orig_movie_name:
+            movie_name_update = "Original Movie name : " + orig_movie_name + " was suggested to be changed to : " + movie_name 
+            diff_list.append(str(movie_name_update))      
+        if movie_year != orig_movie_year:
+            movie_year_update = "Original Movie Year : " + orig_movie_year + " was suggested to be changed to : " + movie_year 
+            diff_list.append(str(movie_year_update))      
+        if movie_co != orig_movie_co:
+            movie_co_update = "Original Production company : " + orig_movie_co + " was suggested to be changed to : " + movie_co 
+            diff_list.append(str(movie_co_update))      
+        if ski_type != orig_ski_type:
+            ski_type_update = "Original segment type : " + orig_song_name + " was suggested to be changed to : " + ski_type 
+            diff_list.append(str(ski_type_update))      
+        if location != orig_location:
+            location_update = "Original location : " + orig_song_name + " was suggested to be changed to : " + location 
+            diff_list.append(str(location_update))      
+        if video_link != orig_video_link:
+            video_link_update = "Original video link : " + orig_song_name + " was suggested to be changed to : " + video_link 
+            diff_list.append(str(video_link_update))
+        msg = Message('SMS User Correction', sender = 'NickCo7@gmail.com', recipients = ['NickCo7@gmail.com'])
+        msg.body = str(diff_list).replace("', '","\n").replace("['",'').replace("']",'')
+        try:
+            mail.send(msg)
+            flash("Email sent with correction suggestions for approval")
+            return render_template('skitunes.html')
+        except smtplib.SMTPException:
+            flash("Email send error")
+            return render_template('skitunes.html')
+    return render_template('correct_entry.html', song_data=song_data)
 
 @app.route('/delete_entry/<entry>', methods=['GET', 'POST'])
 @login_required

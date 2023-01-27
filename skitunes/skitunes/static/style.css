@@ -50,6 +50,21 @@ caption {
     padding: 5px;
 }
 
+.column {
+  float: left;
+  width: 50%
+}
+
+.left {
+  text-align: right;
+  margin: 5px;
+}
+
+.right {
+  text-align: left;
+  margin: 5px;
+}
+
 .italic-mid {
     font-size: 125%;
     font-style: italic;

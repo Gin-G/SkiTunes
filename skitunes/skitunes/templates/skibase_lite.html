@@ -24,6 +24,7 @@
         <br>
         {% if current_user.is_authenticated %}
             <div id="create_playlist"></div>
+            <button onclick="exportTableToExcel('tblData','SkiMovieSongs_export')">Export Table Data To Excel File</button>
         {% endif %}
             <table border="4">
                 <caption style="font-size: 150%;">Ski Tunes Database</caption>
