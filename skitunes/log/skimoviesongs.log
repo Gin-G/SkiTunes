@@ -1,0 +1,1069 @@
+
+[27/Jan/2023:14:44:41.292] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:14:44:41.294] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:14:44:41.298] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:14:44:42.254] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:14:44:42.255] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:14:54:36.768] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 14:54:36] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:14:54:36.868] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 14:54:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:14:54:36.869] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 14:54:36] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:14:54:37.193] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 14:54:37] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:14:54:37.230] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 14:54:37] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:14:54:37.395] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 14:54:37] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:14:54:42.153] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 14:54:42] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2007 HTTP/1.1" 200 -
+[27/Jan/2023:14:54:42.191] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 14:54:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:14:54:42.192] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 14:54:42] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:14:54:42.775] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 14:54:42] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:14:54:42.783] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 14:54:42] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[27/Jan/2023:14:54:42.865] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 14:54:42] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:14:54:42.867] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 14:54:42] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:14:54:55.486] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 14:54:55] "GET /skitunes/filterskier?skier_name=Dylan+Hood HTTP/1.1" 200 -
+[27/Jan/2023:14:54:55.535] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 14:54:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:14:54:55.536] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 14:54:55] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:14:54:55.679] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 14:54:55] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:14:54:55.680] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 14:54:55] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[27/Jan/2023:14:54:55.711] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 14:54:55] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:14:54:55.766] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 14:54:55] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:17:47.649] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:17:47.771] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:17:48.702] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:17:48.703] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:17:51.332] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:17:51.488] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:17:59.143] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:17:59.146] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:18:48.584] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:18:48.694] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:18:49.611] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:18:49.613] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:18:51.091] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:18:51.204] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:18:52.202] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:18:52.203] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:19:00.636] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:19:00.762] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:19:02.254] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:19:02.256] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:19:04.982] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:19:05.097] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:19:06.249] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:19:06.251] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:19:10.528] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:19:10.642] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:19:11.871] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:19:11.873] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:19:12.238] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:19:12.360] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:19:13.403] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:19:13.405] INFO werkzeug:_log:  * Debugger PIN: 682-648-828
+[27/Jan/2023:15:19:15.063] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:19:15.196] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:19:16.456] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:19:16.459] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:19:19.288] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:19:19.407] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:19:20.845] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:19:20.850] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:19:43.470] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:19:43.603] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:19:44.716] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:19:44.719] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:19:46.263] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:19:46.399] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:19:47.717] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:19:47.719] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:19:48.099] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:19:48.221] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:19:49.451] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:19:49.453] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:19:56.889] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:19:57.082] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:19:57.644] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:19:57.646] INFO werkzeug:_log:  * Debugger PIN: 682-648-828
+[27/Jan/2023:15:20:00.305] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:20:00.358] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:20:01.429] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:20:01.431] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:20:04.247] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:20:04.384] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:20:05.559] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:20:05.561] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:20:07.045] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:20:07.184] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:20:08.761] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:20:08.763] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:20:23.115] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:20:23.219] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:20:24.222] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:20:24.223] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:20:27.110] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:20:27.265] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:20:28.513] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:20:28.514] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:20:33.579] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:20:33.698] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:20:34.799] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:20:34.800] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:20:36.298] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:20:36.403] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:20:37.449] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:20:37.450] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:20:41.389] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:20:41.512] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:20:42.676] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:20:42.677] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:20:46.583] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:20:46.718] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:20:47.953] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:20:47.955] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:20:51.919] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:20:52.099] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:20:53.291] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:20:53.293] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:20:54.865] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:20:54.972] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:20:56.100] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:20:56.102] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:20:56.504] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:20:56.625] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:20:57.833] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:20:57.835] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:21:04.174] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:21:04.297] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:21:05.600] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:21:05.603] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:21:13.565] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:21:13.701] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:21:14.909] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:21:14.911] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:21:16.479] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:21:16.618] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:21:17.851] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:21:17.853] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:21:24.083] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:21:24.200] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:21:25.436] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:21:25.438] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:21:40.876] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:21:40.980] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:21:41.894] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:21:41.896] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:21:50.189] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:21:50.295] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:21:51.443] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:21:51.445] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:21:57.723] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:21:57.842] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:21:58.253] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:21:58.255] INFO werkzeug:_log:  * Debugger PIN: 682-648-828
+[27/Jan/2023:15:22:02.162] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:22:02.237] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:22:03.376] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:22:03.379] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:22:23.483] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:22:23.597] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:22:24.496] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:22:24.498] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:22:43.444] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:22:43.574] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:22:43.967] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:22:43.969] INFO werkzeug:_log:  * Debugger PIN: 682-648-828
+[27/Jan/2023:15:22:46.564] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:22:46.627] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:22:47.834] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:22:47.836] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:22:53.043] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:22:53.167] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:22:54.339] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:22:54.341] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:22:59.450] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:22:59.564] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:23:00.744] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:23:00.746] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:23:03.431] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:23:03.547] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:23:05.064] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:23:05.066] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:23:10.551] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:15:23:10.554] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:15:23:10.558] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:23:12.198] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:23:12.200] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:23:18.042] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:23:18] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:15:23:18.120] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:23:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:23:18.121] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:23:18] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:23:18.914] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:23:18] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:23:18.969] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:23:18] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:23:19.096] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:23:19] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:23:27.570] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2007
+[27/Jan/2023:15:23:28.804] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:23:28] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2007 HTTP/1.1" 200 -
+[27/Jan/2023:15:23:28.848] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:23:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:23:28.849] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:23:28] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:23:29.267] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:23:29] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:23:29.274] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:23:29] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[27/Jan/2023:15:23:29.336] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:23:29] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:23:29.341] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:23:29] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:25:22.747] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/logs/views.py', reloading
+[27/Jan/2023:15:25:22.858] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:25:23.769] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:25:23.771] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:26:52.139] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:26:52] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:15:26:52.189] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:26:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:26:52.192] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:26:52] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:26:52.583] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:26:52] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:26:52.640] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:26:52] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:26:52.805] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:26:52] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:27:02.521] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:27:02] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:15:27:02.568] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:27:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:27:02.570] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:27:02] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:27:02.745] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:27:02] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:27:02.794] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:27:02] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:27:02.861] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:27:02] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:27:05.023] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:27:05] "GET /Reports HTTP/1.1" 200 -
+[27/Jan/2023:15:27:05.068] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:27:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:27:28.676] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:27:28] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:15:27:28.728] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:27:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:27:28.731] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:27:28] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:27:28.967] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:27:28] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:27:29.042] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:27:29] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:27:29.043] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:27:29] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:28:03.589] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:28:03] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:15:28:03.634] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:28:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:28:03.639] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:28:03] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:28:03.810] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:28:03] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:28:03.863] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:28:03] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:28:03.938] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:28:03] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:28:05.499] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:28:05] "GET /Reports HTTP/1.1" 200 -
+[27/Jan/2023:15:28:05.534] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:28:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:28:05.535] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:28:05] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:28:05.676] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:28:05] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:28:05.735] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:28:05] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:28:05.768] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:28:05] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:29:21.740] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:29:21] "GET /Reports HTTP/1.1" 200 -
+[27/Jan/2023:15:29:21.783] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:29:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:29:21.784] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:29:21] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:29:21.926] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:29:21] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:29:21.954] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:29:21] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:29:22.008] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:29:22] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:29:28.464] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:29:28] "[35m[1mGET /Reports/skimoviesongs.log HTTP/1.1[0m" 500 -
+[27/Jan/2023:15:29:28.499] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:29:28] "GET /Reports/skimoviesongs.log?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[27/Jan/2023:15:29:28.500] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:29:28] "GET /Reports/skimoviesongs.log?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[27/Jan/2023:15:29:28.634] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:29:28] "GET /Reports/skimoviesongs.log?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[27/Jan/2023:15:29:28.751] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:29:28] "[36mGET /Reports/skimoviesongs.log?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:30:28.179] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/logs/views.py', reloading
+[27/Jan/2023:15:30:28.325] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:30:29.384] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:30:29.386] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:30:34.293] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/logs/views.py', reloading
+[27/Jan/2023:15:30:34.449] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:30:35.552] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:30:35.553] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:30:38.174] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/logs/views.py', reloading
+[27/Jan/2023:15:30:38.279] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:30:39.235] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:30:39.236] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:30:39.510] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/logs/views.py', reloading
+[27/Jan/2023:15:30:39.629] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:30:41.105] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:30:41.111] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:30:42.782] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/logs/views.py', reloading
+[27/Jan/2023:15:30:42.899] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:30:44.004] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:30:44.006] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:30:44.397] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/logs/views.py', reloading
+[27/Jan/2023:15:30:44.514] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:30:45.637] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:30:45.639] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:30:50.684] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/logs/views.py', reloading
+[27/Jan/2023:15:30:50.790] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:30:51.823] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:30:51.825] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:30:53.350] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/logs/views.py', reloading
+[27/Jan/2023:15:30:53.456] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:30:54.476] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:30:54.479] INFO werkzeug:_log:  * Debugger PIN: 682-648-828
+[27/Jan/2023:15:30:56.072] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/logs/views.py', reloading
+[27/Jan/2023:15:30:56.255] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:30:57.740] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:30:57.741] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:31:00.067] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:15:31:00.072] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:15:31:00.077] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:31:01.821] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:31:01.824] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:31:03.387] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:31:03] "[35m[1mGET /Reports/skimoviesongs.log HTTP/1.1[0m" 500 -
+[27/Jan/2023:15:31:03.430] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:31:03] "[36mGET /Reports/skimoviesongs.log?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:31:03.432] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:31:03] "[36mGET /Reports/skimoviesongs.log?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:31:03.578] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:31:03] "[36mGET /Reports/skimoviesongs.log?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:31:12.748] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:31:12] "[35m[1mGET /Reports/download/skimoviesongs.log HTTP/1.1[0m" 500 -
+[27/Jan/2023:15:31:12.781] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:31:12] "GET /Reports/download/skimoviesongs.log?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[27/Jan/2023:15:31:12.785] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:31:12] "GET /Reports/download/skimoviesongs.log?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[27/Jan/2023:15:31:12.903] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:31:12] "GET /Reports/download/skimoviesongs.log?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[27/Jan/2023:15:31:13.010] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:31:13] "[36mGET /Reports/download/skimoviesongs.log?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:32:35.563] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:15:32:35.568] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:15:32:35.573] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:32:36.706] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:32:36.708] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:32:46.078] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:32:46] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:15:32:46.113] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:32:46] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:32:46.113] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:32:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:32:46.286] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:32:46] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:32:46.319] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:32:46] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:32:46.331] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:32:46] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:32:47.580] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:32:47] "GET /Reports HTTP/1.1" 200 -
+[27/Jan/2023:15:32:47.615] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:32:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:32:47.616] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:32:47] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:32:47.765] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:32:47] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:32:47.803] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:32:47] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:32:47.852] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:32:47] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:32:49.033] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:32:49] "GET /Reports/skimoviesongs.log HTTP/1.1" 200 -
+[27/Jan/2023:15:32:49.076] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:32:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:34:59.591] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:34:59] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:15:34:59.636] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:34:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:34:59.636] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:34:59] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:34:59.861] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:34:59] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:34:59.938] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:34:59] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:34:59.940] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:34:59] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:35:01.827] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:35:01] "GET /Reports HTTP/1.1" 200 -
+[27/Jan/2023:15:35:01.861] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:35:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:35:01.862] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:35:01] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:35:02.015] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:35:02] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:35:02.053] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:35:02] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:35:02.117] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:35:02] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:35:04.393] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:35:04] "GET /Reports/skimoviesongs.log HTTP/1.1" 200 -
+[27/Jan/2023:15:35:04.427] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:35:04] "[33mGET /Reports/static/app.js HTTP/1.1[0m" 404 -
+[27/Jan/2023:15:35:04.432] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:35:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:35:04.622] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:35:04] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:35:04.655] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:35:04] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:35:04.675] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:35:04] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:36:03.550] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:15:36:03.553] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:15:36:03.559] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:36:04.771] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:36:04.773] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:36:05.274] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:05] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:15:36:05.319] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:36:05.320] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:05] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:36:05.624] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:05] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:36:05.688] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:05] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:36:05.715] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:05] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:36:07.376] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:07] "GET /Reports HTTP/1.1" 200 -
+[27/Jan/2023:15:36:07.417] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:36:07.419] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:07] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:36:07.581] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:07] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:36:07.621] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:07] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:36:07.687] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:07] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:36:09.064] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:09] "GET /Reports/skimoviesongs.log HTTP/1.1" 200 -
+[27/Jan/2023:15:36:09.094] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:09] "[33mGET /Reports/static/app.js HTTP/1.1[0m" 404 -
+[27/Jan/2023:15:36:09.103] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:36:09.333] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:09] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:36:09.405] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:09] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:36:09.411] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:09] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:36:17.476] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:17] "[35m[1mGET /Reports/download/skimoviesongs.log HTTP/1.1[0m" 500 -
+[27/Jan/2023:15:36:17.509] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:17] "[36mGET /Reports/download/skimoviesongs.log?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:36:17.510] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:17] "[36mGET /Reports/download/skimoviesongs.log?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:36:17.629] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:36:17] "[36mGET /Reports/download/skimoviesongs.log?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:37:43.017] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/logs/views.py', reloading
+[27/Jan/2023:15:37:43.129] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:37:44.132] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:37:44.133] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:37:46.778] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/logs/views.py', reloading
+[27/Jan/2023:15:37:46.898] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:37:48.110] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:37:48.112] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:37:49.673] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/logs/views.py', reloading
+[27/Jan/2023:15:37:49.794] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:37:50.952] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:37:50.954] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:37:53.730] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/logs/views.py', reloading
+[27/Jan/2023:15:37:53.853] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:37:55.128] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:37:55.130] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:37:56.657] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/logs/views.py', reloading
+[27/Jan/2023:15:37:56.793] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:37:59.471] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:15:37:59.476] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:15:37:59.482] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:38:00.714] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:38:00.716] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:38:21.035] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:21] "GET /Reports/skimoviesongs.log HTTP/1.1" 200 -
+[27/Jan/2023:15:38:21.064] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:21] "[33mGET /Reports/static/app.js HTTP/1.1[0m" 404 -
+[27/Jan/2023:15:38:21.070] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:38:21.245] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:21] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:38:21.278] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:21] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:38:21.323] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:21] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:38:24.445] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:24] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:15:38:24.488] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:24] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:38:24.490] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:38:24.650] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:24] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:38:24.685] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:24] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:38:24.764] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:24] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:38:26.298] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:26] "GET /Reports HTTP/1.1" 200 -
+[27/Jan/2023:15:38:26.337] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:38:26.338] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:26] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:38:26.470] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:26] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:38:26.538] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:26] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:38:26.562] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:26] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:38:28.022] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:28] "[35m[1mGET /Reports/download/skimoviesongs.log HTTP/1.1[0m" 500 -
+[27/Jan/2023:15:38:28.061] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:28] "[36mGET /Reports/download/skimoviesongs.log?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:38:28.062] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:28] "[36mGET /Reports/download/skimoviesongs.log?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:38:28.179] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:38:28] "[36mGET /Reports/download/skimoviesongs.log?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:39:07.092] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/logs/views.py', reloading
+[27/Jan/2023:15:39:07.209] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:39:08.444] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:39:08.446] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:39:12.979] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:15:39:12.984] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:15:39:12.988] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:39:14.303] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:39:14.305] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:39:32.328] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:39:32] "GET /Reports/skimoviesongs.log HTTP/1.1" 200 -
+[27/Jan/2023:15:39:32.364] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:39:32] "[33mGET /Reports/static/app.js HTTP/1.1[0m" 404 -
+[27/Jan/2023:15:39:32.374] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:39:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:39:32.588] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:39:32] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:39:32.630] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:39:32] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:39:32.637] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:39:32] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:39:33.927] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:39:33] "[35m[1mGET /Reports/download/skimoviesongs.log HTTP/1.1[0m" 500 -
+[27/Jan/2023:15:39:33.959] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:39:33] "[36mGET /Reports/download/skimoviesongs.log?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:39:33.961] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:39:33] "[36mGET /Reports/download/skimoviesongs.log?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:39:34.076] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:39:34] "[36mGET /Reports/download/skimoviesongs.log?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:39:57.627] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/logs/views.py', reloading
+[27/Jan/2023:15:39:57.738] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:39:58.658] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:39:58.659] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:40:02.054] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:15:40:02.056] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:15:40:02.060] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:40:03.310] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:40:03.312] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:40:10.808] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:10] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:15:40:10.851] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:40:10.852] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:10] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:40:11.038] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:11] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:40:11.080] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:11] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:40:11.104] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:11] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:40:12.377] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:12] "GET /Reports HTTP/1.1" 200 -
+[27/Jan/2023:15:40:12.411] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:12] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:40:12.412] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:40:12.591] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:12] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:40:12.633] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:12] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:40:12.649] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:12] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:40:13.947] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:13] "GET /Reports/skimoviesongs.log HTTP/1.1" 200 -
+[27/Jan/2023:15:40:13.976] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:13] "[33mGET /Reports/static/app.js HTTP/1.1[0m" 404 -
+[27/Jan/2023:15:40:13.982] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:40:14.189] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:14] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:40:14.250] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:14] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:40:14.256] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:14] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:40:15.831] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:15] "[35m[1mGET /Reports/download/skimoviesongs.log HTTP/1.1[0m" 500 -
+[27/Jan/2023:15:40:15.873] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:15] "[36mGET /Reports/download/skimoviesongs.log?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:40:15.884] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:15] "[36mGET /Reports/download/skimoviesongs.log?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:40:16.049] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:40:16] "[36mGET /Reports/download/skimoviesongs.log?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:41:16.385] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:15:41:16.389] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:15:41:16.395] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:41:17.830] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:41:17.833] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:41:19.448] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:41:19] "GET /Reports/skimoviesongs.log HTTP/1.1" 200 -
+[27/Jan/2023:15:41:19.483] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:41:19] "[33mGET /Reports/static/app.js HTTP/1.1[0m" 404 -
+[27/Jan/2023:15:41:19.490] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:41:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:41:19.736] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:41:19] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:41:19.792] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:41:19] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:41:19.833] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:41:19] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:41:20.824] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:41:20] "[35m[1mGET /Reports/download/skimoviesongs.log HTTP/1.1[0m" 500 -
+[27/Jan/2023:15:41:20.860] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:41:20] "[36mGET /Reports/download/skimoviesongs.log?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:41:20.861] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:41:20] "[36mGET /Reports/download/skimoviesongs.log?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:41:20.985] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:41:20] "[36mGET /Reports/download/skimoviesongs.log?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:41:27.790] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/logs/views.py', reloading
+[27/Jan/2023:15:41:29.622] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:15:41:29.627] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:15:41:29.634] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:41:30.893] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:41:30.895] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:41:36.489] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:41:36] "GET /Reports/skimoviesongs.log HTTP/1.1" 200 -
+[27/Jan/2023:15:41:36.518] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:41:36] "[33mGET /Reports/static/app.js HTTP/1.1[0m" 404 -
+[27/Jan/2023:15:41:36.524] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:41:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:41:36.760] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:41:36] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:41:36.804] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:41:36] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:41:36.814] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:41:36] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:41:38.853] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:41:38] "GET /Reports/download/skimoviesongs.log HTTP/1.1" 200 -
+[27/Jan/2023:15:43:34.629] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:43:34] "GET /Reports/skimoviesongs.log HTTP/1.1" 200 -
+[27/Jan/2023:15:43:34.673] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:43:34] "[33mGET /Reports/static/app.js HTTP/1.1[0m" 404 -
+[27/Jan/2023:15:43:34.679] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:43:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:43:35.984] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:43:35] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:43:36.021] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:43:36] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:43:36.052] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:43:36] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:06.287] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:06] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:15:46:06.343] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:06.344] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:06] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:06.586] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:06] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:46:06.628] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:06] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:46:06.657] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:06] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:08.123] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:08] "GET /Reports HTTP/1.1" 200 -
+[27/Jan/2023:15:46:08.158] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:08.158] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:08] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:08.299] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:08] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:46:08.347] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:08] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:46:08.392] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:08] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:09.526] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:09] "[35m[1mGET /Reports/skimoviesongs.log HTTP/1.1[0m" 500 -
+[27/Jan/2023:15:46:09.556] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:09] "[36mGET /Reports/skimoviesongs.log?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:09.558] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:09] "[36mGET /Reports/skimoviesongs.log?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:09.698] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:09] "[36mGET /Reports/skimoviesongs.log?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:09.855] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:09] "[36mGET /Reports/skimoviesongs.log?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:20.738] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:15:46:20.743] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:15:46:20.754] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:46:22.077] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:46:22.079] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:46:23.943] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:23] "GET /Reports/skimoviesongs.log HTTP/1.1" 200 -
+[27/Jan/2023:15:46:23.995] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:23] "[33mGET /Reports/static/app.js HTTP/1.1[0m" 404 -
+[27/Jan/2023:15:46:24.003] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:24.271] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:24] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:46:24.322] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:24] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:46:24.332] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:24] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:41.560] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:41] "GET /Reports/skimoviesongs.log HTTP/1.1" 200 -
+[27/Jan/2023:15:46:41.589] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:41] "[33mGET /Reports/static/app.js HTTP/1.1[0m" 404 -
+[27/Jan/2023:15:46:41.595] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:41.801] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:41] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:46:41.834] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:41] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:46:41.860] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:41] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:44.060] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:44] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:15:46:44.097] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:44.098] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:44] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:44.259] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:44] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:46:44.320] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:44] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:46:44.320] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:44] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:45.396] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:45] "GET /Reports HTTP/1.1" 200 -
+[27/Jan/2023:15:46:45.434] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:45.435] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:45] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:45.574] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:45] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:46:45.605] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:45] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:46:45.657] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:45] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:46.711] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:46] "GET /Reports/skimoviesongs.log HTTP/1.1" 200 -
+[27/Jan/2023:15:46:46.744] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:46] "[33mGET /Reports/static/app.js HTTP/1.1[0m" 404 -
+[27/Jan/2023:15:46:46.751] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:46.978] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:46] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:46:47.016] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:47] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:46:47.040] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:47] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:51.025] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:15:46:51.029] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:15:46:51.034] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:46:52.280] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:46:52.282] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:46:54.391] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:54] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:15:46:54.428] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:54.429] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:54] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:54.585] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:54] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:46:54.628] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:54] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:46:54.683] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:54] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:56.252] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:56] "GET /Reports HTTP/1.1" 200 -
+[27/Jan/2023:15:46:56.292] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:56.295] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:56] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:56.461] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:56] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:46:56.503] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:56] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:46:56.566] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:56] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:57.826] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:57] "GET /Reports/skimoviesongs.log HTTP/1.1" 200 -
+[27/Jan/2023:15:46:57.860] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:57] "[33mGET /Reports/static/app.js HTTP/1.1[0m" 404 -
+[27/Jan/2023:15:46:57.866] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:58.107] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:58] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:46:58.176] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:58] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:46:58.181] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:46:58] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:47:45.553] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:15:47:45.560] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:15:47:45.565] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:47:46.603] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:47:46.605] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:47:49.421] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:47:49] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:15:47:49.463] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:47:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:47:49.465] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:47:49] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:47:49.734] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:47:49] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:47:49.784] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:47:49] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:47:49.800] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:47:49] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:47:50.972] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:47:50] "GET /Reports HTTP/1.1" 200 -
+[27/Jan/2023:15:47:51.013] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:47:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:47:51.014] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:47:51] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:47:51.188] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:47:51] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:47:51.228] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:47:51] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:47:51.288] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:47:51] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:47:52.358] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:47:52] "GET /Reports/skimoviesongs.log HTTP/1.1" 200 -
+[27/Jan/2023:15:47:52.387] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:47:52] "[33mGET /Reports/static/app.js HTTP/1.1[0m" 404 -
+[27/Jan/2023:15:47:52.393] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:47:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:47:52.678] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:47:52] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:47:52.748] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:47:52] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:47:52.748] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:47:52] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:49:15.380] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:49:15.495] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:49:16.598] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:49:16.601] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:49:18.202] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:49:18.311] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:49:18.683] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:49:18.684] INFO werkzeug:_log:  * Debugger PIN: 682-648-828
+[27/Jan/2023:15:49:20.153] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:49:20.239] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:49:21.729] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:49:21.731] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:49:29.135] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:49:29.241] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:49:30.366] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:49:30.368] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:49:31.860] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:49:31.975] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:49:33.340] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:49:33.342] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:49:51.297] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:49:51.404] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:49:52.339] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:49:52.341] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:50:25.134] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:50:25] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:15:50:25.178] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:50:25] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:50:25.179] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:50:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:50:25.394] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:50:25] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:50:25.435] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:50:25] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:50:25.458] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:50:25] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:50:34.515] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:15:50:34.520] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:15:50:34.526] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:50:35.910] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:50:35.912] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:50:37.790] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2007
+[27/Jan/2023:15:50:39.341] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:50:39] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2007 HTTP/1.1" 200 -
+[27/Jan/2023:15:50:39.384] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:50:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:50:39.385] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:50:39] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:50:39.907] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:50:39] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:50:39.912] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:50:39] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[27/Jan/2023:15:50:39.976] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:50:39] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:50:39.992] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:50:39] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:51:00.173] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:51:00] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:15:51:00.232] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:51:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:51:00.234] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:51:00] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:51:00.377] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:51:00] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:51:00.456] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:51:00] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:51:00.476] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:51:00] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:55:44.026] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:55:44.138] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:55:45.087] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:55:45.089] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:55:57.592] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:15:55:57.596] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:15:55:57.600] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:55:58.631] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:55:58.633] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:56:12.504] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:56:12] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:15:56:12.544] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:56:12] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:56:12.545] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:56:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:56:12.765] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:56:12] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:56:12.817] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:56:12] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:56:12.855] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:56:12] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:56:16.255] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2007
+[27/Jan/2023:15:56:16.384] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:56:16] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2007 HTTP/1.1" 200 -
+[27/Jan/2023:15:56:16.422] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:56:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:56:16.425] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:56:16] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:56:16.577] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:56:16] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:56:16.581] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:56:16] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[27/Jan/2023:15:56:16.608] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:56:16] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:56:16.661] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:56:16] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:56:48.698] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:56:48.814] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:56:49.708] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:56:49.709] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:56:54.685] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:56:54.821] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:56:55.801] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:56:55.803] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:57:01.973] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:57:02.079] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:57:03.190] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:57:03.192] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:57:04.810] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:57:04.985] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:57:06.437] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:57:06.440] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:57:09.214] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:57:09.362] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:57:09.871] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:57:09.872] INFO werkzeug:_log:  * Debugger PIN: 682-648-828
+[27/Jan/2023:15:57:48.446] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:57:48.525] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:57:49.105] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:57:49.107] INFO werkzeug:_log:  * Debugger PIN: 682-648-828
+[27/Jan/2023:15:58:11.320] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:58:11.371] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:58:12.334] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:58:12.336] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:58:12.628] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:58:12.741] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:58:13.935] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:58:13.937] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:58:15.487] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:58:15.606] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:58:16.940] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:58:16.942] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:58:23.306] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:58:23.458] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:58:25.892] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:15:58:25.896] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:15:58:25.901] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:58:27.122] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:58:27.123] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:58:28.848] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:58:28] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:15:58:28.907] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:58:28] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:58:28.908] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:58:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:58:29.350] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:58:29] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:58:29.410] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:58:29] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:58:29.444] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:58:29] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:58:34.626] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2007
+[27/Jan/2023:15:58:34.745] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:58:34] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2007 HTTP/1.1" 200 -
+[27/Jan/2023:15:58:34.783] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:58:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:58:34.784] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:58:34] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:58:34.945] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:58:34] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:58:34.954] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:58:34] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[27/Jan/2023:15:58:34.987] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:58:34] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:58:35.056] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:58:35] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:58:51.893] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:58:52.002] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:58:54.519] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:15:58:54.524] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:15:58:54.532] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:58:56.012] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:58:56.014] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:59:09.282] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:59:09.396] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:59:10.549] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:59:10.551] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:59:13.411] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:59:13.541] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:59:14.659] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:59:14.661] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:59:17.320] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:59:17.441] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:59:18.723] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:59:18.725] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:59:23.539] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:15:59:23.543] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:15:59:23.548] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:59:24.696] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:59:24.698] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:59:27.628] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:59:27] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:15:59:27.678] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:59:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:59:27.681] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:59:27] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:59:27.874] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:59:27] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:59:27.920] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:59:27] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:59:27.994] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:59:27] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:59:30.541] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2007
+[27/Jan/2023:15:59:31.559] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:59:31] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2007 HTTP/1.1" 200 -
+[27/Jan/2023:15:59:31.602] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:59:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:59:31.603] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:59:31] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:59:32.002] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:59:32] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:15:59:32.013] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:59:32] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[27/Jan/2023:15:59:32.083] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:59:32] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:15:59:32.093] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 15:59:32] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:15:59:53.100] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:59:53.216] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:15:59:54.228] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:15:59:54.230] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:15:59:59.394] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:15:59:59.506] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:00:00.605] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:00:00.606] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:00:09.192] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:00:09.324] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:00:10.381] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:00:10.382] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:00:16.388] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:16:00:16.392] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:16:00:16.397] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:00:17.478] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:00:17.480] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:00:38.623] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:00:38.753] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:00:39.850] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:00:39.851] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:00:43.633] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:00:43.756] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:00:44.269] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:00:44.272] INFO werkzeug:_log:  * Debugger PIN: 682-648-828
+[27/Jan/2023:16:00:44.660] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:00:44.741] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:00:48.092] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:16:00:48.097] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:16:00:48.103] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:00:49.434] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:00:49.436] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:00:49.741] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:00:49] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:16:00:49.796] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:00:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:00:49.797] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:00:49] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:00:50.044] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:00:50] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:16:00:50.098] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:00:50] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:16:00:50.169] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:00:50] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:00:52.754] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2007
+[27/Jan/2023:16:00:52.886] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:00:52] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2007 HTTP/1.1" 200 -
+[27/Jan/2023:16:00:52.924] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:00:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:00:52.925] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:00:52] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:00:53.082] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:00:53] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:16:00:53.086] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:00:53] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[27/Jan/2023:16:00:53.120] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:00:53] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:16:00:53.184] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:00:53] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:01:09.722] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:01:09.841] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:01:10.943] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:01:10.945] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:01:14.914] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:01:15.020] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:01:16.178] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:01:16.180] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:01:16.625] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:01:16.752] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:01:18.692] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:16:01:18.697] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:16:01:18.704] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:01:20.082] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:01:20.085] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:01:20.513] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:01:20] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:16:01:20.582] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:01:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:01:20.584] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:01:20] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:01:20.924] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:01:20] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:16:01:20.986] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:01:20] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:16:01:21.099] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:01:21] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:01:28.581] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2007
+[27/Jan/2023:16:01:28.836] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:01:28] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2007 HTTP/1.1" 200 -
+[27/Jan/2023:16:01:28.868] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:01:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:01:28.869] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:01:28] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:01:29.047] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:01:29] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:16:01:29.058] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:01:29] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[27/Jan/2023:16:01:29.103] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:01:29] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:16:01:29.149] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:01:29] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:02:21.156] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:02:21.276] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:02:22.186] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:02:22.187] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:02:29.441] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:02:29.554] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:02:30.762] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:02:30.764] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:02:36.947] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:02:37.055] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:02:38.131] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:02:38.133] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:02:39.813] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:02:39.987] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:02:41.377] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:02:41.381] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:02:51.161] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:02:51.286] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:02:53.708] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:16:02:53.712] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:16:02:53.722] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:02:55.490] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:02:55.493] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:02:56.690] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:02:56] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:16:02:56.722] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:02:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:02:56.722] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:02:56] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:02:56.900] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:02:56] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:16:02:56.944] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:02:56] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:16:02:57.005] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:02:57] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:02:59.410] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2007
+[27/Jan/2023:16:02:59.624] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:02:59] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2007 HTTP/1.1" 200 -
+[27/Jan/2023:16:02:59.656] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:02:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:02:59.658] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:02:59] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:02:59.835] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:02:59] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:16:02:59.839] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:02:59] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[27/Jan/2023:16:02:59.877] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:02:59] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:16:02:59.945] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:02:59] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:03:23.893] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:03:24.000] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:03:25.109] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:03:25.111] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:03:29.350] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:03:29.456] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:03:29.850] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:03:29.852] INFO werkzeug:_log:  * Debugger PIN: 682-648-828
+[27/Jan/2023:16:03:32.598] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:03:32.656] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:03:33.135] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:03:33.137] INFO werkzeug:_log:  * Debugger PIN: 682-648-828
+[27/Jan/2023:16:03:35.780] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:03:35.856] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:03:36.350] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:03:36.352] INFO werkzeug:_log:  * Debugger PIN: 682-648-828
+[27/Jan/2023:16:03:39.170] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:03:39.236] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:03:39.725] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:03:39.727] INFO werkzeug:_log:  * Debugger PIN: 682-648-828
+[27/Jan/2023:16:03:44.663] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:03:44.739] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:03:45.968] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:03:45.970] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:03:48.714] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:16:03:48.718] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:16:03:48.722] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:03:50.029] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:03:50.032] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:03:50.436] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:03:50] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:16:03:50.517] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:03:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:03:50.517] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:03:50] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:03:50.940] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:03:50] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:16:03:51.026] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:03:51] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:16:03:51.092] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:03:51] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:03:53.108] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2007
+[27/Jan/2023:16:03:54.405] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:03:54] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2007 HTTP/1.1" 200 -
+[27/Jan/2023:16:03:54.450] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:03:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:03:54.450] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:03:54] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:03:54.830] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:03:54] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:16:03:54.835] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:03:54] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[27/Jan/2023:16:03:54.903] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:03:54] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:03:54.909] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:03:54] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:16:06:00.018] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:16:06:00.022] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:16:06:00.026] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:06:01.082] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:06:01.084] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:06:03.676] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:06:03] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:16:06:03.720] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:06:03] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:06:03.721] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:06:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:06:04.319] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:06:04] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:16:06:04.376] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:06:04] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:16:06:04.508] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:06:04] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:06:06.791] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2007
+[27/Jan/2023:16:06:08.007] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:06:08] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2007 HTTP/1.1" 200 -
+[27/Jan/2023:16:06:08.051] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:06:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:06:08.052] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:06:08] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:06:08.459] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:06:08] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:16:06:08.469] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:06:08] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[27/Jan/2023:16:06:08.564] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:06:08] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:06:08.572] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:06:08] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:16:06:27.494] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:06:27.615] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:06:28.731] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:06:28.733] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:06:30.383] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:06:30.545] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:06:32.021] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:06:32.023] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:07:05.226] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:07:05.348] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:07:06.486] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:07:06.488] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:07:14.025] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:16:07:14.029] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:16:07:14.035] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:07:15.687] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:07:15.689] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:07:19.418] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:19] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:16:07:19.472] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:19] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:07:19.472] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:07:19.744] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:19] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:16:07:19.791] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:19] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:16:07:19.820] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:19] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:07:23.523] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2007
+[27/Jan/2023:16:07:24.282] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:24] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2007 HTTP/1.1" 200 -
+[27/Jan/2023:16:07:24.321] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:07:24.322] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:24] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:07:24.491] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:24] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:16:07:24.501] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:24] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[27/Jan/2023:16:07:24.581] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:24] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:16:07:24.610] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:24] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:07:45.217] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:07:45.323] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:07:47.372] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:16:07:47.375] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:16:07:47.381] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:07:48.741] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:07:48.743] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:07:49.122] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:49] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:16:07:49.179] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:07:49.183] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:49] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:07:49.469] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:49] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:16:07:49.534] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:49] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:16:07:49.682] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:49] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:07:52.361] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2007
+[27/Jan/2023:16:07:53.212] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:53] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2007 HTTP/1.1" 200 -
+[27/Jan/2023:16:07:53.251] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:07:53.252] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:53] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:07:53.451] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:53] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:16:07:53.461] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:53] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[27/Jan/2023:16:07:53.529] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:53] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:16:07:53.574] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:07:53] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:08:41.433] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:08:41.543] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:08:42.434] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:08:42.437] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:09:31.159] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:09:31.265] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:09:32.184] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:09:32.185] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:09:39.397] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:09:39.506] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:09:40.698] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:09:40.700] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:09:43.447] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:09:43.569] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:09:44.884] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:09:44.886] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:09:47.537] INFO werkzeug:_log:  * Detected change in '/mnt/c/Users/cnick/Documents/code/Personal/SkiTunes/skitunes/skitunes/main/views.py', reloading
+[27/Jan/2023:16:09:47.648] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:09:48.794] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:09:48.797] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:10:04.820] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[27/Jan/2023:16:10:04.824] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[27/Jan/2023:16:10:04.829] INFO werkzeug:_log:  * Restarting with stat
+[27/Jan/2023:16:10:06.065] WARNING werkzeug:_log:  * Debugger is active!
+[27/Jan/2023:16:10:06.068] INFO werkzeug:_log:  * Debugger PIN: 104-148-275
+[27/Jan/2023:16:10:07.255] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:10:07] "GET / HTTP/1.1" 200 -
+[27/Jan/2023:16:10:07.293] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:10:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:10:07.294] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:10:07] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:10:07.516] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:10:07] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:16:10:07.578] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:10:07] "GET /templates/navbar.html HTTP/1.1" 200 -
+[27/Jan/2023:16:10:07.621] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:10:07] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:10:10.176] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2007
+[27/Jan/2023:16:10:11.744] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:10:11] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2007 HTTP/1.1" 200 -
+[27/Jan/2023:16:10:11.785] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:10:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:10:11.786] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:10:11] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:10:12.326] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:10:12] "GET /templates/header.html HTTP/1.1" 200 -
+[27/Jan/2023:16:10:12.334] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:10:12] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[27/Jan/2023:16:10:12.396] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:10:12] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[27/Jan/2023:16:10:12.405] INFO werkzeug:_log: 127.0.0.1 - - [27/Jan/2023 16:10:12] "GET /templates/navbar.html HTTP/1.1" 200 -
+[30/Jan/2023:10:12:11.456] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[30/Jan/2023:10:12:11.462] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[30/Jan/2023:10:12:21.539] INFO werkzeug:_log: 127.0.0.1 - - [30/Jan/2023 10:12:21] "GET / HTTP/1.1" 200 -
+[30/Jan/2023:10:12:21.599] INFO werkzeug:_log: 127.0.0.1 - - [30/Jan/2023 10:12:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[30/Jan/2023:10:12:21.600] INFO werkzeug:_log: 127.0.0.1 - - [30/Jan/2023 10:12:21] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[30/Jan/2023:10:12:22.290] INFO werkzeug:_log: 127.0.0.1 - - [30/Jan/2023 10:12:22] "GET /templates/header.html HTTP/1.1" 200 -
+[30/Jan/2023:10:12:22.343] INFO werkzeug:_log: 127.0.0.1 - - [30/Jan/2023 10:12:22] "GET /templates/navbar.html HTTP/1.1" 200 -
+[30/Jan/2023:10:12:22.461] INFO werkzeug:_log: 127.0.0.1 - - [30/Jan/2023 10:12:22] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[30/Jan/2023:10:12:25.164] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2007
+[30/Jan/2023:10:12:27.103] INFO werkzeug:_log: 127.0.0.1 - - [30/Jan/2023 10:12:27] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2007 HTTP/1.1" 200 -
+[30/Jan/2023:10:12:27.144] INFO werkzeug:_log: 127.0.0.1 - - [30/Jan/2023 10:12:27] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[30/Jan/2023:10:12:27.145] INFO werkzeug:_log: 127.0.0.1 - - [30/Jan/2023 10:12:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[30/Jan/2023:10:12:27.838] INFO werkzeug:_log: 127.0.0.1 - - [30/Jan/2023 10:12:27] "GET /templates/header.html HTTP/1.1" 200 -
+[30/Jan/2023:10:12:27.856] INFO werkzeug:_log: 127.0.0.1 - - [30/Jan/2023 10:12:27] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[30/Jan/2023:10:12:27.940] INFO werkzeug:_log: 127.0.0.1 - - [30/Jan/2023 10:12:27] "GET /templates/navbar.html HTTP/1.1" 200 -
+[30/Jan/2023:10:12:27.940] INFO werkzeug:_log: 127.0.0.1 - - [30/Jan/2023 10:12:27] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
