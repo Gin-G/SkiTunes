@@ -48,7 +48,7 @@
                 {% if 'Not Found' in movie.spotify_id %}
                     <th>{{ movie.spotify_id }}</th>
                 {% else %}
-                <th><a  href={{ movie.spotify_id }}>{{ movie.spotify_id }}</a></th>
+                <th><a  href={{ movie.spotify_id }}>Listen on Spotify</a></th>
                 {% endif %}
                 {% if 'Unknown' in movie.video_link %}
                     <th>{{ movie.video_link }}</th>

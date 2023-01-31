@@ -123,7 +123,7 @@
                 {% if 'Not Found' in track.spotify_id %}
                     <th>{{ track.spotify_id }}</th>
                 {% else %}
-                <th><a  href={{ track.spotify_id }}>{{ track.spotify_id }}</a></th>
+                <th><a  href={{ track.spotify_id }}>Listen on Spotify</a></th>
                 {% endif %}
                 {% if 'Unknown' in track.video_link %}
                     <th>{{ track.video_link }}</th>
