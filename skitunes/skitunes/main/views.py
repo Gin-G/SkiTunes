@@ -62,7 +62,7 @@ def navbar():
     return render_template('navbar.html', tracks = track_list)
 
 @app.route('/templates/create_playlist.html')
-def create_playlist():
+def create_playlist_js():
     return render_template('create_playlist.html')
 
 @app.route('/skitunes')
@@ -220,6 +220,7 @@ def create_playlist_url():
     spotify_id = session['spotify_user_id']
     playlist_name = request.form['playlist_name']
     track_list = []
+    print(request.form.getlist('selected_track'))
     for spotify_link in request.form.getlist('selected_track'):
         spotify_track_id = spotify_link.replace("https://open.spotify.com/track/","")
         playlist_value = "spotify:track:" + spotify_track_id
@@ -227,7 +228,11 @@ def create_playlist_url():
             pass
         else:
             track_list.append(playlist_value)
-    response = create_playlist(spotify_id, playlist_name)
+    try:
+        response = create_playlist(spotify_id, playlist_name)
+    except AttributeError:
+        flash('Issue creating playlist. Try logging back in to Spotify')
+        return redirect(url_for('skitunes'))
     create_code = response.status_code
     response = response.json()
     try:
@@ -236,14 +241,18 @@ def create_playlist_url():
         flash('Issue creating playlist. Try logging back in to Spotify')
         return redirect(url_for('skitunes'))
     new_playlist_uri = new_playlist_uri.replace('spotify:playlist:','')
+    print(track_list)
+    print(len(track_list))
     if len(track_list) > 100:
         step = 100
         for i in range(0,len(track_list),step):
             x = i
             short_list = track_list[x:x+step]
             add_track_response = add_tracks(new_playlist_uri, short_list)
+            print(add_track_response.json())
     else:
         add_track_response = add_tracks(new_playlist_uri, track_list)
+        print(add_track_response.json())
     add_track_response_code = add_track_response.status_code
     if create_code == 201 and add_track_response_code == 201:
         flash('Playlist ' + playlist_name + ' was created and ' + str(len(track_list)) + ' tracks were added.')

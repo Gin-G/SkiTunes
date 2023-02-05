@@ -1067,3 +1067,487 @@
 [30/Jan/2023:10:12:27.856] INFO werkzeug:_log: 127.0.0.1 - - [30/Jan/2023 10:12:27] "GET /templates/create_playlist.html HTTP/1.1" 200 -
 [30/Jan/2023:10:12:27.940] INFO werkzeug:_log: 127.0.0.1 - - [30/Jan/2023 10:12:27] "GET /templates/navbar.html HTTP/1.1" 200 -
 [30/Jan/2023:10:12:27.940] INFO werkzeug:_log: 127.0.0.1 - - [30/Jan/2023 10:12:27] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[04/Feb/2023:12:27:47.432] INFO matplotlib.font_manager:__init__: Failed to extract font properties from /usr/share/fonts/truetype/noto/NotoColorEmoji.ttf: In FT2Font: Can not load face.  Unknown file format.
+[04/Feb/2023:12:27:47.469] INFO matplotlib.font_manager:_load_fontmanager: generated new fontManager
+[04/Feb/2023:12:27:47.895] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[04/Feb/2023:12:27:47.895] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[04/Feb/2023:12:27:47.896] INFO werkzeug:_log:  * Restarting with stat
+[04/Feb/2023:12:29:35.236] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[04/Feb/2023:12:29:35.236] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[04/Feb/2023:12:29:35.237] INFO werkzeug:_log:  * Restarting with stat
+[04/Feb/2023:12:29:41.891] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[04/Feb/2023:12:29:41.892] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[04/Feb/2023:12:29:52.185] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 12:29:52] "GET /skitunes HTTP/1.1" 200 -
+[04/Feb/2023:12:29:52.210] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 12:29:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[04/Feb/2023:12:29:52.214] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 12:29:52] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[04/Feb/2023:12:29:52.378] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 12:29:52] "GET /templates/header.html HTTP/1.1" 200 -
+[04/Feb/2023:12:29:52.438] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 12:29:52] "GET /templates/navbar.html HTTP/1.1" 200 -
+[04/Feb/2023:12:29:52.461] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 12:29:52] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[04/Feb/2023:12:29:54.143] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 12:29:54] "[32mGET /login HTTP/1.1[0m" 302 -
+[04/Feb/2023:12:31:12.269] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[04/Feb/2023:12:31:12.269] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[04/Feb/2023:12:31:12.270] INFO werkzeug:_log:  * Restarting with stat
+[04/Feb/2023:17:06:19.372] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[04/Feb/2023:17:06:19.372] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[04/Feb/2023:17:06:28.934] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:06:28] "[32mGET / HTTP/1.1[0m" 302 -
+[04/Feb/2023:17:06:28.991] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:06:28] "GET /skitunes HTTP/1.1" 200 -
+[04/Feb/2023:17:06:29.024] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:06:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:06:29.025] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:06:29] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:06:29.431] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:06:29] "GET /templates/header.html HTTP/1.1" 200 -
+[04/Feb/2023:17:06:29.475] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:06:29] "GET /templates/navbar.html HTTP/1.1" 200 -
+[04/Feb/2023:17:06:29.544] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:06:29] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:06:29.563] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:06:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[04/Feb/2023:17:06:32.693] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:06:32] "[32mGET /login HTTP/1.1[0m" 302 -
+[04/Feb/2023:17:13:37.928] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[04/Feb/2023:17:13:37.928] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[04/Feb/2023:17:13:43.929] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:13:43] "GET /skitunes HTTP/1.1" 200 -
+[04/Feb/2023:17:13:43.970] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:13:43] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:13:43.978] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:13:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:13:44.809] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:13:44] "GET /templates/header.html HTTP/1.1" 200 -
+[04/Feb/2023:17:13:44.878] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:13:44] "GET /templates/navbar.html HTTP/1.1" 200 -
+[04/Feb/2023:17:13:44.979] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:13:44] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:13:47.140] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:13:47] "[32mGET /login HTTP/1.1[0m" 302 -
+[04/Feb/2023:17:14:25.901] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[04/Feb/2023:17:14:25.901] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[04/Feb/2023:17:14:38.490] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:14:38] "[32mGET /login HTTP/1.1[0m" 302 -
+[04/Feb/2023:17:17:41.662] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[04/Feb/2023:17:17:41.662] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[04/Feb/2023:17:17:50.919] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:17:50] "[32mGET /login HTTP/1.1[0m" 302 -
+[04/Feb/2023:17:17:57.329] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:17:57] "[32mGET /login/callback?code=4%2F0AWtgzh6r9sfJ5rM7vhHomA-md1Qt1DaH8G1VxuFtraWjTddKz1nekEpOXiAjZTbs22N5cQ&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&prompt=consent HTTP/1.1[0m" 302 -
+[04/Feb/2023:17:17:57.334] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:17:57] "[32mGET /spotify/auth HTTP/1.1[0m" 302 -
+[04/Feb/2023:17:18:06.171] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:18:06] "[32mGET /spotify/callback?code=AQBuxu2BbbJUtvEgfUqTo0aBV2jqMO0rNAY5UdxolNCJi7Er_ZxFnbOyyha1B5zXuEE8Q2oEPy4CEkqbRQM5Hsmp4TuzI8qxU0woEjneoaDyLEwnxhUjs0h0aT458QJz0acu01G61jun3Ab67QX2gNShrFRPJvHODmm6EjtMPyOTv2ylY3xuNLt0ZORBlg2q6v1QdfEmCKIScmareJ6iJV8SSX8S4IJ9x-cyCJtThAhEaxdvx_opV0jKJg&state=csRroRVfqPqkotWU HTTP/1.1[0m" 302 -
+[04/Feb/2023:17:18:06.208] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:18:06] "GET / HTTP/1.1" 200 -
+[04/Feb/2023:17:18:06.347] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:18:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:18:06.348] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:18:06] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:18:07.277] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:18:07] "GET /templates/header.html HTTP/1.1" 200 -
+[04/Feb/2023:17:18:07.341] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:18:07] "GET /templates/navbar.html HTTP/1.1" 200 -
+[04/Feb/2023:17:18:07.566] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:18:07] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:18:19.375] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:18:19] "GET /skitunes/skibase HTTP/1.1" 200 -
+[04/Feb/2023:17:18:19.445] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:18:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:18:19.445] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:18:19] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:18:23.392] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:18:23] "GET /templates/header.html HTTP/1.1" 200 -
+[04/Feb/2023:17:18:23.400] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:18:23] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[04/Feb/2023:17:18:23.451] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:18:23] "GET /templates/navbar.html HTTP/1.1" 200 -
+[04/Feb/2023:17:18:23.723] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:18:23] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:19:02.893] ERROR skitunes:log_exception: Exception on /skitunes/create_playlist [POST]
+Traceback (most recent call last):
+  File "/home/gin-g/.local/lib/python3.10/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/gin-g/.local/lib/python3.10/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/gin-g/.local/lib/python3.10/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/gin-g/.local/lib/python3.10/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/gin-g/.local/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/gin-g/Documents/Code/SkiTunes/skitunes/skitunes/main/views.py", line 230, in create_playlist_url
+    response = create_playlist(spotify_id, playlist_name)
+TypeError: create_playlist() takes 0 positional arguments but 2 were given
+[04/Feb/2023:17:19:02.895] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:19:02] "[35m[1mPOST /skitunes/create_playlist HTTP/1.1[0m" 500 -
+[04/Feb/2023:17:23:46.033] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[04/Feb/2023:17:23:46.033] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[04/Feb/2023:17:24:46.617] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[04/Feb/2023:17:24:46.617] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[04/Feb/2023:17:25:04.920] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:25:04] "[32mPOST /skitunes/create_playlist HTTP/1.1[0m" 302 -
+[04/Feb/2023:17:25:04.933] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:25:04] "GET / HTTP/1.1" 200 -
+[04/Feb/2023:17:25:04.998] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:25:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:25:05.000] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:25:05] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:25:05.208] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:25:05] "GET /templates/header.html HTTP/1.1" 200 -
+[04/Feb/2023:17:25:05.233] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:25:05] "GET /templates/navbar.html HTTP/1.1" 200 -
+[04/Feb/2023:17:25:05.326] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:25:05] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:27:37.601] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:27:37] "GET / HTTP/1.1" 200 -
+[04/Feb/2023:17:27:37.641] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:27:37] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:27:37.642] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:27:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:27:37.876] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:27:37] "GET /templates/header.html HTTP/1.1" 200 -
+[04/Feb/2023:17:27:37.894] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:27:37] "GET /templates/navbar.html HTTP/1.1" 200 -
+[04/Feb/2023:17:27:37.945] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:27:37] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:27:42.831] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2003
+[04/Feb/2023:17:27:43.106] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:27:43] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2003 HTTP/1.1" 200 -
+[04/Feb/2023:17:27:43.128] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:27:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:27:43.128] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:27:43] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:27:43.415] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:27:43] "GET /templates/header.html HTTP/1.1" 200 -
+[04/Feb/2023:17:27:43.416] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:27:43] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[04/Feb/2023:17:27:43.460] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:27:43] "GET /templates/navbar.html HTTP/1.1" 200 -
+[04/Feb/2023:17:27:43.472] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:27:43] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:27:51.669] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:27:51] "[32mPOST /skitunes/create_playlist HTTP/1.1[0m" 302 -
+[04/Feb/2023:17:27:51.691] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:27:51] "GET / HTTP/1.1" 200 -
+[04/Feb/2023:17:27:51.740] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:27:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:27:51.740] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:27:51] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:27:51.875] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:27:51] "GET /templates/header.html HTTP/1.1" 200 -
+[04/Feb/2023:17:27:51.895] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:27:51] "GET /templates/navbar.html HTTP/1.1" 200 -
+[04/Feb/2023:17:27:51.946] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:27:51] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:40:08.277] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[04/Feb/2023:17:40:08.277] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[04/Feb/2023:17:40:12.408] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:40:12] "GET / HTTP/1.1" 200 -
+[04/Feb/2023:17:40:12.433] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:40:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:40:12.434] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:40:12] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:40:12.917] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:40:12] "GET /templates/header.html HTTP/1.1" 200 -
+[04/Feb/2023:17:40:12.944] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:40:12] "GET /templates/navbar.html HTTP/1.1" 200 -
+[04/Feb/2023:17:40:13.059] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:40:13] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:40:17.262] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2003
+[04/Feb/2023:17:40:17.596] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:40:17] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2003 HTTP/1.1" 200 -
+[04/Feb/2023:17:40:17.617] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:40:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:40:17.618] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:40:17] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:40:17.977] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:40:17] "GET /templates/header.html HTTP/1.1" 200 -
+[04/Feb/2023:17:40:17.979] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:40:17] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[04/Feb/2023:17:40:18.015] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:40:18] "GET /templates/navbar.html HTTP/1.1" 200 -
+[04/Feb/2023:17:40:18.040] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:40:18] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:40:26.266] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:40:26] "[32mPOST /skitunes/create_playlist HTTP/1.1[0m" 302 -
+[04/Feb/2023:17:40:26.272] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:40:26] "GET / HTTP/1.1" 200 -
+[04/Feb/2023:17:40:26.315] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:40:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:40:26.317] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:40:26] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:40:26.505] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:40:26] "GET /templates/header.html HTTP/1.1" 200 -
+[04/Feb/2023:17:40:26.558] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:40:26] "GET /templates/navbar.html HTTP/1.1" 200 -
+[04/Feb/2023:17:40:26.588] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:40:26] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:41:52.590] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[04/Feb/2023:17:41:52.590] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[04/Feb/2023:17:42:27.393] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2007
+[04/Feb/2023:17:42:27.885] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:42:27] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2007 HTTP/1.1" 200 -
+[04/Feb/2023:17:42:27.907] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:42:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:42:27.911] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:42:27] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:42:28.445] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:42:28] "GET /templates/header.html HTTP/1.1" 200 -
+[04/Feb/2023:17:42:28.447] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:42:28] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[04/Feb/2023:17:42:28.475] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:42:28] "GET /templates/navbar.html HTTP/1.1" 200 -
+[04/Feb/2023:17:42:28.499] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:42:28] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:42:35.501] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:42:35] "[32mPOST /skitunes/create_playlist HTTP/1.1[0m" 302 -
+[04/Feb/2023:17:42:35.511] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:42:35] "GET / HTTP/1.1" 200 -
+[04/Feb/2023:17:42:35.548] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:42:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:42:35.550] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:42:35] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[04/Feb/2023:17:42:35.744] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:42:35] "GET /templates/header.html HTTP/1.1" 200 -
+[04/Feb/2023:17:42:35.765] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:42:35] "GET /templates/navbar.html HTTP/1.1" 200 -
+[04/Feb/2023:17:42:35.832] INFO werkzeug:_log: 127.0.0.1 - - [04/Feb/2023 17:42:35] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:30:18.623] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[05/Feb/2023:13:30:18.623] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[05/Feb/2023:13:30:24.714] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:24] "[32mGET / HTTP/1.1[0m" 302 -
+[05/Feb/2023:13:30:24.773] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:24] "GET /skitunes HTTP/1.1" 200 -
+[05/Feb/2023:13:30:24.805] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:24] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:30:24.805] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:30:25.296] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:25] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:13:30:25.352] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:25] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:13:30:25.432] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:25] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:30:25.458] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[05/Feb/2023:13:30:29.668] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:29] "[32mGET /login HTTP/1.1[0m" 302 -
+[05/Feb/2023:13:30:30.915] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:30] "[32mGET /login/callback?code=4%2F0AWtgzh5OGr0QcWZPyX_wV99gEIHMHAET0CezUKD9eelV0nwOjzSQCWlraaOCI14T20PBeA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none HTTP/1.1[0m" 302 -
+[05/Feb/2023:13:30:30.932] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:30] "[32mGET /spotify/auth HTTP/1.1[0m" 302 -
+[05/Feb/2023:13:30:35.388] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:35] "[32mGET /spotify/callback?code=AQCUiCytiF6n4h3TWROyXCb4__GDgD0-bwRj-HM0-archT2qgdc2utnqZa_eXq8k9DGG5uUhUc_AA0Zqi6GC2OQhokJtldZPNObWNgQMQ0i53CHeiFcOdiUnS5nSJ_hOwuPOb_mQauRW00LGrXyLmmlrayyIpKkBry9AUfDxufIhTjRKVxfa5HHYm1W6_aRcGuFY2aK_9P1mboPgFDgGZIOwWbvL0w5sS4WGCQ_rupL-PAhgTLqGX70y2w&state=zBqXjEtDxQqToIKP HTTP/1.1[0m" 302 -
+[05/Feb/2023:13:30:35.409] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:35] "GET / HTTP/1.1" 200 -
+[05/Feb/2023:13:30:35.459] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:30:35.459] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:35] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:30:35.852] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:35] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:13:30:35.871] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:35] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:13:30:35.968] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:35] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:30:43.384] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:43] "GET /skitunes/skibase HTTP/1.1" 200 -
+[05/Feb/2023:13:30:43.414] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:30:43.415] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:43] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:30:46.263] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:46] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:13:30:46.268] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:46] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[05/Feb/2023:13:30:46.314] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:46] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:13:30:46.337] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:30:46] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:32:14.868] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:32:14] "[32mPOST /skitunes/create_playlist HTTP/1.1[0m" 302 -
+[05/Feb/2023:13:32:14.892] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:32:14] "GET / HTTP/1.1" 200 -
+[05/Feb/2023:13:32:14.969] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:32:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:32:14.971] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:32:14] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:32:15.190] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:32:15] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:13:32:15.208] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:32:15] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:13:32:15.279] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:32:15] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:36:20.635] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2003
+[05/Feb/2023:13:36:20.904] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:36:20] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2003 HTTP/1.1" 200 -
+[05/Feb/2023:13:36:20.926] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:36:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:36:20.927] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:36:20] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:36:21.241] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:36:21] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:13:36:21.244] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:36:21] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[05/Feb/2023:13:36:21.261] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:36:21] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:13:36:21.284] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:36:21] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:38:16.222] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:38:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:40:49.760] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[05/Feb/2023:13:40:49.760] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[05/Feb/2023:13:40:53.775] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:40:53] "GET / HTTP/1.1" 200 -
+[05/Feb/2023:13:40:53.805] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:40:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:40:53.806] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:40:53] "GET /static/app.js HTTP/1.1" 200 -
+[05/Feb/2023:13:40:54.258] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:40:54] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:13:40:54.280] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:40:54] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:13:40:54.404] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:40:54] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:41:01.365] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2003
+[05/Feb/2023:13:41:01.646] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:41:01] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2003 HTTP/1.1" 200 -
+[05/Feb/2023:13:41:01.667] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:41:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:41:01.669] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:41:01] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:41:02.230] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:41:02] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:13:41:02.233] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:41:02] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[05/Feb/2023:13:41:02.264] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:41:02] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:13:41:02.376] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:41:02] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:41:12.596] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:41:12] "[32mPOST /skitunes/create_playlist HTTP/1.1[0m" 302 -
+[05/Feb/2023:13:41:12.621] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:41:12] "GET / HTTP/1.1" 200 -
+[05/Feb/2023:13:41:12.658] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:41:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:41:12.659] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:41:12] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:41:13.133] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:41:13] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:13:41:13.176] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:41:13] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:13:41:13.271] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:41:13] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:42:31.316] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[05/Feb/2023:13:42:31.317] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[05/Feb/2023:13:42:34.588] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2003
+[05/Feb/2023:13:42:34.855] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:42:34] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2003 HTTP/1.1" 200 -
+[05/Feb/2023:13:42:34.884] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:42:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:42:34.885] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:42:34] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:42:35.479] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:42:35] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:13:42:35.481] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:42:35] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[05/Feb/2023:13:42:35.503] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:42:35] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:13:42:35.619] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:42:35] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:49:52.430] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:49:52] "GET / HTTP/1.1" 200 -
+[05/Feb/2023:13:49:52.452] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:49:52] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:49:52.452] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:49:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:49:52.861] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:49:52] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:13:49:52.879] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:49:52] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:13:49:52.974] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:49:52] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:55:22.021] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2003
+[05/Feb/2023:13:55:22.295] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:22] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2003 HTTP/1.1" 200 -
+[05/Feb/2023:13:55:22.311] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:55:22.312] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:22] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:55:22.812] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:22] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:13:55:22.813] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:22] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[05/Feb/2023:13:55:22.862] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:22] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:13:55:22.951] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:22] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:55:33.219] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[05/Feb/2023:13:55:33.219] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[05/Feb/2023:13:55:35.749] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:35] "GET / HTTP/1.1" 200 -
+[05/Feb/2023:13:55:35.774] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:35] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:55:35.774] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:55:35.950] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:35] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:13:55:35.972] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:35] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:13:55:36.002] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:36] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:55:39.536] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2003
+[05/Feb/2023:13:55:39.812] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:39] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2003 HTTP/1.1" 200 -
+[05/Feb/2023:13:55:39.834] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:55:39.836] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:39] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:55:39.837] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:39] "GET /static/export.js HTTP/1.1" 200 -
+[05/Feb/2023:13:55:40.123] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:40] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:13:55:40.125] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:40] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[05/Feb/2023:13:55:40.144] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:40] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:13:55:40.173] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:40] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:55:54.969] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:54] "[32mPOST /skitunes/create_playlist HTTP/1.1[0m" 302 -
+[05/Feb/2023:13:55:54.986] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:54] "GET / HTTP/1.1" 200 -
+[05/Feb/2023:13:55:55.026] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:55:55.028] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:55] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:55:55.211] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:55] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:13:55:55.256] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:55] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:13:55:55.289] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:55:55] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:56:18.947] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2003
+[05/Feb/2023:13:56:19.218] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:56:19] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2003 HTTP/1.1" 200 -
+[05/Feb/2023:13:56:19.238] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:56:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:56:19.239] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:56:19] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:56:19.239] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:56:19] "[36mGET /static/export.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:56:19.532] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:56:19] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:13:56:19.534] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:56:19] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[05/Feb/2023:13:56:19.551] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:56:19] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:13:56:19.578] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:56:19] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:56:34.750] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2003
+[05/Feb/2023:13:56:34.996] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:56:34] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2003 HTTP/1.1" 200 -
+[05/Feb/2023:13:56:35.018] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:56:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:56:35.019] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:56:35] "[36mGET /static/export.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:56:35.019] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:56:35] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:56:35.317] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:56:35] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:13:56:35.317] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:56:35] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[05/Feb/2023:13:56:35.336] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:56:35] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:13:56:35.371] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:56:35] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:56:43.390] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:56:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:59:19.818] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[05/Feb/2023:13:59:19.818] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[05/Feb/2023:13:59:23.284] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:23] "GET / HTTP/1.1" 200 -
+[05/Feb/2023:13:59:23.309] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:59:23.309] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:23] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:59:23.782] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:23] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:13:59:23.803] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:23] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:13:59:23.931] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:23] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:59:28.800] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:28] "GET /account HTTP/1.1" 200 -
+[05/Feb/2023:13:59:28.818] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:59:28.818] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:28] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:59:29.234] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:29] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:13:59:29.252] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:29] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:13:59:29.369] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:29] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:59:36.206] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:36] "[32mGET /logout HTTP/1.1[0m" 302 -
+[05/Feb/2023:13:59:36.212] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:36] "[32mGET / HTTP/1.1[0m" 302 -
+[05/Feb/2023:13:59:36.279] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:36] "GET /skitunes HTTP/1.1" 200 -
+[05/Feb/2023:13:59:36.299] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:59:36.299] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:36] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:59:36.776] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:36] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:13:59:36.796] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:36] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:13:59:36.918] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:36] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:59:39.130] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:39] "[32mGET /login HTTP/1.1[0m" 302 -
+[05/Feb/2023:13:59:40.438] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:40] "[32mGET /login/callback?code=4%2F0AWtgzh4AKrdL3j-B_6_GntVLKVePZXvvDGWw5mL_gYDo77yjH7t6PmkmUo2SZTa2vBpRmA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&prompt=none HTTP/1.1[0m" 302 -
+[05/Feb/2023:13:59:40.454] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:40] "[32mGET /spotify/auth HTTP/1.1[0m" 302 -
+[05/Feb/2023:13:59:47.415] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:47] "[32mGET /spotify/callback?code=AQAUrmF92gbBKDym6b9QcNjUQpgXzPpZd8CccafXv0PbZSaLcibJ-U4qteW43Y_SJtVM_B3Dp8DAdVua-uT_Q0OoeNAArdQoW2i6sHRtmt3OOlBaaQ28-iSgEcq_IpTF89y5FbjMaSk_mA2sX3OoTFEwSQI_TVX0B19vLYfy-0UiIYaU65fk7Yf9KtPTluq_1tBSYELxB99_ooN63gVqpXzUTsdQOhSRwoN1l7tnQ-cRZGCBG7KS2UymRw&state=slJwtjQRqchjLigC HTTP/1.1[0m" 302 -
+[05/Feb/2023:13:59:47.423] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:47] "GET / HTTP/1.1" 200 -
+[05/Feb/2023:13:59:47.447] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:59:47.450] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:47] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:59:47.943] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:47] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:13:59:47.962] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:47] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:13:59:48.070] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:48] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:59:54.586] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 1999
+[05/Feb/2023:13:59:54.693] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:54] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=1999 HTTP/1.1" 200 -
+[05/Feb/2023:13:59:54.713] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:59:54.715] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:54] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:13:59:55.218] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:55] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:13:59:55.220] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:55] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[05/Feb/2023:13:59:55.260] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:55] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:13:59:55.364] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 13:59:55] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:00:22.572] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:00:22] "[32mPOST /skitunes/create_playlist HTTP/1.1[0m" 302 -
+[05/Feb/2023:14:00:22.587] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:00:22] "GET / HTTP/1.1" 200 -
+[05/Feb/2023:14:00:22.670] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:00:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:00:22.676] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:00:22] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:00:23.210] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:00:23] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:14:00:23.232] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:00:23] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:14:00:23.342] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:00:23] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:04:20.167] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:04:20] "GET /skitunes/skibase_lite HTTP/1.1" 200 -
+[05/Feb/2023:14:04:20.187] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:04:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:04:20.189] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:04:20] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:04:22.134] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:04:22] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:14:04:22.135] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:04:22] "GET /templates/create_playlist.html HTTP/1.1" 200 -
+[05/Feb/2023:14:04:22.154] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:04:22] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:14:04:22.296] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:04:22] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:04:32.777] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:04:32] "[32mPOST /skitunes/create_playlist HTTP/1.1[0m" 302 -
+[05/Feb/2023:14:04:32.799] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:04:32] "GET / HTTP/1.1" 200 -
+[05/Feb/2023:14:04:32.902] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:04:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:04:32.905] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:04:32] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:04:33.384] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:04:33] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:14:04:33.403] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:04:33] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:14:04:33.556] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:04:33] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:06:58.737] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[05/Feb/2023:14:06:58.737] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[05/Feb/2023:14:07:02.232] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:07:02] "GET / HTTP/1.1" 200 -
+[05/Feb/2023:14:07:02.260] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:07:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:07:02.261] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:07:02] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:07:02.712] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:07:02] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:14:07:02.734] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:07:02] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:14:07:02.857] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:07:02] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:07:09.638] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 1999
+[05/Feb/2023:14:07:09.762] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:07:09] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=1999 HTTP/1.1" 200 -
+[05/Feb/2023:14:07:09.786] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:07:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:07:09.787] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:07:09] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:07:10.260] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:07:10] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:14:07:10.280] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:07:10] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:14:07:10.427] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:07:10] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:08:24.479] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:08:24] "[32mPOST /skitunes/create_playlist HTTP/1.1[0m" 302 -
+[05/Feb/2023:14:08:24.502] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:08:24] "GET / HTTP/1.1" 200 -
+[05/Feb/2023:14:08:24.618] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:08:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:08:24.621] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:08:24] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:08:25.217] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:08:25] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:14:08:25.235] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:08:25] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:14:08:25.363] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:08:25] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:09:07.702] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[05/Feb/2023:14:09:07.702] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[05/Feb/2023:14:09:12.375] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:12] "GET / HTTP/1.1" 200 -
+[05/Feb/2023:14:09:12.399] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:12] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:09:12.400] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:09:12.892] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:12] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:14:09:12.916] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:12] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:14:09:13.035] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:13] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:09:15.512] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2003
+[05/Feb/2023:14:09:15.790] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:15] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2003 HTTP/1.1" 200 -
+[05/Feb/2023:14:09:15.813] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:09:15.815] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:15] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:09:16.366] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:16] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:14:09:16.384] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:16] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:14:09:16.526] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:16] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:09:23.241] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:23] "[32mPOST /skitunes/create_playlist HTTP/1.1[0m" 302 -
+[05/Feb/2023:14:09:23.251] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:23] "GET / HTTP/1.1" 200 -
+[05/Feb/2023:14:09:23.311] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:23] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:09:23.312] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:09:24.144] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:24] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:14:09:24.193] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:24] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:14:09:24.289] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:24] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:09:53.188] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[05/Feb/2023:14:09:53.189] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[05/Feb/2023:14:09:57.370] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:57] "GET / HTTP/1.1" 200 -
+[05/Feb/2023:14:09:57.395] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:57] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:09:57.395] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:09:57.863] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:57] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:14:09:57.887] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:57] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:14:09:58.010] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:09:58] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:10:01.017] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2003
+[05/Feb/2023:14:10:01.296] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:10:01] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2003 HTTP/1.1" 200 -
+[05/Feb/2023:14:10:01.313] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:10:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:10:01.315] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:10:01] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:10:01.903] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:10:01] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:14:10:01.924] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:10:01] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:14:10:02.039] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:10:02] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:10:08.551] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:10:08] "[32mPOST /skitunes/create_playlist HTTP/1.1[0m" 302 -
+[05/Feb/2023:14:10:08.562] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:10:08] "GET / HTTP/1.1" 200 -
+[05/Feb/2023:14:10:08.617] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:10:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:10:08.622] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:10:08] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:10:09.409] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:10:09] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:14:10:09.452] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:10:09] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:14:10:09.560] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:10:09] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:11:14.919] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[05/Feb/2023:14:11:14.919] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[05/Feb/2023:14:11:18.805] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:18] "GET / HTTP/1.1" 200 -
+[05/Feb/2023:14:11:18.826] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:11:18.828] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:18] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:11:19.331] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:19] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:14:11:19.358] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:19] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:14:11:19.473] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:19] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:11:23.476] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2005
+[05/Feb/2023:14:11:23.831] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:23] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2005 HTTP/1.1" 200 -
+[05/Feb/2023:14:11:23.850] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:11:23.852] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:23] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:11:24.454] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:24] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:14:11:24.476] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:24] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:14:11:24.595] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:24] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:11:33.085] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:33] "[32mPOST /skitunes/create_playlist HTTP/1.1[0m" 302 -
+[05/Feb/2023:14:11:33.093] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:33] "GET / HTTP/1.1" 200 -
+[05/Feb/2023:14:11:33.211] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:11:33.212] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:33] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:11:34.015] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:34] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:14:11:34.054] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:34] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:14:11:34.151] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:34] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:11:42.666] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2005
+[05/Feb/2023:14:11:43.023] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:43] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2005 HTTP/1.1" 200 -
+[05/Feb/2023:14:11:43.043] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:11:43.045] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:43] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:11:43.692] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:43] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:14:11:43.722] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:43] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:14:11:43.845] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:11:43] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:16:38.194] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[05/Feb/2023:14:16:38.194] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[05/Feb/2023:14:16:42.322] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:42] "GET / HTTP/1.1" 200 -
+[05/Feb/2023:14:16:42.348] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:16:42.352] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:42] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:16:42.677] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:42] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:14:16:42.714] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:42] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:14:16:42.878] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:42] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:16:50.059] INFO skitunes.main.views:findmovie: SEARCH - MOVIE_YEAR : 2004
+[05/Feb/2023:14:16:50.378] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:50] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year=2004 HTTP/1.1" 200 -
+[05/Feb/2023:14:16:50.400] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:50] "[36mGET /static/export.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:16:50.400] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:16:50.401] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:50] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:16:50.765] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:50] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:14:16:50.784] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:50] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:14:16:50.811] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:50] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:16:58.968] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:58] "[32mPOST /skitunes/create_playlist HTTP/1.1[0m" 302 -
+[05/Feb/2023:14:16:58.978] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:58] "GET / HTTP/1.1" 200 -
+[05/Feb/2023:14:16:59.041] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:59] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:16:59.043] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[05/Feb/2023:14:16:59.384] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:59] "GET /templates/header.html HTTP/1.1" 200 -
+[05/Feb/2023:14:16:59.463] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:59] "GET /templates/navbar.html HTTP/1.1" 200 -
+[05/Feb/2023:14:16:59.487] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:59] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -

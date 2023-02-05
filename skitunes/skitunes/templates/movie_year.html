@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang = "en">
     <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}">
+    <script src="{{url_for('static',  filename='export.js')}}"></script>
     <script src="{{url_for('static',  filename='app.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script>
@@ -15,7 +16,7 @@
     </script>
     <script>
         $(function(){
-            $('#create_playlist').load("{{ url_for('create_playlist') }}")
+            $('#create_playlist').load("{{ url_for('create_playlist_js') }}")
         })
     </script>
     <body>
@@ -23,8 +24,13 @@
         <div id="navbar"></div>
         <br>
         {% if current_user.is_authenticated %}
-            <div id="create_playlist"></div>
-            <button onclick="exportTableToExcel('tblData','SkiMovieSongs_export')">Export Table Data To Excel File</button>
+            <div class="mid-bold">Use the checkboxes, or the select all box, to pick songs you want in your playlist.<br>
+                Give the playlist the name, hit the Create Playlist button, and it will be added to your Spotify account.<br>
+            </div>
+            <br>
+            <form action="/skitunes/create_playlist" method="post">
+                Playlist Name : <input type="text" id="playlist_name" name="playlist_name" placeholder="My Awesome Playlist"><br>
+                <button type="submit" name="submit-button" value="Create">Create Playlist</button><br><br>
         {% endif %}
     <table border="4">
         <caption style="font-size: 150%;">Ski Tunes Database</caption>
@@ -123,12 +129,12 @@
                 {% if 'Not Found' in track.spotify_id %}
                     <th>{{ track.spotify_id }}</th>
                 {% else %}
-                <th><a  href={{ track.spotify_id }}>Listen on Spotify</a></th>
+                <th><a href={{ track.spotify_id }} target="_blank" rel="noopener noreferrer">Listen on Spotify</a></th>
                 {% endif %}
                 {% if 'Unknown' in track.video_link %}
                     <th>{{ track.video_link }}</th>
                 {% else %}
-                    <td><a href={{ track.video_link }}>{{ track.video_link }}</a></td>
+                    <td><a href={{ track.video_link }} target="_blank" rel="noopener noreferrer">{{ track.video_link }}</a></td>
                 {% endif %}
                 {% if current_user.is_authenticated %}
                     {% if current_user.email == 'nickco7@gmail.com' %}
@@ -147,7 +153,9 @@
             {% endfor %}
         </tbody>
     </table>
+    {% if current_user.is_authenticated %}
     </form>
+    {% endif %}
 </body>
 
 </html>

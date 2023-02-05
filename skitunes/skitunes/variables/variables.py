@@ -5,8 +5,9 @@ import string
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", None)
 GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET", None)
 GOOGLE_DISCOVERY_URL = ("https://accounts.google.com/.well-known/openid-configuration")
-google_redirect_uri_url = "https://www.skimoviesongs.com/login/callback"
-spotify_redirect_uri_url = "https://www.skimoviesongs.com/spotify/callback"
+
+google_redirect_uri_url = "http://127.0.0.1:5000/login/callback"
+spotify_redirect_uri_url = "http://127.0.0.1:5000/spotify/callback"
 flask_state = str(os.environ.get("FLASK_DEBUG", '1'))
 if flask_state == '0':
     debug = False
@@ -17,6 +18,9 @@ else:
 if debug == True:
     google_redirect_uri_url = "http://127.0.0.1:5000/login/callback"
     spotify_redirect_uri_url = "http://127.0.0.1:5000/spotify/callback"
+else:
+    google_redirect_uri_url = "https://www.skimoviesongs.com/login/callback"
+    spotify_redirect_uri_url = "https://www.skimoviesongs.com/spotify/callback"
 
 SPOTIFY_AUTH_BASE_URL = "https://accounts.spotify.com/{}"
 SPOTIFY_AUTH_URL = "https://accounts.spotify.com/authorize?"
