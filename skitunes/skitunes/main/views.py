@@ -120,7 +120,8 @@ def skibase_lite():
 def findmovie():
     user_agent = request.headers.get('User-Agent')
     user_agent = user_agent.lower()
-
+    log_info = "USER-AGENT : " + user_agent
+    logger.info('%s', log_info)
     if "iphone" in user_agent:
         try:
             song_name = request.args.get('song_name')
