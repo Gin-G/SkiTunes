@@ -1551,3 +1551,127 @@ TypeError: create_playlist() takes 0 positional arguments but 2 were given
 [05/Feb/2023:14:16:59.384] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:59] "GET /templates/header.html HTTP/1.1" 200 -
 [05/Feb/2023:14:16:59.463] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:59] "GET /templates/navbar.html HTTP/1.1" 200 -
 [05/Feb/2023:14:16:59.487] INFO werkzeug:_log: 127.0.0.1 - - [05/Feb/2023 14:16:59] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[10/Feb/2023:18:02:00.333] INFO matplotlib.font_manager:__init__: Failed to extract font properties from /usr/share/fonts/truetype/noto/NotoColorEmoji.ttf: In FT2Font: Can not load face.  Unknown file format.
+[10/Feb/2023:18:02:00.408] INFO matplotlib.font_manager:_load_fontmanager: generated new fontManager
+[10/Feb/2023:18:02:00.828] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[10/Feb/2023:18:02:00.828] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[10/Feb/2023:18:02:15.644] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:02:15] "[32mGET / HTTP/1.1[0m" 302 -
+[10/Feb/2023:18:02:15.706] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:02:15] "GET /skitunes HTTP/1.1" 200 -
+[10/Feb/2023:18:02:15.775] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:02:15] "GET /static/style.css HTTP/1.1" 200 -
+[10/Feb/2023:18:02:15.776] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:02:15] "GET /static/app.js HTTP/1.1" 200 -
+[10/Feb/2023:18:02:16.131] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:02:16] "GET /templates/header.html HTTP/1.1" 200 -
+[10/Feb/2023:18:02:16.151] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:02:16] "GET /templates/navbar.html HTTP/1.1" 200 -
+[10/Feb/2023:18:02:16.251] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:02:16] "GET /static/Logo.png HTTP/1.1" 200 -
+[10/Feb/2023:18:02:16.277] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:02:16] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[10/Feb/2023:18:02:34.866] ERROR skitunes:log_exception: Exception on /skitunes/findmovie [GET]
+Traceback (most recent call last):
+  File "/home/nick/.local/lib/python3.10/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nick/.local/lib/python3.10/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/nick/.local/lib/python3.10/site-packages/flask/app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "/home/nick/.local/lib/python3.10/site-packages/flask/app.py", line 1698, in make_response
+    raise TypeError(
+TypeError: The view function for 'findmovie' did not return a valid response. The function either returned None or ended without a return statement.
+[10/Feb/2023:18:02:34.867] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:02:34] "[35m[1mGET /skitunes/findmovie?song_name=&song_artist=&movie_year= HTTP/1.1[0m" 500 -
+[10/Feb/2023:18:04:29.400] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[10/Feb/2023:18:04:29.400] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[10/Feb/2023:18:04:33.055] ERROR skitunes:log_exception: Exception on /skitunes/findmovie [GET]
+Traceback (most recent call last):
+  File "/home/nick/.local/lib/python3.10/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nick/.local/lib/python3.10/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/nick/.local/lib/python3.10/site-packages/flask/app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "/home/nick/.local/lib/python3.10/site-packages/flask/app.py", line 1698, in make_response
+    raise TypeError(
+TypeError: The view function for 'findmovie' did not return a valid response. The function either returned None or ended without a return statement.
+[10/Feb/2023:18:04:33.056] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:04:33] "[35m[1mGET /skitunes/findmovie?song_name=&song_artist=&movie_year= HTTP/1.1[0m" 500 -
+[10/Feb/2023:18:04:36.108] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:04:36] "GET /skitunes HTTP/1.1" 200 -
+[10/Feb/2023:18:04:36.183] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:04:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[10/Feb/2023:18:04:36.186] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:04:36] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[10/Feb/2023:18:04:36.255] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:04:36] "GET /templates/header.html HTTP/1.1" 200 -
+[10/Feb/2023:18:04:36.304] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:04:36] "GET /templates/navbar.html HTTP/1.1" 200 -
+[10/Feb/2023:18:04:36.328] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:04:36] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[10/Feb/2023:18:04:38.075] ERROR skitunes:log_exception: Exception on /skitunes/findmovie [GET]
+Traceback (most recent call last):
+  File "/home/nick/.local/lib/python3.10/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nick/.local/lib/python3.10/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/nick/.local/lib/python3.10/site-packages/flask/app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "/home/nick/.local/lib/python3.10/site-packages/flask/app.py", line 1698, in make_response
+    raise TypeError(
+TypeError: The view function for 'findmovie' did not return a valid response. The function either returned None or ended without a return statement.
+[10/Feb/2023:18:04:38.076] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:04:38] "[35m[1mGET /skitunes/findmovie?song_name=&song_artist=&movie_year= HTTP/1.1[0m" 500 -
+[10/Feb/2023:18:05:26.398] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[10/Feb/2023:18:05:26.398] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[10/Feb/2023:18:05:31.736] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:05:31] "GET /skitunes HTTP/1.1" 200 -
+[10/Feb/2023:18:05:31.810] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:05:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[10/Feb/2023:18:05:31.811] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:05:31] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[10/Feb/2023:18:05:31.860] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:05:31] "GET /templates/header.html HTTP/1.1" 200 -
+[10/Feb/2023:18:05:31.910] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:05:31] "GET /templates/navbar.html HTTP/1.1" 200 -
+[10/Feb/2023:18:05:32.027] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:05:32] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[10/Feb/2023:18:05:33.099] ERROR skitunes:log_exception: Exception on /skitunes/findmovie [GET]
+Traceback (most recent call last):
+  File "/home/nick/.local/lib/python3.10/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nick/.local/lib/python3.10/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/nick/.local/lib/python3.10/site-packages/flask/app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "/home/nick/.local/lib/python3.10/site-packages/flask/app.py", line 1698, in make_response
+    raise TypeError(
+TypeError: The view function for 'findmovie' did not return a valid response. The function either returned None or ended without a return statement.
+[10/Feb/2023:18:05:33.100] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:05:33] "[35m[1mGET /skitunes/findmovie?song_name=&song_artist=&movie_year= HTTP/1.1[0m" 500 -
+[10/Feb/2023:18:07:17.191] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[10/Feb/2023:18:07:17.192] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[10/Feb/2023:18:07:19.522] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:07:19] "GET /skitunes HTTP/1.1" 200 -
+[10/Feb/2023:18:07:19.584] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:07:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[10/Feb/2023:18:07:19.585] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:07:19] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[10/Feb/2023:18:07:19.671] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:07:19] "GET /templates/header.html HTTP/1.1" 200 -
+[10/Feb/2023:18:07:19.718] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:07:19] "GET /templates/navbar.html HTTP/1.1" 200 -
+[10/Feb/2023:18:07:19.803] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:07:19] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[10/Feb/2023:18:07:21.108] ERROR skitunes:log_exception: Exception on /skitunes/findmovie [GET]
+Traceback (most recent call last):
+  File "/home/nick/.local/lib/python3.10/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nick/.local/lib/python3.10/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/nick/.local/lib/python3.10/site-packages/flask/app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "/home/nick/.local/lib/python3.10/site-packages/flask/app.py", line 1698, in make_response
+    raise TypeError(
+TypeError: The view function for 'findmovie' did not return a valid response. The function either returned None or ended without a return statement.
+[10/Feb/2023:18:07:21.110] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:07:21] "[35m[1mGET /skitunes/findmovie?song_name=&song_artist=&movie_year= HTTP/1.1[0m" 500 -
+[10/Feb/2023:18:08:27.360] INFO werkzeug:_log: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[10/Feb/2023:18:08:27.361] INFO werkzeug:_log: [33mPress CTRL+C to quit[0m
+[10/Feb/2023:18:08:32.542] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:08:32] "GET /skitunes HTTP/1.1" 200 -
+[10/Feb/2023:18:08:32.607] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:08:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[10/Feb/2023:18:08:32.608] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:08:32] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[10/Feb/2023:18:08:32.682] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:08:32] "GET /templates/header.html HTTP/1.1" 200 -
+[10/Feb/2023:18:08:32.732] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:08:32] "GET /templates/navbar.html HTTP/1.1" 200 -
+[10/Feb/2023:18:08:32.810] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:08:32] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[10/Feb/2023:18:08:34.020] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:08:34] "[32mGET / HTTP/1.1[0m" 302 -
+[10/Feb/2023:18:08:34.065] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:08:34] "GET /skitunes HTTP/1.1" 200 -
+[10/Feb/2023:18:08:34.128] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:08:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[10/Feb/2023:18:08:34.130] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:08:34] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[10/Feb/2023:18:08:34.194] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:08:34] "GET /templates/header.html HTTP/1.1" 200 -
+[10/Feb/2023:18:08:34.214] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:08:34] "GET /templates/navbar.html HTTP/1.1" 200 -
+[10/Feb/2023:18:08:34.234] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:08:34] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
+[10/Feb/2023:18:08:35.821] INFO skitunes.main.views:findmovie: SEARCH - ALL
+[10/Feb/2023:18:08:38.429] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:08:38] "GET /skitunes/findmovie?song_name=&song_artist=&movie_year= HTTP/1.1" 200 -
+[10/Feb/2023:18:08:38.474] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:08:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[10/Feb/2023:18:08:38.475] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:08:38] "GET /static/export.js HTTP/1.1" 200 -
+[10/Feb/2023:18:08:38.476] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:08:38] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+[10/Feb/2023:18:08:41.144] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:08:41] "GET /templates/header.html HTTP/1.1" 200 -
+[10/Feb/2023:18:08:41.170] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:08:41] "GET /templates/navbar.html HTTP/1.1" 200 -
+[10/Feb/2023:18:08:41.234] INFO werkzeug:_log: 127.0.0.1 - - [10/Feb/2023 18:08:41] "[36mGET /static/Logo.png HTTP/1.1[0m" 304 -
