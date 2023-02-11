@@ -16,6 +16,8 @@ import os
 import json
 
 logger = logging.getLogger(__name__)
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
 
 @app.before_first_request
 def create_tables():
@@ -23,6 +25,7 @@ def create_tables():
 
 @app.route('/')
 def home():
+    
     if current_user.is_authenticated:
         name = current_user.name
         profile_pic = current_user.profile_pic
@@ -115,45 +118,129 @@ def skibase_lite():
 
 @app.route('/skitunes/findmovie')
 def findmovie():
-    try:
-        song_name = request.args.get('song_name')
-        song_artist = request.args.get('song_artist')
-        movie_year = request.args.get('movie_year')
-        if len(song_artist) != 0:
-            if len(song_name) != 0:
-                log_info = "SEARCH - SONG_NAME : " + song_name + " SONG_ARTIST : " + song_artist
+    user_agent = request.headers.get('User-Agent')
+    user_agent = user_agent.lower()
+
+    if "iphone" in user_agent:
+        try:
+            song_name = request.args.get('song_name')
+            song_artist = request.args.get('song_artist')
+            movie_year = request.args.get('movie_year')
+            if len(song_artist) != 0:
+                if len(song_name) != 0:
+                    log_info = "SEARCH - SONG_NAME : " + song_name + " SONG_ARTIST : " + song_artist
+                    logger.info('%s', log_info)
+                    filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_name.contains(song_name),ski_movie_song_info.song_artist.contains(song_artist)).all()
+                    return render_template('skibase_lite.html', tracks = filter_info)
+                else:
+                    log_info = "SEARCH - SONG_ARTIST : " + song_artist
+                    logger.info('%s', log_info)
+                    filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_artist.contains(song_artist)).all()
+                return render_template('skibase_lite.html', tracks = filter_info)
+            elif len(song_name) != 0:
+                log_info = "SEARCH - SONG_NAME : " + song_name
                 logger.info('%s', log_info)
-                filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_name.contains(song_name),ski_movie_song_info.song_artist.contains(song_artist)).all()
-                return render_template('skibase.html', tracks = filter_info)
+                filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_name.contains(song_name)).all()
+                return render_template('skibase_lite.html', tracks = filter_info)
+            elif len(movie_year) != 0:
+                log_info = "SEARCH - MOVIE_YEAR : " + movie_year
+                logger.info('%s', log_info)
+                movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == movie_year).all()
+                year_list = []
+                for id in movie_filter_info:
+                    filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
+                    year_list.append(filter_info)
+                return render_template('movie_year.html', movie_year = year_list)
             else:
-                log_info = "SEARCH - SONG_ARTIST : " + song_artist
+                log_info = "SEARCH - ALL"
                 logger.info('%s', log_info)
-                filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_artist.contains(song_artist)).all()
-            return render_template('skibase.html', tracks = filter_info)
-        elif len(song_name) != 0:
-            log_info = "SEARCH - SONG_NAME : " + song_name
+                tracks = ski_movie_song_info.query.all()
+                return render_template('skibase_lite.html', tracks = tracks)
+        except TypeError:
+            log_info = "Type Error - returned all tracks"
             logger.info('%s', log_info)
-            filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_name.contains(song_name)).all()
-            return render_template('skibase.html', tracks = filter_info)
-        elif len(movie_year) != 0:
-            log_info = "SEARCH - MOVIE_YEAR : " + movie_year
+            tracks = ski_movie_song_info.query.all()
+            return render_template('skibase_lite.html', tracks = tracks)
+    elif "android" in user_agent:
+        try:
+            song_name = request.args.get('song_name')
+            song_artist = request.args.get('song_artist')
+            movie_year = request.args.get('movie_year')
+            if len(song_artist) != 0:
+                if len(song_name) != 0:
+                    log_info = "SEARCH - SONG_NAME : " + song_name + " SONG_ARTIST : " + song_artist
+                    logger.info('%s', log_info)
+                    filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_name.contains(song_name),ski_movie_song_info.song_artist.contains(song_artist)).all()
+                    return render_template('skibase_lite.html', tracks = filter_info)
+                else:
+                    log_info = "SEARCH - SONG_ARTIST : " + song_artist
+                    logger.info('%s', log_info)
+                    filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_artist.contains(song_artist)).all()
+                return render_template('skibase_lite.html', tracks = filter_info)
+            elif len(song_name) != 0:
+                log_info = "SEARCH - SONG_NAME : " + song_name
+                logger.info('%s', log_info)
+                filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_name.contains(song_name)).all()
+                return render_template('skibase_lite.html', tracks = filter_info)
+            elif len(movie_year) != 0:
+                log_info = "SEARCH - MOVIE_YEAR : " + movie_year
+                logger.info('%s', log_info)
+                movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == movie_year).all()
+                year_list = []
+                for id in movie_filter_info:
+                    filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
+                    year_list.append(filter_info)
+                return render_template('movie_year.html', movie_year = year_list)
+            else:
+                log_info = "SEARCH - ALL"
+                logger.info('%s', log_info)
+                tracks = ski_movie_song_info.query.all()
+                return render_template('skibase_lite.html', tracks = tracks)
+        except TypeError:
+            log_info = "Type Error - returned all tracks"
             logger.info('%s', log_info)
-            movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == movie_year).all()
-            year_list = []
-            for id in movie_filter_info:
-                filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
-                year_list.append(filter_info)
-            return render_template('movie_year.html', movie_year = year_list)
-        else:
-            log_info = "SEARCH - ALL"
+            tracks = ski_movie_song_info.query.all()
+            return render_template('skibase_lite.html', tracks = tracks)
+    else:
+        try:
+            song_name = request.args.get('song_name')
+            song_artist = request.args.get('song_artist')
+            movie_year = request.args.get('movie_year')
+            if len(song_artist) != 0:
+                if len(song_name) != 0:
+                    log_info = "SEARCH - SONG_NAME : " + song_name + " SONG_ARTIST : " + song_artist
+                    logger.info('%s', log_info)
+                    filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_name.contains(song_name),ski_movie_song_info.song_artist.contains(song_artist)).all()
+                    return render_template('skibase.html', tracks = filter_info)
+                else:
+                    log_info = "SEARCH - SONG_ARTIST : " + song_artist
+                    logger.info('%s', log_info)
+                    filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_artist.contains(song_artist)).all()
+                return render_template('skibase.html', tracks = filter_info)
+            elif len(song_name) != 0:
+                log_info = "SEARCH - SONG_NAME : " + song_name
+                logger.info('%s', log_info)
+                filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_name.contains(song_name)).all()
+                return render_template('skibase.html', tracks = filter_info)
+            elif len(movie_year) != 0:
+                log_info = "SEARCH - MOVIE_YEAR : " + movie_year
+                logger.info('%s', log_info)
+                movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == movie_year).all()
+                year_list = []
+                for id in movie_filter_info:
+                    filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
+                    year_list.append(filter_info)
+                return render_template('movie_year.html', movie_year = year_list)
+            else:
+                log_info = "SEARCH - ALL"
+                logger.info('%s', log_info)
+                tracks = ski_movie_song_info.query.all()
+                return render_template('skibase.html', tracks = tracks)
+        except TypeError:
+            log_info = "Type Error - returned all tracks"
             logger.info('%s', log_info)
             tracks = ski_movie_song_info.query.all()
             return render_template('skibase.html', tracks = tracks)
-    except TypeError:
-        log_info = "Type Error - returned all tracks"
-        logger.info('%s', log_info)
-        tracks = ski_movie_song_info.query.all()
-        return render_template('skibase.html', tracks = tracks)
 
 @app.route('/skitunes/filtermovie')
 @login_required

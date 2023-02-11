@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}">
+    <script src="{{url_for('static',  filename='export.js')}}"></script>
+    <script src="{{url_for('static',  filename='app.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $('#header').load("{{ url_for('header') }}")
+        })
+    </script>
+    <script>
+        $(function(){
+            $('#navbar').load("{{ url_for('navbar') }}")
+        })
+    </script>
+    <script>
+        $(function(){
+            $('#create_playlist').load("{{ url_for('create_playlist_js') }}")
+        })
+    </script>
+    <body>
+        <div id="header"></div>
+        <div id="navbar"></div>
+        <br>
+        {% if current_user.is_authenticated %}
+            <div class="mid-bold">Use the checkboxes, or the select all box, to pick songs you want in your playlist.<br>
+                Give the playlist the name, hit the Create Playlist button, and it will be added to your Spotify account.<br>
+            </div>
+            <br>
+            <form action="/skitunes/create_playlist" method="post">
+                Playlist Name : <input type="text" id="playlist_name" name="playlist_name" placeholder="My Awesome Playlist"><br>
+                <button type="submit" name="submit-button" value="Create">Create Playlist</button><br><br>
+        {% endif %}
+    <table border="4">
+        <caption style="font-size: 150%;">Ski Tunes Database</caption>
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th>Song Name</th>
+                <th>Artist</th>
+                <th>Movie Title</th>
+                <th>Production Company</th>
+                <th>Spotify Link</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th>
+                    <label class="select_all" for="chkbxAll">
+                        <input onchange="selectAllChkboxes()" class="select_all" type="checkbox" id="chkbxAll"/>All
+                    </label>
+                </th>
+                <th>
+                    <form action="/skitunes/filtersong"><input type="text" value="" placeholder="Filter Song Name" name="song_name"></form>
+                </th>
+                <th>        
+                    <form action="/skitunes/filterartist">
+                        <input type="text" value="" placeholder="Filter Artist" name="song_artist">
+                    </form>
+                </th>
+                <th>
+                    <form action="/skitunes/filtermovie">      
+                        <input type="text" value="" placeholder="Filter Movie Name" name="movie_name">
+                    </form>
+                </th>
+                <th>
+                    <form action="/skitunes/filtermovieco">
+                        <input type="text" value="" placeholder="Filter Production Co." name="movie_co">
+                    </form>
+                </th>
+            </tr>
+            {% for movie in movie_year %}
+            {% for track in movie %}
+            <tr>
+                {% if 'Not Found' in track.spotify_id %}
+                <td></td>
+                {% else %}
+                <td>
+                    <label class="select-option" for="chkbx{{ track.db_id }}">
+                        <input type="checkbox" name="selected_track" class="select-option" id="chkbx{{ track.db_id }}" value="{{ track.spotify_id }}">
+                    </label>
+                </td>
+                {% endif %}
+                <th>{{ track.song_name }}</th>
+                <th>{{ track.song_artist }}</th>
+                    {% for movie in track.movie_details %}
+                        <th><a href="{{url_for('ski_movie',  name=movie.movie_name)}}">{{ movie.movie_name }}</a></th>
+                        <th>{{ movie.movie_co }}</th>
+                    {% endfor %}
+            {% if 'Not Found' in track.spotify_id %}
+                <th>{{ track.spotify_id }}</th>
+            {% else %}
+            <th><a  href={{ track.spotify_id }} target="_blank" rel="noopener noreferrer">Listen on Spotify</a></th>
+            {% endif %}
+            </tr>
+            {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+    {% if current_user.is_authenticated %}
+    </form>
+    {% endif %}
+</body>
+
+</html>
