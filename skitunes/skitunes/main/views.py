@@ -151,7 +151,7 @@ def findmovie():
                 for id in movie_filter_info:
                     filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
                     year_list.append(filter_info)
-                return render_template('movie_year.html', movie_year = year_list)
+                return render_template('movie_year_lite.html', movie_year = year_list)
             else:
                 log_info = "SEARCH - ALL"
                 logger.info('%s', log_info)
@@ -191,7 +191,7 @@ def findmovie():
                 for id in movie_filter_info:
                     filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
                     year_list.append(filter_info)
-                return render_template('movie_year.html', movie_year = year_list)
+                return render_template('movie_year_lite.html', movie_year = year_list)
             else:
                 log_info = "SEARCH - ALL"
                 logger.info('%s', log_info)
