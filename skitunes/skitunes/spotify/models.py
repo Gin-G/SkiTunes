@@ -9,6 +9,7 @@ class ski_movie_song_info(db.Model):
     song_artist = db.Column('Song Artist', db.String(100))
     song_album = db.Column('Album', db.String(100))
     song_num = db.Column('Song Number', db.String(100))
+    genres = db.Column('Genres', db.String(100))
     spotify_id = db.Column('Spotify Link', db.String(100))
     skier_name = db.Column('Skier Name', db.String(100))
     movie_details = relationship("Movie", back_populates="parent")
@@ -16,11 +17,12 @@ class ski_movie_song_info(db.Model):
     location = db.Column('Location', db.String(100))
     video_link = db.Column('Link to segment', db.String(100))
 
-    def __init__(self, song_name, song_artist, song_album, song_num, spotify_id, skier_name, ski_type, location, video_link):
+    def __init__(self, song_name, song_artist, song_album, song_num, genres, spotify_id, skier_name, ski_type, location, video_link):
         self.song_name = song_name
         self.song_artist = song_artist
         self.song_album = song_album
         self.song_num = song_num
+        self.genres = genres
         self.spotify_id = spotify_id
         self.skier_name = skier_name
         self.ski_type = ski_type
@@ -33,6 +35,7 @@ class ski_movie_song_info(db.Model):
             'Song Name':self.song_name,
             'Song Artist':self.song_artist,
             'Song Album':self.song_album,
+            'Genres':self.genres,
             'Skier Name':self.skier_name,
             'Movie Name':self.movie_name,
             'Production Company':self.movie_co,

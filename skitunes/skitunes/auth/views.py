@@ -31,6 +31,20 @@ def get_google_provider_cfg():
 def unauthorized():
     return render_template('sign_up.html')
 
+@app.route('/login_url')
+def login_url():
+    return render_template('login.html')
+
+@app.route('/login_local', methods=["GET","POST"])
+def login_local():
+    flash('Local login is being worked on currently but not yet available')
+    return render_template('skitunes.html')
+
+@app.route('/signup')
+def signup():
+    flash('Registration is being worked on currently but not yet available')
+    return render_template('skitunes.html')
+
 @app.route('/login')
 def login():
     # Find out what URL to hit for Google login
@@ -87,6 +101,7 @@ def callback():
         users_email = userinfo_response.json()["email"]
         picture = userinfo_response.json()["picture"]
         users_name = userinfo_response.json()["given_name"]
+        pwd = 'Nonethisisgoogle'
     else:
         return "User email not available or not verified by Google.", 400
     # Create a user in your db with the information provided
@@ -94,14 +109,14 @@ def callback():
 
     # Doesn't exist? Add it to the database.
     if not User.get(unique_id):
-        user = User.create(unique_id, users_name, users_email, picture)
+        user = User.create(unique_id, users_name, users_email, picture, pwd)
     else:
         user = User.get(unique_id)
     if user == None:
         try:
-            user = User.create(unique_id, users_name, users_email, picture)
+            user = User.create(unique_id, users_name, users_email, picture, pwd)
         except:
-            return url_for('home')
+            return redirect(url_for('home'))
     # Begin user session by logging the user in
     login_user(user)
 

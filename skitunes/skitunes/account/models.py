@@ -7,15 +7,17 @@ class User(db.Model, UserMixin):
     name = db.Column('Name', db.String(100))
     email = db.Column('Email', db.String(100))
     profile_pic = db.Column('Picture', db.String(100))
+    pwd = db.Column(db.String(300), nullable=False, unique=True)
 
     def get_id(self):
         return(self.user_id)
         
-    def __init__(self, user_id, name, email, profile_pic):
+    def __init__(self, user_id, name, email, profile_pic, pwd):
         self.user_id = user_id
         self.name = name
         self.email = email
         self.profile_pic = profile_pic   
+        self.pwd = pwd
 
     @staticmethod
     def get(user_id):
@@ -25,13 +27,7 @@ class User(db.Model, UserMixin):
         return user
 
     @staticmethod
-    def create(user_id, name, email, profile_pic):
-        print(type(user_id))
-        print(type(name))
-        print(type(email))
-        print(type(profile_pic))
-        user = User(user_id=user_id, name=name, email=email, profile_pic=profile_pic)
+    def create(user_id, name, email, profile_pic, pwd):
+        user = User(user_id=user_id, name=name, email=email, profile_pic=profile_pic, pwd=pwd)
         db.session.add(user)
         db.session.commit()
-
-    

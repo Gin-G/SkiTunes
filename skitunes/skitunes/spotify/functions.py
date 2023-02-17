@@ -51,11 +51,12 @@ def spotify_search_song(track):
         album = track_info['tracks']['items'][0]['album']['name']
         name = track_info['tracks']['items'][0]['name']
         artist = track_info['tracks']['items'][0]['artists'][0]['name']
-        return url, album, name, artist
+        genres = track_info['artists']['items'][0]['genres']
+        return url, album, name, artist, genres
     except IndexError:
-        return "Not Found", "Not Found", "Not Found", "Not Found"
+        return "Not Found", "Not Found", "Not Found", "Not Found", "Not Found"
     except TypeError:
-        return "Not Found", "Not Found", "Not Found", "Not Found"
+        return "Not Found", "Not Found", "Not Found", "Not Found", "Not Found"
 
 def get_track_info():
     headers = spotify_auth()
