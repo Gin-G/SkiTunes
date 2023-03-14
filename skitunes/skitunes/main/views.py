@@ -209,13 +209,22 @@ def findmovie():
                     log_info = "SEARCH - RANGE MOVIE_YEAR : " + movie_year + " to " + movie_year2
                     logger.info('%s', log_info)
                     year_list = []
-                    years = range(int(movie_year), int(movie_year2)+1, 1)
-                    for year in years:
-                        movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == year).all()
-                        for id in movie_filter_info:
-                            filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
-                            year_list.append(filter_info)
-                    return render_template('movie_year_lite.html', movie_year = year_list)
+                    if int(movie_year) > int(movie_year2):
+                        years = range(int(movie_year), int(movie_year2)+1, 1)
+                        for year in years:
+                            movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == year).all()
+                            for id in movie_filter_info:
+                                filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
+                                year_list.append(filter_info)
+                        return render_template('movie_year_lite.html', movie_year = year_list)
+                    elif int(movie_year) < int(movie_year2):
+                        years = range(int(movie_year2), int(movie_year)+1, 1)
+                        for year in years:
+                            movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == year).all()
+                            for id in movie_filter_info:
+                                filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
+                                year_list.append(filter_info)
+                        return render_template('movie_year_lite.html', movie_year = year_list)
                 else:
                     log_info = "SEARCH - MOVIE_YEAR : " + movie_year
                     logger.info('%s', log_info)
@@ -262,13 +271,22 @@ def findmovie():
                     log_info = "SEARCH - RANGE MOVIE_YEAR : " + movie_year + " to " + movie_year2
                     logger.info('%s', log_info)
                     year_list = []
-                    years = range(int(movie_year), int(movie_year2)+1, 1)
-                    for year in years:
-                        movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == year).all()
-                        for id in movie_filter_info:
-                            filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
-                            year_list.append(filter_info)
-                    return render_template('movie_year.html', movie_year = year_list)
+                    if int(movie_year) > int(movie_year2):
+                        years = range(int(movie_year), int(movie_year2)+1, 1)
+                        for year in years:
+                            movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == year).all()
+                            for id in movie_filter_info:
+                                filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
+                                year_list.append(filter_info)
+                        return render_template('movie_year_lite.html', movie_year = year_list)
+                    elif int(movie_year) < int(movie_year2):
+                        years = range(int(movie_year2), int(movie_year)+1, 1)
+                        for year in years:
+                            movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == year).all()
+                            for id in movie_filter_info:
+                                filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
+                                year_list.append(filter_info)
+                        return render_template('movie_year_lite.html', movie_year = year_list)
                 else:
                     log_info = "SEARCH - MOVIE_YEAR : " + movie_year
                     logger.info('%s', log_info)
