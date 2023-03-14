@@ -3,7 +3,6 @@ from textwrap import indent
 
 from flask import request, flash, redirect, url_for, jsonify, send_file, session
 from flask_login import current_user, LoginManager, login_required, login_user, logout_user
-from matplotlib.font_manager import json_load
 import logging
 from skitunes import app, db, mail
 from skitunes.spotify.models import ski_movie_song_info, Movie

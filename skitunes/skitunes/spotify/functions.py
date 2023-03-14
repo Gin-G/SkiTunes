@@ -1,6 +1,5 @@
 from email.mime import base
 from flask import redirect, session
-from matplotlib.pyplot import get
 import requests
 from requests.auth import HTTPBasicAuth
 import json
