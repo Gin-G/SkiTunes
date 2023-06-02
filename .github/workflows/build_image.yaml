@@ -1,9 +1,6 @@
 name: Build and push Docker image
 
-on:
-  push:
-    paths:
-      - /**
+on: push
 
 jobs:
   deploy-docker-image:
