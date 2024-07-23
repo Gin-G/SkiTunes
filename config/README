@@ -1,0 +1,31 @@
+# New Setup Guide
+
+git clone https://github.com/Gin-G/SkiTunes.git
+
+sudo apt install python3-pip python3.12-venv
+
+python3 -m venv .venv
+
+source activate .venv/bin/activate
+
+pip install -r requirement.txt
+
+## Nginx setup 
+sudo apt install nginx
+
+Copy nginx.conf contents in to /etc/nginx/nginx.conf
+    Basically the server {} section needs to be added so certbot can do the rest
+
+sudo apt install certbot python3-certbot-nginx
+
+sudo service nginx restart
+
+**Make sure firewall allows port 80 and 443 on the host side and from the cloud security ingress rules**
+
+sudo certbot --nginx -d skimoviesongs.com -d www.skimoviesongs.com
+
+**Add Google and Spotify env_vars**
+
+sudo apt install gunicorn
+
+gunicorn --daemon --bind 0.0.0.0:8000 wsgi:app
