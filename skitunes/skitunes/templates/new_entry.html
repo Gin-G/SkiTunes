@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4L8K5WV7VD"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-4L8K5WV7VD');
+        </script>
     <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}" type="text/css">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script>
@@ -35,4 +45,6 @@
                 <a href="{{url_for('home')}}">Home</a>
             </form>
         </div>
+    </body>
+    </head>
 </html>

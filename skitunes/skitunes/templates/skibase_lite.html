@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang = "en">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4L8K5WV7VD"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-4L8K5WV7VD');
+        </script>
     <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}">
     <script src="{{url_for('static',  filename='app.js')}}"></script>
     <script src="{{url_for('static',  filename='export.js')}}"></script>
@@ -100,5 +110,5 @@
             </table>
         </form>
     </body>
-
+    </head>
 </html>
