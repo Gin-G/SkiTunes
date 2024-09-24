@@ -1,0 +1,13 @@
+name: SkiTunes ARC test
+
+on: push
+
+jobs:
+  checkout-and-echo:
+    runs-on: gh-arc-set-skitunes-runner
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
+      - name: Run echo
+        run: |
+          echo $PATH
