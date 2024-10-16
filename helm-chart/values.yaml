@@ -1,0 +1,12 @@
+webapp:
+  name: skitunes
+  group: skitunes
+  fqdn: skitunes.gingmachine
+  path: /
+  replicaCount: 1
+  container: 
+    image: docker.io/ncging/skitunes:latest
+    imagePullPolicy: Always
+    port: 8000
+worker:
+  replicaCount: 2
