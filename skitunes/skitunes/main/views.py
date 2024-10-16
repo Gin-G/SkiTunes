@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
 
-@app.before_first_request
+@app.before_request
 def create_tables():
     db.create_all()
 
