@@ -1,4 +1,3 @@
-from crypt import methods
 from textwrap import indent
 
 from flask import request, flash, redirect, url_for, jsonify, send_file, session
