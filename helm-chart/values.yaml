@@ -2,7 +2,7 @@ webapp:
   name: skitunes
   group: skitunes
   fqdn: skitunes.gingmachine
-  path: /skitunes
+  path: /
   replicaCount: 1
   container: 
     image: docker.io/ncging/skitunes:2024-10-16.18.53
