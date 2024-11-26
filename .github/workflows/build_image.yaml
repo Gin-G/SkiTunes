@@ -1,6 +1,9 @@
 name: Build and push Docker image
 
-on: push
+on: 
+  push:
+    paths:
+      - skitunes/**
 
 jobs:
   deploy-docker-image:
@@ -13,16 +16,14 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Extract metadata for Docker
-        id: meta
-        uses: docker/metadata-action@v4
-        with:
-          images: ncging/skitunes
+      - name: Get the current date for an image tag
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d.%H.%M')" >> $GITHUB_OUTPUT
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
           context: .
           file: Dockerfile
           push: true
-          tags: ncging/skitunes:latest
+          tags: ncging/skitunes:${{ steps.date.outputs.date }}
           labels: ${{ steps.meta.output.labels }}

@@ -18,6 +18,12 @@ spec:
     spec:
       containers:
       - name: {{ .Values.webapp.name }}
+        env:
+        - name: FLASK_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: flask-secret
+              key: flask-secret
         image: {{ .Values.webapp.container.image }}
         imagePullPolicy: {{ .Values.webapp.container.imagePullPolicy }}
         resources:
@@ -26,3 +32,7 @@ spec:
             cpu: {{ .Values.webapp.container.cpu }}
         ports:
         - containerPort: {{ .Values.webapp.container.port }}
+        resources:
+          limits:
+            cpu: '0'
+            memory: '0'
