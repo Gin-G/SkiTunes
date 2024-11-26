@@ -21,11 +21,22 @@ spec:
           image: postgres:latest
           env:
             - name: POSTGRES_USER
-              value: "username"
+              valueFrom:
+                secretKeyRef:
+                name: flask-secret
+                key: db-username
             - name: POSTGRES_PASSWORD
-              value: "password"
+              valueFrom:
+                secretKeyRef:
+                name: flask-secret
+                key: db-password
             - name: POSTGRES_DB
               value: "skitunes"
+        - name: FLASK_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: flask-secret
+              key: flask-secret
           ports:
             - containerPort: 5432
           volumeMounts:
