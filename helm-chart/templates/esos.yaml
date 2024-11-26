@@ -15,3 +15,7 @@ spec:
     remoteRef:
       key: skitunes       # Just the path without data/ prefix for v1
       property: flask-secret
+  - secretKey: db-password
+    remoteRef:
+      key: skitunes       # Just the path without data/ prefix for v1
+      property: db-password
