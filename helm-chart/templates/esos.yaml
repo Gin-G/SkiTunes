@@ -10,6 +10,7 @@ spec:
     kind: SecretStore
   target:
     name: flask-secret
+    creationPolicy: Owner
   data:
   - secretKey: flask-secret
     remoteRef:
