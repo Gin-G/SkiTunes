@@ -23,20 +23,15 @@ spec:
             - name: POSTGRES_USER
               valueFrom:
                 secretKeyRef:
-                name: flask-secret
+                name: db-username
                 key: db-username
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                name: flask-secret
+                name: db-password
                 key: db-password
             - name: POSTGRES_DB
               value: "skitunes"
-        - name: FLASK_SECRET
-          valueFrom:
-            secretKeyRef:
-              name: flask-secret
-              key: flask-secret
           ports:
             - containerPort: 5432
           volumeMounts:
