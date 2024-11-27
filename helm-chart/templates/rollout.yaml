@@ -16,8 +16,8 @@ spec:
         app: {{ .Values.webapp.name }}
     spec:
       containers:
-        - name: app: {{ .Values.webapp.name }}
-          {{ .Values.webapp.container.image }}
+        - name: {{ .Values.webapp.name }}
+          image: {{ .Values.webapp.container.image }}
         env:
         - name: FLASK_SECRET
           valueFrom:
