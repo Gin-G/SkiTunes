@@ -1,7 +1,8 @@
 webapp:
   name: skitunes-dev
   group: skitunes
-  fqdn: skitunes-dev.gingmachine
+  activeHost: skitunes-dev.gingmachine
+  previewHost: skitunes-dev-preview.gingmachine
   path: /
   replicaCount: 1
   container: 
