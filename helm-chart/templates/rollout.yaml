@@ -2,26 +2,39 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: {{ include "mychart.fullname" . }}
+  name: {{ .Values.webapp.name }}
   labels:
-    {{- include "mychart.labels" . | nindent 4 }}
+    app: {{ .Values.webapp.name }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      {{- include "mychart.selectorLabels" . | nindent 6 }}
+      {{ .Values.webapp.replicaCount }}
   template:
     metadata:
       labels:
-        {{- include "mychart.selectorLabels" . | nindent 8 }}
+        app: {{ .Values.webapp.name }}
     spec:
       containers:
-        - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          # ... other container specs
+        - name: app: {{ .Values.webapp.name }}
+          {{ .Values.webapp.container.image }}
+        env:
+        - name: FLASK_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: flask-secret
+              key: flask-secret
+        image: {{ .Values.webapp.container.image }}
+        imagePullPolicy: {{ .Values.webapp.container.imagePullPolicy }}
+        ports:
+        - containerPort: {{ .Values.webapp.container.port }}
+        resources:
+          limits:
+            cpu: '0'
+            memory: '0'
   strategy:
     blueGreen:
-      activeService: {{ include "mychart.fullname" . }}-active
-      previewService: {{ include "mychart.fullname" . }}-preview
+      activeService: {{ .Values.webapp.name }}-active
+      previewService: {{ .Values.webapp.name }}-preview
       autoPromotionEnabled: {{ .Values.rollout.autoPromotionEnabled | default false }}
 {{- end }}

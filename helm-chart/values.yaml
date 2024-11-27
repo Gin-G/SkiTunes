@@ -1,5 +1,5 @@
 webapp:
-  name: skitunes
+  name: skitunes-dev
   group: skitunes
   fqdn: skitunes-dev.gingmachine
   path: /
