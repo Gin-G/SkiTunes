@@ -20,18 +20,18 @@ spec:
         - name: postgres
           image: postgres:latest
           env:
-            - name: POSTGRES_USER
-              valueFrom:
-                secretKeyRef:
-                name: db-username
-                key: db-username
-            - name: POSTGRES_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                name: db-password
-                key: db-password
-            - name: POSTGRES_DB
-              value: "skitunes"
+          - name: POSTGRES_USER
+            valueFrom:
+              secretKeyRef:
+              name: db-username
+              key: db-username
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+              name: db-password
+              key: db-password
+          - name: POSTGRES_DB
+            value: "skitunes"
           ports:
             - containerPort: 5432
           volumeMounts:
