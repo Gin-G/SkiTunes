@@ -12,6 +12,7 @@ mail = Mail(app)
 
 db = SQLAlchemy(app)
 
+# Logging is stopping the app from running, removed it for now to get a working version that can be troubleshot additionally later
 # Configure the logging setup as defined in log functions module and apply to the app
 #logs = LogSetup()
 #logs.init_app(app)
