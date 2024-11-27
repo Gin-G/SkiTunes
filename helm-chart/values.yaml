@@ -1,12 +1,12 @@
 webapp:
-  name: skitunes-dev
-  group: skitunes
-  activeHost: skitunes-dev.gingmachine
-  previewHost: skitunes-dev-preview.gingmachine
+    image: docker.io/ncging/skitunes:2024-11-27.22.31
+    image: docker.io/ncging/skitunes:2024-11-27.22.31
+    image: docker.io/ncging/skitunes:2024-11-27.22.31
+    image: docker.io/ncging/skitunes:2024-11-27.22.31
   path: /
   replicaCount: 1
   container: 
-    image: docker.io/ncging/skitunes:2024-11-27.21.23
+    image: docker.io/ncging/skitunes:2024-11-27.22.31
     imagePullPolicy: Always
     port: 8000
 worker:
