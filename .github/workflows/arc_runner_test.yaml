@@ -13,7 +13,7 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
         with:
-          ref: dev
+          ref: db-switch
       - name: Run echo
         run: |
           echo $PATH
