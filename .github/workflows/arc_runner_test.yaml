@@ -32,7 +32,7 @@ jobs:
           docker buildx build --push -t ${{ secrets.DOCKERHUB_USERNAME }}/skitunes:${{ steps.date.outputs.date }} .
       - name: Update Helm chart with new image
         run: |
-          sed -i "/skitunes/ c\    image: docker.io/ncging/skitunes:${{ steps.date.outputs.date }}" helm_knows/values.yaml
+          sed -i "/skitunes/ c\    image: docker.io/ncging/skitunes:${{ steps.date.outputs.date }}" helm-chart/values.yaml
       - name: Push changes to GitHub
         run: |
           git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
