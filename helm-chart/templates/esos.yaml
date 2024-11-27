@@ -9,7 +9,7 @@ spec:
     name: openbao-backend
     kind: SecretStore
   target:
-    name: flask-secret
+    name: flask-secret-dev
   data:
   - secretKey: flask-secret
     remoteRef:

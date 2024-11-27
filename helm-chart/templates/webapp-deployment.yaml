@@ -22,7 +22,7 @@ spec:
         - name: FLASK_SECRET
           valueFrom:
             secretKeyRef:
-              name: flask-secret
+              name: flask-secret-dev
               key: flask-secret
         image: {{ .Values.webapp.container.image }}
         imagePullPolicy: {{ .Values.webapp.container.imagePullPolicy }}
