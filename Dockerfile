@@ -1,4 +1,5 @@
-FROM python:3
+# Use the 
+FROM python:3.10-slim
 
 # Copy only the flask app files
 COPY skitunes/ .

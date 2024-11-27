@@ -28,11 +28,11 @@ jobs:
       - name: Build and push SkiTunes Flask image"
         run: |
           docker buildx create --use --driver=remote tcp://buildkit-buildkit-service.arc-systems:1234
-          docker buildx build --push -t ${{ secrets.DOCKERHUB_USERNAME }}/skitunes:latest .
-          docker buildx build --push -t ${{ secrets.DOCKERHUB_USERNAME }}/skitunes:${{ steps.date.outputs.date }} .
+          docker buildx build --push -t ${{ secrets.DOCKERHUB_USERNAME }}/skitunes-app:latest .
+          docker buildx build --push -t ${{ secrets.DOCKERHUB_USERNAME }}/skitunes-app:${{ steps.date.outputs.date }} .
       - name: Update Helm chart with new image
         run: |
-          sed -i "/skitunes/ c\    image: docker.io/ncging/skitunes:${{ steps.date.outputs.date }}" helm-chart/values.yaml
+          sed -i "/skitunes-app/ c\    image: docker.io/ncging/skitunes-app:${{ steps.date.outputs.date }}" helm-chart/values.yaml
       - name: Push changes to GitHub
         run: |
           git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
