@@ -7,7 +7,7 @@ on:
       - Dockerfile
 
 jobs:
-  checkout-and-echo:
+  buildkit-push-on-arc:
     runs-on: gh-arc-skitunes-scale-set
     steps:
       - name: Check out the repo
