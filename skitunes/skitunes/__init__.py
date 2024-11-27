@@ -13,9 +13,9 @@ mail = Mail(app)
 db = SQLAlchemy(app)
 
 # Configure the logging setup as defined in log functions module and apply to the app
-logs = LogSetup()
-logs.init_app(app)
+#logs = LogSetup()
+#logs.init_app(app)
 
 from skitunes.main import views
 from skitunes.auth import views
-from skitunes.logs import views
+#from skitunes.logs import views
