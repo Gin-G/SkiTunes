@@ -5,6 +5,9 @@ metadata:
   name: {{ .Values.webapp.name }}
   labels:
     app: {{ .Values.webapp.name }}
+    argocd.argoproj.io/managed-by: argo  # Replace with your namespace
+  annotations:
+    argocd.argoproj.io/tracking-id: skitunes-dev 
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
