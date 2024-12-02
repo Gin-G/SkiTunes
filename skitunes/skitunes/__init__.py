@@ -19,4 +19,5 @@ db = SQLAlchemy(app)
 
 from skitunes.main import views
 from skitunes.auth import views
+from skitunes.metrics import views
 #from skitunes.logs import views
