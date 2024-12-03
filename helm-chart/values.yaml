@@ -13,4 +13,4 @@ worker:
   replicaCount: 2
 rollout:
   enabled: true
-  autoPromotionEnabled: false
+  autoPromotionEnabled: true

@@ -54,4 +54,5 @@ spec:
       activeService: {{ .Values.webapp.name }}-active
       previewService: {{ .Values.webapp.name }}-preview
       autoPromotionEnabled: {{ .Values.rollout.autoPromotionEnabled | default false }}
+      autoPromotionSeconds: 30 
 {{- end }}
