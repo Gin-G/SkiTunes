@@ -9,3 +9,4 @@ requests
 oauthlib
 Werkzeug
 flask-bcrypt
+Flask-WTF
