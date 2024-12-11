@@ -8,3 +8,4 @@ Flask-Login
 requests
 oauthlib
 Werkzeug
+flask-bcrypt

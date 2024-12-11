@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
     <head>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-4L8K5WV7VD"></script>
@@ -10,36 +10,70 @@
         
           gtag('config', 'G-4L8K5WV7VD');
         </script>
-    <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}">
-    <script src="static/app.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script>
-        $(function(){
-            $('#header').load("{{ url_for('header') }}")
-        })
-    </script><script>
-        $(function(){
-            $('#navbar').load("{{ url_for('navbar') }}")
-        })
-    </script>
-    <body>
+        <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}">
+        <script src="static/app.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script>
+            $(function(){
+                $('#header').load("{{ url_for('header') }}")
+            })
+        </script>
+        <script>
+            $(function(){
+                $('#navbar').load("{{ url_for('navbar') }}")
+            })
+        </script>
         <div id="header"></div>
         <div id="navbar"></div>
-        <h1>
-            Login
-        </h1>
-        <form action="/login_local">
-            Username : <input type="text" id="username" name="username"><br><br>
-            Password : <input type="text" id="password" name="password"><br><br>
-            <input type="submit" value="Login">
+    </head>
+    <body>
+        <h1>Login</h1>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class=flashes>
+                {% for category, message in messages %}
+                    <div class="big-bold-italic {{ category }}">{{ message }}</div>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        
+        <form method="POST" action="{{ url_for('login_local') }}">
+            {{ form.hidden_tag() }}
+            <div class="form-group mb-3">
+                {{ form.email.label(class="form-label") }}
+                {{ form.email(class="form-control") }}
+                {% if form.email.errors %}
+                    <div class="text-danger">
+                        {% for error in form.email.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="form-group mb-3">
+                {{ form.password.label(class="form-label") }}
+                {{ form.password(class="form-control") }}
+                {% if form.password.errors %}
+                    <div class="text-danger">
+                        {% for error in form.password.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-primary") }}
+            </div>
         </form>
-        <br>
-        <form action="/signup">
-            <input type="submit" value="Register">
-        </form>
-        <br>
+        <div class="text-center mt-3">
+            <small>
+                Don't have an account? 
+                <a href="{{ url_for('register') }}">Sign Up</a>
+            </small>
+        </div>
         <br>
         <a href="{{ url_for('login') }}"><img src="{{url_for('static',  filename='google_logo.png')}}" style="width: 10%;"></a>
     </body>
-    </head>
 </html>
