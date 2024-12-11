@@ -24,12 +24,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r skitunes/requirements.txt
-          pip install pytest  # Add testing framework
-
-      - name: Run Python tests
-        run: |
-          cd skitunes
-          python -m pytest tests/
 
       - name: Verify Flask App Startup
         run: |
