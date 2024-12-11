@@ -10,3 +10,4 @@ oauthlib
 Werkzeug
 flask-bcrypt
 Flask-WTF
+email-validator
