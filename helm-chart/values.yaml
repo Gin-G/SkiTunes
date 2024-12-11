@@ -6,7 +6,7 @@ webapp:
   path: /
   replicaCount: 1
   container: 
-    image: docker.io/ncging/skitunes-app:2024-12-11.19.20
+    image: docker.io/ncging/skitunes-app:2024-12-11.19.31
     imagePullPolicy: Always
     port: 8000
 worker:
