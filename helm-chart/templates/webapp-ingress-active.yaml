@@ -15,6 +15,7 @@ spec:
   tls:
     - hosts:
       - {{ .Values.webapp.activeHost}}
+      secretName: {{ .Values.webapp.activeHost}}-tls
   rules:
   - host: {{ .Values.webapp.activeHost }}
     http:
