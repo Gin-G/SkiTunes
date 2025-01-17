@@ -23,12 +23,12 @@ spec:
           - name: POSTGRES_USER
             valueFrom:
               secretKeyRef:
-                name: flask-secret-dev
+                name: skitunes-esos
                 key: db-username
           - name: POSTGRES_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: flask-secret-dev
+                name: skitunes-esos
                 key: db-password
           - name: POSTGRES_DB
             value: "skitunes"

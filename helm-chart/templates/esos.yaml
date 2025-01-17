@@ -1,7 +1,7 @@
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
-  name: flask-secret-dev
+  name: skitunes-esos
   namespace: skitunes
 spec:
   refreshInterval: 1h
@@ -9,7 +9,7 @@ spec:
     name: openbao-backend
     kind: SecretStore
   target:
-    name: flask-secret-dev
+    name: skitunes-esos
   data:
   - secretKey: flask-secret
     remoteRef:
@@ -23,3 +23,19 @@ spec:
     remoteRef:
       key: skitunes       # Just the path without data/ prefix for v1
       property: db-password
+  - secretKey: spotify-client-id
+    remoteRef:
+      key: spotify       # Just the path without data/ prefix for v1
+      property: client-id
+  - secretKey: spotify-client-secret
+    remoteRef:
+      key: spotify       # Just the path without data/ prefix for v1
+      property: client-secret
+  - secretKey: google-client-id
+    remoteRef:
+      key: google       # Just the path without data/ prefix for v1
+      property: client-id
+  - secretKey: google-client-id
+    remoteRef:
+      key: google       # Just the path without data/ prefix for v1
+      property: client-secret
