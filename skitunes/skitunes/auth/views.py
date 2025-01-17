@@ -90,19 +90,16 @@ def login_local():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    # If user is already logged in, redirect to home
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     
     form = RegistrationForm()
     
     if request.method == 'POST':
-        # Add detailed logging to understand form validation
         print("Form submitted")
         print("Form data:", request.form)
         print("Form validate_on_submit():", form.validate_on_submit())
         
-        # If form doesn't validate, print out specific errors
         if not form.validate_on_submit():
             print("Form Errors:")
             for field, errors in form.errors.items():
@@ -110,17 +107,18 @@ def register():
         
         if form.validate_on_submit():
             try:
-                # Use the built-in user ID generation method
+                # Generate user_id before creating user
+                user_id = User.generate_next_user_id()
+                
                 user = User.create(
+                    user_id=user_id,  # Pass the generated user_id
                     name=form.name.data, 
                     email=form.email.data, 
-                    profile_pic=None,  # No profile pic for local registration
+                    profile_pic=None,
                     pwd=form.password.data
                 )
                 
-                # Log the user in
                 login_user(user)
-                
                 flash('Your account has been created! You are now logged in.', 'success')
                 return redirect(url_for('home'))
             
