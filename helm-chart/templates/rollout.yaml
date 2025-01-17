@@ -7,7 +7,7 @@ metadata:
     app: {{ .Values.webapp.name }}
     argocd.argoproj.io/managed-by: skitunes  # Replace with your namespace
   annotations:
-    argocd.argoproj.io/tracking-id: skitunes-dev 
+    argocd.argoproj.io/tracking-id: skitunes
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -25,8 +25,28 @@ spec:
         - name: FLASK_SECRET
           valueFrom:
             secretKeyRef:
-              name: flask-secret
+              name: skitunes-esos
               key: flask-secret
+        - name: SPOTIFY_CLIENT_ID
+          valueFrom:
+            secretKeyRef:
+              name: skitunes-esos
+              key: spotify-client-id
+        - name: SPOTIFY_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: skitunes-esos
+              key: spotify-client-secret
+        - name: GOOGLE_CLIENT_ID
+          valueFrom:
+            secretKeyRef:
+              name: skitunes-esos
+              key: google-client-id
+        - name: GOOGLE_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: skitunes-esos
+              key: google-client-secret
         imagePullPolicy: {{ .Values.webapp.container.imagePullPolicy }}
         ports:
         - containerPort: {{ .Values.webapp.container.port }}

@@ -1,8 +1,8 @@
 webapp:
-  name: skitunes-dev
+  name: skitunes
   group: skitunes
-  activeHost: skitunes-dev.ging.nickknows.net
-  previewHost: skitunes-dev-preview.ging.nickknows.net
+  activeHost: skitunes.ging.nickknows.net
+  previewHost: skitunes-dev.ging.nickknows.net
   path: /
   replicaCount: 1
   container: 
