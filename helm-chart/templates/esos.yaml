@@ -35,7 +35,7 @@ spec:
     remoteRef:
       key: google       # Just the path without data/ prefix for v1
       property: client-id
-  - secretKey: google-client-id
+  - secretKey: google-client-secret
     remoteRef:
       key: google       # Just the path without data/ prefix for v1
       property: client-secret
