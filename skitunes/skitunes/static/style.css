@@ -1,53 +1,135 @@
 body {
-    background-color: #f2f6f8;
-    text-align: center;
+  background-color: #f2f6f8;
+  text-align: center;
 }
 
 .bubble {
-    margin: 20px auto;
-    width: 95%;
-    font: 15px Arial;
-    background-color: #FFFFFF;
-    color: #454545;
-    text-align: center;
-    padding: 20px;
-    border-radius: 5px;
-    justify-content: space-between
+  margin: 20px auto;
+  width: 95%;
+  font: 15px Arial;
+  background-color: #FFFFFF;
+  color: #454545;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+  justify-content: space-between
+}
+
+/* Registration Form Settings */
+/* Form container styles */
+.signup-bubble {
+  margin: 20px auto;
+  width: 400px;  /* Fixed width instead of percentage for better control */
+  font-family: Arial, sans-serif;
+  background-color: #FFFFFF;
+  color: #454545;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form group spacing */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Hide labels visually but keep them for screen readers */
+.form-label {
+  display: none;
+}
+
+/* Input field styles */
+.form-control {
+  width: 100%;
+  height: 45px;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Submit button styles */
+.btn-primary {
+  width: 100%;
+  height: 45px;
+  background-color: #454545;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: darkblue;
+}
+
+
+/* Error message styles */
+.text-danger {
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: left;
+}
+
+/* Sign in link styles */
+.text-center {
+  margin-top: 20px;
+}
+
+.text-center a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.text-center a:hover {
+  text-decoration: underline;
 }
 
 h1 {
-    margin: 20px auto;
-    width: 50%;
-    background-color: #454545;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 20px;
-    border-radius: 5px;
+  margin: 20px auto;
+  width: 50%;
+  background-color: #454545;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 table {
-    text-align: center;
-    margin: 0 auto;
-    vertical-align: middle;
-    width: 92%;
-    color: #000000;
-    border-collapse: collapse;
-    border: 4px solid black;
+  text-align: center;
+  margin: 0 auto;
+  vertical-align: middle;
+  width: 92%;
+  color: #000000;
+  border-collapse: collapse;
+  border: 4px solid black;
 }
 
 th, td, tr {
-    text-align: center;
-    margin: 0 auto;
-    vertical-align: middle;
-    color: #454545;
-    padding: 2.5px;
-    font-size: 12px;
-    height: 15px;
+  text-align: center;
+  margin: 0 auto;
+  vertical-align: middle;
+  color: #454545;
+  padding: 2.5px;
+  font-size: 12px;
+  height: 15px;
 }
 
 caption {
-    font-size: 150%;
-    padding: 5px;
+  font-size: 150%;
+  padding: 5px;
 }
 
 .column {
@@ -66,27 +148,27 @@ caption {
 }
 
 .italic-mid {
-    font-size: 125%;
-    font-style: italic;
-    text-align: center;
+  font-size: 125%;
+  font-style: italic;
+  text-align: center;
 }
 
 .italic-left {
-    font-size: 125%;
-    font-style: italic;
-    text-align: left;
+  font-size: 125%;
+  font-style: italic;
+  text-align: left;
 }
 
 .italic-right {
-    font-size: 125%;
-    font-style: italic;
-    text-align: right;
+  font-size: 125%;
+  font-style: italic;
+  text-align: right;
 }
 
 .big-bold {
-    font-size: 150%;
-    font-weight: bold;
-    display: inline
+  font-size: 150%;
+  font-weight: bold;
+  display: inline
 }
 
 .big-bold-italic {
@@ -97,30 +179,30 @@ caption {
 }
 
 .mid-bold {
-    font-size: 115%;
-    font-weight: bold;
-    display: inline
+  font-size: 115%;
+  font-weight: bold;
+  display: inline
 }
 
 .select_all{
-    background: #ccc;
+  background: #ccc;
 }
 
 .select-option {
-    background: #ccc;
+  background: #ccc;
 }
 
 input[type="checkbox"] {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 .header-image {
-    float:left;
-    width:276px;
-    height:210px;
-    position: relative; 
-    top: 0%; 
-    left: 31%;
+  float:left;
+  width:276px;
+  height:210px;
+  position: relative; 
+  top: 0%; 
+  left: 31%;
 }
 
 /* Navbar container */
@@ -255,3 +337,25 @@ input[type="checkbox"] {
     display: block;
   }
  
+  /* Divider container */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Lines on sides */
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Text in middle */
+.divider-text {
+  padding: 0 10px;
+  color: #666;
+  font-size: 14px;
+}

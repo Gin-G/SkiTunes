@@ -19,7 +19,7 @@ class User(db.Model, UserMixin):
         self.user_id = user_id
         self.name = name
         self.email = email
-        self.profile_pic = profile_pic   
+        self.profile_pic = profile_pic
         self.pwd = generate_password_hash(pwd)  # Hash the password
         self.is_active = True
 
@@ -47,22 +47,16 @@ class User(db.Model, UserMixin):
         return next_id
 
     @classmethod
-    def create(cls, name, email, profile_pic, pwd):
-        # Generate the next user ID
-        user_id = cls.generate_next_user_id()
-        
-        # Check if email already exists
+    def create(cls, user_id, name, email, profile_pic, pwd):
+        # Remove the user_id generation since we're now passing it in
         existing_user = cls.query.filter_by(email=email).first()
         if existing_user:
             raise ValueError('Email already registered')
         
-        # Print debug information
         print("Creating user with:")
         print(f"User ID: {user_id}")
         print(f"Email: {email}")
         
-        # Create new user
-        # Note: generate_password_hash will be called in __init__
         user = cls(
             user_id=user_id, 
             name=name, 
@@ -71,7 +65,6 @@ class User(db.Model, UserMixin):
             pwd=pwd
         )
         
-        # Print the generated hash for verification
         print(f"Generated password hash: {user.pwd}")
         
         db.session.add(user)

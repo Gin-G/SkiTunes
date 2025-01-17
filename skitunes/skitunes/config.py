@@ -1,7 +1,9 @@
 import os
 
-SQLALCHEMY_DATABASE_URI = 'sqlite:///skitunes.db'
+# Flask secret key
 SECRET_KEY = os.environ.get('FLASK_SECRET')
+
+SQLALCHEMY_DATABASE_URI = 'sqlite:///skitunes.db'
 SQLALCHEMY_TRACK_MODIFICATIONS = False 
 
 MAIL_SERVER = 'smtp.gmail.com'

@@ -6,36 +6,36 @@ from skitunes.account.models import User
 class RegistrationForm(FlaskForm):
     name = StringField('Name', 
         validators=[DataRequired(message="Name is required"), 
-                    Length(min=2, max=50, message="Name must be between 2 and 50 characters")])
+                    Length(min=2, max=50, message="Name must be between 2 and 50 characters")],
+        render_kw={"placeholder": "Name"})
     email = StringField('Email', 
         validators=[DataRequired(message="Email is required"), 
-                    Email(message="Invalid email format")])
+                    Email(message="Invalid email format")],
+        render_kw={"placeholder": "Email"})
     password = PasswordField('Password', 
         validators=[
             DataRequired(message="Password is required"), 
             Length(min=8, max=100, message="Password must be at least 8 characters long")
-        ])
+        ],
+        render_kw={"placeholder": "Password"})
     confirm_password = PasswordField('Confirm Password', 
         validators=[
             DataRequired(message="Confirmation password is required"), 
             EqualTo('password', message='Passwords must match')
-        ])
+        ],
+        render_kw={"placeholder": "Confirm Password"})
     submit = SubmitField('Sign Up')
-
-    def validate_email(self, email):
-        """Custom validation to check if email already exists"""
-        user = User.query.filter_by(email=email.data).first()
-        if user:
-            raise ValidationError('That email is already registered. Please choose a different one.')
 
 class LoginForm(FlaskForm):
     email = StringField('Email', 
         validators=[
             DataRequired(message="Email is required"), 
             Email(message="Invalid email format")
-        ])
+        ],
+        render_kw={"placeholder": "Email"})
     password = PasswordField('Password', 
-        validators=[DataRequired(message="Password is required")])
+        validators=[DataRequired(message="Password is required")],
+        render_kw={"placeholder": "Password"})
     submit = SubmitField('Login')
 
 class PasswordResetRequestForm(FlaskForm):

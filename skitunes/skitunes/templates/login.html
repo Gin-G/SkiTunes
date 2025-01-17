@@ -27,6 +27,7 @@
         <div id="navbar"></div>
     </head>
     <body>
+        <div class="signup-bubble">
         <h1>Login</h1>
         
         {% with messages = get_flashed_messages(with_categories=true) %}
@@ -67,13 +68,17 @@
                 {{ form.submit(class="btn btn-primary") }}
             </div>
         </form>
+        
         <div class="text-center mt-3">
             <small>
                 Don't have an account? 
                 <a href="{{ url_for('register') }}">Sign Up</a>
             </small>
         </div>
-        <br>
-        <a href="{{ url_for('login') }}"><img src="{{url_for('static',  filename='google_logo.png')}}" style="width: 10%;"></a>
+        <div class="divider">
+            <span class="divider-text">or</span>
+        </div>
+        <a href="{{ url_for('login') }}"><img src="{{url_for('static',  filename='google_logo.png')}}" style="width: 90%;"></a>
+        </div>
     </body>
 </html>
