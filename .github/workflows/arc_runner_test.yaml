@@ -1,13 +1,76 @@
-name: SkiTunes ARC test
+name: SkiTunes ARC build
 
-on: push
+on: 
+  push:
+    paths:
+      - skitunes/**
+      - Dockerfile
 
 jobs:
-  checkout-and-echo:
-    runs-on: gh-arc-set-skitunes-runner
+  test-and-build:
+    runs-on: gh-arc-skitunes-scale-set
     steps:
       - name: Check out the repo
-        uses: actions/checkout@v3
-      - name: Run echo
+        uses: actions/checkout@v4
+        with:
+          ref: db-switch
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'  # Use the Python version your app requires
+
+      - name: Install dependencies
         run: |
-          echo $PATH
+          python -m pip install --upgrade pip
+          pip install -r skitunes/requirements.txt
+
+      - name: Verify Flask App Startup
+        run: |
+          cd skitunes
+          python -c "
+          import sys
+          try:
+              from skitunes import app
+              print('Flask app imported successfully')
+              # Attempt to import specific known dependencies
+              try:
+                  import email_validator
+                  print('email-validator is installed')
+              except ImportError:
+                  print('email-validator is missing')
+                  sys.exit(1)
+          except ImportError as e:
+              print(f'Import error: {e}')
+              sys.exit(1)
+          except Exception as e:
+              print(f'Error importing Flask app: {e}')
+              sys.exit(1)
+          "
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Get the current date for an image tag
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d.%H.%M')" >> $GITHUB_OUTPUT
+
+      - name: Build and push SkiTunes Flask image
+        run: |
+          docker buildx create --use --driver=remote tcp://buildkit-buildkit-service.arc-systems:1234
+          docker buildx build --push -t ${{ secrets.DOCKERHUB_USERNAME }}/skitunes-app:latest .
+          docker buildx build --push -t ${{ secrets.DOCKERHUB_USERNAME }}/skitunes-app:${{ steps.date.outputs.date }} .
+
+      - name: Update Helm chart with new image
+        run: |
+          sed -i "/skitunes-app/ c\    image: docker.io/ncging/skitunes-app:${{ steps.date.outputs.date }}" helm-chart/values.yaml
+
+      - name: Push changes to GitHub
+        run: |
+          git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git config --global user.name "$GITHUB_ACTOR"
+          git commit -a -m "Image build and push successful, updated Helm chart to use new image"
+          git push

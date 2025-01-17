@@ -1,12 +1,16 @@
 webapp:
-  name: skitunes
+  name: skitunes-dev
   group: skitunes
-  fqdn: skitunes.gingmachine
+  activeHost: skitunes-dev.ging.nickknows.net
+  previewHost: skitunes-dev-preview.ging.nickknows.net
   path: /
   replicaCount: 1
   container: 
-    image: docker.io/ncging/skitunes:2024-10-16.18.53
+    image: docker.io/ncging/skitunes-app:2025-01-17.03.24
     imagePullPolicy: Always
     port: 8000
 worker:
   replicaCount: 2
+rollout:
+  enabled: true
+  autoPromotionEnabled: true

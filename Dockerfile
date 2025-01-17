@@ -1,5 +1,11 @@
-FROM python:3
-COPY . .
+# Use the 
+FROM python:3.10-slim
+
+# Copy only the flask app files
+COPY skitunes/ .
+
+# Install Python Requirements 
 RUN pip install -r requirements.txt
-WORKDIR /skitunes
-CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
+
+# Run the app
+CMD ["python3", "wsgi.py", "--hot=0.0.0.0"]

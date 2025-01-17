@@ -22,14 +22,30 @@ spec:
         - name: FLASK_SECRET
           valueFrom:
             secretKeyRef:
-              name: flask-secret
+              name: skitunes-esos
               key: flask-secret
+        - name: SPOTIFY_CLIENT_ID
+          valueFrom:
+            secretKeyRef:
+              name: skitunes-esos
+              key: spotify-client-id
+        - name: SPOTIFY_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: skitunes-esos
+              key: spotify-client-secret
+        - name: GOOGLE_CLIENT_ID
+          valueFrom:
+            secretKeyRef:
+              name: skitunes-esos
+              key: google-client-id
+        - name: GOOGLE_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: skitunes-esos
+              key: google-client-secret
         image: {{ .Values.webapp.container.image }}
         imagePullPolicy: {{ .Values.webapp.container.imagePullPolicy }}
-        resources:
-          limits:
-            memory: {{ .Values.webapp.container.memory }}
-            cpu: {{ .Values.webapp.container.cpu }}
         ports:
         - containerPort: {{ .Values.webapp.container.port }}
         resources:

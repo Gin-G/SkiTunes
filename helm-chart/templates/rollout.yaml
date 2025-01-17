@@ -1,0 +1,58 @@
+{{- if .Values.rollout.enabled }}
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: {{ .Values.webapp.name }}
+  labels:
+    app: {{ .Values.webapp.name }}
+    argocd.argoproj.io/managed-by: skitunes  # Replace with your namespace
+  annotations:
+    argocd.argoproj.io/tracking-id: skitunes-dev 
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.webapp.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.webapp.name }}
+    spec:
+      containers:
+      - name: {{ .Values.webapp.name }}
+        image: {{ .Values.webapp.container.image }}
+        env:
+        - name: FLASK_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: flask-secret
+              key: flask-secret
+        imagePullPolicy: {{ .Values.webapp.container.imagePullPolicy }}
+        ports:
+        - containerPort: {{ .Values.webapp.container.port }}
+        resources:
+          limits:
+            cpu: '0'
+            memory: '0'
+        readinessProbe:
+          httpGet:
+            path: /health  # Add a health check endpoint in your Flask app
+            port: {{ .Values.webapp.container.port }}
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          failureThreshold: 3
+          successThreshold: 1
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: {{ .Values.webapp.container.port }}
+          initialDelaySeconds: 15
+          periodSeconds: 10
+          failureThreshold: 3
+  strategy:
+    blueGreen:
+      activeService: {{ .Values.webapp.name }}-active
+      previewService: {{ .Values.webapp.name }}-preview
+      autoPromotionEnabled: {{ .Values.rollout.autoPromotionEnabled | default false }}
+      autoPromotionSeconds: 30 
+{{- end }}

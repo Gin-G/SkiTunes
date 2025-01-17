@@ -13,9 +13,9 @@ import requests
 import os
 import json
 
-logger = logging.getLogger(__name__)
-log = logging.getLogger('werkzeug')
-log.setLevel(logging.ERROR)
+#logger = logging.getLogger(__name__)
+#log = logging.getLogger('werkzeug')
+#log.setLevel(logging.ERROR)
 
 @app.before_request
 def create_tables():

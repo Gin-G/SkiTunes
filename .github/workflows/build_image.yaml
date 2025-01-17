@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - skitunes/**
+      - Dockerfile
 
 jobs:
   deploy-docker-image:

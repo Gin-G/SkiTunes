@@ -1,20 +1,22 @@
 from flask import Blueprint, render_template, flash, url_for, redirect, request, session
-from flask_login import current_user, LoginManager, login_required, login_user, logout_user
-from skitunes import app
+from flask_login import current_user, login_required, login_user, logout_user
+from skitunes import app, mail, db, login_manager
 import requests
 from oauthlib.oauth2 import WebApplicationClient
 from skitunes.account.models import User
 from skitunes.spotify.functions import authorize, get_user
 from skitunes.variables.variables import *
-import os
+from skitunes.auth.forms import (
+    RegistrationForm, 
+    LoginForm, 
+    PasswordResetRequestForm, 
+    PasswordResetForm
+)
 import json
 import urllib.parse as urllibparse
 from urllib.parse import urlencode
-
-# User session management setup
-# https://flask-login.readthedocs.io/en/latest
-login_manager = LoginManager()
-login_manager.init_app(app)
+from flask_mail import Mail, Message
+import uuid
 
 # Flask-Login helper to retrieve a user from our db
 @login_manager.user_loader
@@ -33,17 +35,100 @@ def unauthorized():
 
 @app.route('/login_url')
 def login_url():
-    return render_template('login.html')
+    form = LoginForm()  # Create the form
+    return render_template('login.html', form=form)
 
-@app.route('/login_local', methods=["GET","POST"])
+@app.route('/login_local', methods=['GET', 'POST'])
 def login_local():
-    flash('Local login is being worked on currently but not yet available')
-    return render_template('skitunes.html')
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+    
+    form = LoginForm()
+    
+    if request.method == 'POST':
+        print("Login Form Submitted")
+        print("Form data:", request.form)
+        print("Form validate_on_submit():", form.validate_on_submit())
+        
+        if not form.validate_on_submit():
+            print("Form Errors:")
+            for field, errors in form.errors.items():
+                print(f"{field}: {errors}")
+        
+        if form.validate_on_submit():
+            # Debug: Check email exists
+            user = User.query.filter_by(email=form.email.data).first()
+            
+            if user:
+                print(f"User found: {user.email}")
+                print(f"User ID: {user.user_id}")
+                
+                # More detailed password verification
+                from werkzeug.security import check_password_hash
+                print("Manual password verification:")
+                print(f"Stored hash: {user.pwd}")
+                print(f"Attempted password: {form.password.data}")
+                manual_check = check_password_hash(user.pwd, form.password.data)
+                print(f"Manual check result: {manual_check}")
+                
+                # Test with different methods
+                print("Built-in method check:")
+                builtin_check = user.check_password(form.password.data)
+                print(f"Built-in check result: {builtin_check}")
+            else:
+                print(f"No user found with email: {form.email.data}")
+            
+            if user and user.check_password(form.password.data):
+                login_user(user)
+                flash('Login successful!', 'success')
+                return redirect(url_for('home'))
+            else:
+                print("Login failed: Invalid credentials")
+                flash('Invalid email or password.', 'danger')
+    
+    return render_template('login.html', form=form)
 
-@app.route('/signup')
-def signup():
-    flash('Registration is being worked on currently but not yet available')
-    return render_template('skitunes.html')
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    # If user is already logged in, redirect to home
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+    
+    form = RegistrationForm()
+    
+    if request.method == 'POST':
+        # Add detailed logging to understand form validation
+        print("Form submitted")
+        print("Form data:", request.form)
+        print("Form validate_on_submit():", form.validate_on_submit())
+        
+        # If form doesn't validate, print out specific errors
+        if not form.validate_on_submit():
+            print("Form Errors:")
+            for field, errors in form.errors.items():
+                print(f"{field}: {errors}")
+        
+        if form.validate_on_submit():
+            try:
+                # Use the built-in user ID generation method
+                user = User.create(
+                    name=form.name.data, 
+                    email=form.email.data, 
+                    profile_pic=None,  # No profile pic for local registration
+                    pwd=form.password.data
+                )
+                
+                # Log the user in
+                login_user(user)
+                
+                flash('Your account has been created! You are now logged in.', 'success')
+                return redirect(url_for('home'))
+            
+            except ValueError as e:
+                flash(str(e), 'danger')
+                print(f"ValueError: {e}")
+    
+    return render_template('register.html', form=form)
 
 @app.route('/login')
 def login():
@@ -128,6 +213,70 @@ def callback():
 def logout():
     logout_user()
     return redirect(url_for("home"))
+
+
+@app.route('/reset_password_request', methods=['GET', 'POST'])
+def reset_password_request():
+    # If user is already logged in, redirect to home
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+    
+    form = PasswordResetRequestForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        
+        if user:
+            # Generate reset token
+            reset_token = user.generate_reset_token()
+            
+            # Send reset email
+            reset_url = url_for('reset_password', token=reset_token, _external=True)
+            
+            msg = Message('Password Reset Request',
+                          sender='your-email@gmail.com',  # Your email
+                          recipients=[user.email])
+            msg.body = f'''To reset your password, visit the following link:
+{reset_url}
+
+If you did not make this request, simply ignore this email and no changes will be made.
+'''
+            
+            try:
+                mail.send(msg)
+                flash('An email has been sent with instructions to reset your password.', 'info')
+            except Exception as e:
+                flash('Failed to send reset email. Please try again later.', 'danger')
+        else:
+            flash('No account found with that email.', 'warning')
+    
+    return render_template('reset_password_request.html', form=form)
+
+@app.route('/reset_password/<token>', methods=['GET', 'POST'])
+def reset_password(token):
+    # If user is already logged in, redirect to home
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+    
+    # Verify the token
+    user = User.verify_reset_token(token)
+    
+    if user is None:
+        flash('That is an invalid or expired token.', 'warning')
+        return redirect(url_for('reset_password_request'))
+    
+    form = PasswordResetForm()
+    if form.validate_on_submit():
+        # Update the user's password
+        user.pwd = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        # Clear the reset token
+        user.reset_token = None
+        user.reset_token_expiration = None
+        db.session.commit()
+        
+        flash('Your password has been updated! You can now log in.', 'success')
+        return redirect(url_for('login_local'))
+    
+    return render_template('reset_password.html', form=form)
 
 @app.route('/spotify/auth', methods=["GET", "POST"])
 def spotify_auth():
