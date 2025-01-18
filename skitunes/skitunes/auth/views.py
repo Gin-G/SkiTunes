@@ -111,7 +111,11 @@ def register():
         
         if form.validate_on_submit():
             try:
-                user = User.create_local_user(
+                # Generate user_id before creating user
+                user_id = User.generate_next_user_id()
+                
+                user = User.create(
+                    user_id=user_id,  # Pass the generated user_id
                     name=form.name.data, 
                     email=form.email.data, 
                     profile_pic=None,
