@@ -12,6 +12,7 @@ from skitunes.auth.forms import (
     PasswordResetRequestForm, 
     PasswordResetForm
 )
+from skitunes.auth.functions import sanitize_form_data
 import json
 import urllib.parse as urllibparse
 from urllib.parse import urlencode
@@ -97,21 +98,20 @@ def register():
     
     if request.method == 'POST':
         print("Form submitted")
-        print("Form data:", request.form)
+        print("Form data:", sanitize_form_data(request.form))
         print("Form validate_on_submit():", form.validate_on_submit())
         
         if not form.validate_on_submit():
             print("Form Errors:")
             for field, errors in form.errors.items():
-                print(f"{field}: {errors}")
+                if field not in ['password', 'confirm_password']:
+                    print(f"{field}: {errors}")
+                else:
+                    print(f"{field}: [REDACTED]")
         
         if form.validate_on_submit():
             try:
-                # Generate user_id before creating user
-                user_id = User.generate_next_user_id()
-                
-                user = User.create(
-                    user_id=user_id,  # Pass the generated user_id
+                user = User.create_local_user(
                     name=form.name.data, 
                     email=form.email.data, 
                     profile_pic=None,
@@ -123,8 +123,16 @@ def register():
                 return redirect(url_for('home'))
             
             except ValueError as e:
-                flash(str(e), 'danger')
-                print(f"ValueError: {e}")
+                # Make sure error message doesn't contain password
+                safe_error = str(e)
+                if 'password' in safe_error.lower():
+                    safe_error = "An error occurred during registration"
+                flash(safe_error, 'danger')
+                return redirect(url_for('home'))  # Redirect to home with error message
+            except Exception as e:
+                # Handle any other unexpected errors
+                flash('An unexpected error occurred during registration. Please try again.', 'danger')
+                return redirect(url_for('home'))
     
     return render_template('register.html', form=form)
 
