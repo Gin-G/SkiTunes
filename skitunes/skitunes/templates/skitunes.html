@@ -43,12 +43,54 @@
             use the search fields below to figure out if that song currently stuck in your head really was in the opening segment of MSP's Seven Sunny Days…<br></p>
             </div><br>
             <br><br>
-
-            <form action="/skitunes/findmovie">
-                Song Name : <input type="text" id="song_name" name="song_name" placeholder="Come Alive"><br><br>
-                Song Artist : <input type="text" id="song_artist" name="song_artist" placeholder="Foo Fighters"><br><br>
-                Movie Year : <input type="text" id="movie_year" name="movie_year" placeholder="1999"> to <input type="text" id="movie_year2" name="movie_year2" placeholder="2000"><br><br>
-                <input type="submit" value="Search!">
+        <div class="signup-bubble">    
+            <h1>Find Movie</h1>
+            <form method="POST" action="{{ url_for('findmovie') }}">
+                {{ form.hidden_tag() }}
+                
+                <div class="form-group mb-3">
+                    {{ form.song_name(class="form-control") }}
+                    {% if form.song_name.errors %}
+                        <div class="text-danger">
+                            {% for error in form.song_name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+        
+                <div class="form-group mb-3">
+                    {{ form.song_artist(class="form-control") }}
+                    {% if form.song_artist.errors %}
+                        <div class="text-danger">
+                            {% for error in form.song_artist.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+        
+                <div class="form-group mb-3">
+                    <div class="year-range">
+                        {{ form.movie_year(class="form-control") }}
+                        <span>to</span>
+                        {{ form.movie_year2(class="form-control") }}
+                    </div>
+                    {% if form.movie_year.errors or form.movie_year2.errors %}
+                        <div class="text-danger">
+                            {% for error in form.movie_year.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                            {% for error in form.movie_year2.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+        
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-primary") }}
+                </div>
             </form>
 
             {% if current_user.is_authenticated %}
@@ -56,5 +98,6 @@
                 <a href="{{url_for('skibase')}}">View Full Database</a><br>
             {% endif %}
             </body>
+        </div>
     </head>
 </html>

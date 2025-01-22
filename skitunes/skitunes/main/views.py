@@ -6,6 +6,7 @@ import logging
 from skitunes import app, db, mail
 from skitunes.spotify.models import ski_movie_song_info, Movie
 from skitunes.spotify.functions import create_playlist, add_tracks
+from skitunes.main.forms import MovieSearchForm
 from flask.templating import render_template
 from flask_mail import Message
 import smtplib
@@ -23,12 +24,13 @@ def create_tables():
 
 @app.route('/')
 def home():
+    form = MovieSearchForm()
     if current_user.is_authenticated:
         name = current_user.name
         profile_pic = current_user.profile_pic
-        return render_template('skitunes.html', name=name, profile_pic=profile_pic)
+        return render_template('skitunes.html', name=name, profile_pic=profile_pic, form=form)
     else:
-        return redirect(url_for('skitunes'))
+        return render_template('skitunes.html', form=form)
 
 @app.route('/account')
 @login_required
