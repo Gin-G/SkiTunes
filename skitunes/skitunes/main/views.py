@@ -120,7 +120,7 @@ def findmovie():
     user_agent = request.headers.get('User-Agent')
     user_agent = user_agent.lower()
     log_info = "USER-AGENT : " + user_agent
-    logger.info('%s', log_info)
+    # logger.info('%s', log_info)
     if "iphone" in user_agent:
         try:
             song_name = request.args.get('song_name')
@@ -130,23 +130,23 @@ def findmovie():
             if len(song_artist) != 0:
                 if len(song_name) != 0:
                     log_info = "SEARCH - SONG_NAME : " + song_name + " SONG_ARTIST : " + song_artist
-                    logger.info('%s', log_info)
+                    # logger.info('%s', log_info)
                     filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_name.contains(song_name),ski_movie_song_info.song_artist.contains(song_artist)).all()
                     return render_template('skibase_lite.html', tracks = filter_info)
                 else:
                     log_info = "SEARCH - SONG_ARTIST : " + song_artist
-                    logger.info('%s', log_info)
+                    # logger.info('%s', log_info)
                     filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_artist.contains(song_artist)).all()
                 return render_template('skibase_lite.html', tracks = filter_info)
             elif len(song_name) != 0:
                 log_info = "SEARCH - SONG_NAME : " + song_name
-                logger.info('%s', log_info)
+                # logger.info('%s', log_info)
                 filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_name.contains(song_name)).all()
                 return render_template('skibase_lite.html', tracks = filter_info)
             elif len(movie_year) != 0:
                 if len(movie_year2) != 0:
                     log_info = "SEARCH - RANGE MOVIE_YEAR : " + movie_year + " to " + movie_year2
-                    logger.info('%s', log_info)
+                    # logger.info('%s', log_info)
                     year_list = []
                     if int(movie_year) > int(movie_year2):
                         years = range(int(movie_year), int(movie_year2)+1, 1)
@@ -166,7 +166,7 @@ def findmovie():
                         return render_template('movie_year_lite.html', movie_year = year_list)
                 else:
                     log_info = "SEARCH - MOVIE_YEAR : " + movie_year
-                    logger.info('%s', log_info)
+                    # logger.info('%s', log_info)
                     movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == movie_year).all()
                     year_list = []
                     for id in movie_filter_info:
@@ -175,12 +175,12 @@ def findmovie():
                     return render_template('movie_year_lite.html', movie_year = year_list)
             else:
                 log_info = "SEARCH - ALL"
-                logger.info('%s', log_info)
+                # logger.info('%s', log_info)
                 tracks = ski_movie_song_info.query.all()
                 return render_template('skibase_lite.html', tracks = tracks)
         except TypeError:
             log_info = "Type Error - returned all tracks"
-            logger.info('%s', log_info)
+            # logger.info('%s', log_info)
             tracks = ski_movie_song_info.query.all()
             return render_template('skibase_lite.html', tracks = tracks)
     elif "android" in user_agent:
@@ -192,23 +192,23 @@ def findmovie():
             if len(song_artist) != 0:
                 if len(song_name) != 0:
                     log_info = "SEARCH - SONG_NAME : " + song_name + " SONG_ARTIST : " + song_artist
-                    logger.info('%s', log_info)
+                    # logger.info('%s', log_info)
                     filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_name.contains(song_name),ski_movie_song_info.song_artist.contains(song_artist)).all()
                     return render_template('skibase_lite.html', tracks = filter_info)
                 else:
                     log_info = "SEARCH - SONG_ARTIST : " + song_artist
-                    logger.info('%s', log_info)
+                    # logger.info('%s', log_info)
                     filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_artist.contains(song_artist)).all()
                 return render_template('skibase_lite.html', tracks = filter_info)
             elif len(song_name) != 0:
                 log_info = "SEARCH - SONG_NAME : " + song_name
-                logger.info('%s', log_info)
+                # logger.info('%s', log_info)
                 filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_name.contains(song_name)).all()
                 return render_template('skibase_lite.html', tracks = filter_info)
             elif len(movie_year) != 0:
                 if len(movie_year2) != 0:
                     log_info = "SEARCH - RANGE MOVIE_YEAR : " + movie_year + " to " + movie_year2
-                    logger.info('%s', log_info)
+                    # logger.info('%s', log_info)
                     year_list = []
                     if int(movie_year) > int(movie_year2):
                         years = range(int(movie_year), int(movie_year2)+1, 1)
@@ -228,7 +228,7 @@ def findmovie():
                         return render_template('movie_year_lite.html', movie_year = year_list)
                 else:
                     log_info = "SEARCH - MOVIE_YEAR : " + movie_year
-                    logger.info('%s', log_info)
+                    # logger.info('%s', log_info)
                     movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == movie_year).all()
                     year_list = []
                     for id in movie_filter_info:
@@ -237,12 +237,12 @@ def findmovie():
                     return render_template('movie_year_lite.html', movie_year = year_list)
             else:
                 log_info = "SEARCH - ALL"
-                logger.info('%s', log_info)
+                # logger.info('%s', log_info)
                 tracks = ski_movie_song_info.query.all()
                 return render_template('skibase_lite.html', tracks = tracks)
         except TypeError:
             log_info = "Type Error - returned all tracks"
-            logger.info('%s', log_info)
+            # logger.info('%s', log_info)
             tracks = ski_movie_song_info.query.all()
             return render_template('skibase_lite.html', tracks = tracks)
     else:
@@ -254,23 +254,23 @@ def findmovie():
             if len(song_artist) != 0:
                 if len(song_name) != 0:
                     log_info = "SEARCH - SONG_NAME : " + song_name + " SONG_ARTIST : " + song_artist
-                    logger.info('%s', log_info)
+                    # logger.info('%s', log_info)
                     filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_name.contains(song_name),ski_movie_song_info.song_artist.contains(song_artist)).all()
                     return render_template('skibase.html', tracks = filter_info)
                 else:
                     log_info = "SEARCH - SONG_ARTIST : " + song_artist
-                    logger.info('%s', log_info)
+                    # logger.info('%s', log_info)
                     filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_artist.contains(song_artist)).all()
                 return render_template('skibase.html', tracks = filter_info)
             elif len(song_name) != 0:
                 log_info = "SEARCH - SONG_NAME : " + song_name
-                logger.info('%s', log_info)
+                # logger.info('%s', log_info)
                 filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_name.contains(song_name)).all()
                 return render_template('skibase.html', tracks = filter_info)
             elif len(movie_year) != 0:
                 if len(movie_year2) != 0:
                     log_info = "SEARCH - RANGE MOVIE_YEAR : " + movie_year + " to " + movie_year2
-                    logger.info('%s', log_info)
+                    # logger.info('%s', log_info)
                     year_list = []
                     if int(movie_year) > int(movie_year2):
                         years = range(int(movie_year), int(movie_year2)+1, 1)
@@ -290,7 +290,7 @@ def findmovie():
                         return render_template('movie_year_lite.html', movie_year = year_list)
                 else:
                     log_info = "SEARCH - MOVIE_YEAR : " + movie_year
-                    logger.info('%s', log_info)
+                    # logger.info('%s', log_info)
                     movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == movie_year).all()
                     year_list = []
                     for id in movie_filter_info:
@@ -299,12 +299,12 @@ def findmovie():
                     return render_template('movie_year.html', movie_year = year_list)
             else:
                 log_info = "SEARCH - ALL"
-                logger.info('%s', log_info)
+                # logger.info('%s', log_info)
                 tracks = ski_movie_song_info.query.all()
                 return render_template('skibase.html', tracks = tracks)
         except TypeError as e:
             log_info = "Type Error - returned all tracks" + str(e)
-            logger.info('%s', log_info)
+            # logger.info('%s', log_info)
             tracks = ski_movie_song_info.query.all()
             return render_template('skibase.html', tracks = tracks)
 

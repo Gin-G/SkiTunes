@@ -10,7 +10,6 @@ class User(db.Model, UserMixin):
     email = db.Column('Email', db.String(100), unique=True)
     profile_pic = db.Column('Picture', db.String(100))
     pwd = db.Column(db.String(300), nullable=False)
-    is_active = db.Column(db.Boolean, default=True)  # Add is_active column
 
     def get_id(self):
         return self.user_id
@@ -21,7 +20,6 @@ class User(db.Model, UserMixin):
         self.email = email
         self.profile_pic = profile_pic
         self.pwd = generate_password_hash(pwd)  # Hash the password
-        self.is_active = True
 
     def check_password(self, password):
         return check_password_hash(self.pwd, password)
