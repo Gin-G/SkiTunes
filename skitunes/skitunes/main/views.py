@@ -7,6 +7,7 @@ from skitunes import app, db, mail
 from skitunes.spotify.models import ski_movie_song_info, Movie
 from skitunes.spotify.functions import create_playlist, add_tracks
 from skitunes.main.forms import MovieSearchForm
+from skitunes.account.models import User
 from flask.templating import render_template
 from flask_mail import Message
 import smtplib
@@ -626,3 +627,16 @@ def bulk_import():
     
     flash(f'Bulk Import completed: {success_count} entries added, {duplicate_count} duplicates skipped')
     return redirect(url_for('home'))
+
+# In your routes.py or app.py
+@app.route('/admin/users')
+@login_required
+def admin_users():
+    # Check if current user is admin
+    if current_user.email not in ['nickco7@gmail.com', 'sgmorgan16@gmail.com']:
+        flash('Unauthorized access')
+        return redirect(url_for('home'))
+    
+    # Get all users
+    users = User.query.all()
+    return render_template('admin_users.html', users=users)

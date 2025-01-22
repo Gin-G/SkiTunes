@@ -36,8 +36,9 @@
         {% if current_user.is_authenticated %}
             <div id="create_playlist"></div>
         {% endif %}
+        <h1>Ski Tunes Database</h1>
+    <div class="table-container">
     <table border="4">
-        <caption style="font-size: 150%;">Ski Tunes Database</caption>
         <thead>
             <tr>
                 <th>Select</th>
@@ -160,6 +161,7 @@
             {% endfor %}
         </tbody>
     </table>
+    </div>
         </form>
 </body>
 </head>

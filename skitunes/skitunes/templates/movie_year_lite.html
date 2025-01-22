@@ -42,8 +42,9 @@
                 Playlist Name : <input type="text" id="playlist_name" name="playlist_name" placeholder="My Awesome Playlist"><br>
                 <button type="submit" name="submit-button" value="Create">Create Playlist</button><br><br>
         {% endif %}
+        <h1>Ski Tunes Database</h1>
+    <div class="table-container">
     <table border="4">
-        <caption style="font-size: 150%;">Ski Tunes Database</caption>
         <thead>
             <tr>
                 <th>Select</th>
@@ -109,6 +110,7 @@
             {% endfor %}
         </tbody>
     </table>
+    </div>
     {% if current_user.is_authenticated %}
     </form>
     {% endif %}

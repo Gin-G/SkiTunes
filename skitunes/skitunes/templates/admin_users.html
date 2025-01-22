@@ -26,19 +26,36 @@
     <body>
         <div id="header"></div>
         <div id="navbar"></div>
-        <h1>
-            Account Information
-        </h1>
-        <img src="{{ current_user.profile_pic }}"> <br>
-        <div class="mid-bold">{{ session.display_name }}</div><br>
-        <div class="mid-bold">{{ current_user.email }}</div><br>
-        <div class="mid-bold">Spotify Username : {{ session.spotify_user_id }}</div><br>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+                <div class="big-bold-italic">{{ message }}</div>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+
+<div class="container">
+    <h1>Registered Users</h1>
     {% if current_user.email in ['nickco7@gmail.com', 'sgmorgan16@gmail.com'] %}
-        <a href="{{url_for('admin_users')}}">List all registered users</a>
+        <table class="table-wrapper">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Unauthorized access</p>
     {% endif %}
-        <form action="/logout">
-            <input type="submit" value="Logout!">
-        </form>
-    </body>
-</head>
-</html>
+</div>

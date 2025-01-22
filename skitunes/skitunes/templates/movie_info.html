@@ -29,8 +29,9 @@
             {{ movie_name }} : {{ movie_co.movie_co }} : {{ movie_co.movie_year}}
         </h1>
         {{ movie_co.movie_img_url }}<hr>
+        <h1>Ski Tunes Database</h1>
+    <div class="table-container">
         <table border="4">
-            <caption style="font-size: 150%;">Movie Details</caption>
             <thead>
                 <tr>
                     <th>#</th>
@@ -70,6 +71,8 @@
             </tr>
             {% endfor %}
         {% endfor %}
+        </table>
+    </div>
     </body>
     </head>
 </html>
