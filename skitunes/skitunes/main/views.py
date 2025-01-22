@@ -547,14 +547,13 @@ def submit_correction(entry):
 @app.route('/delete_entry/<entry>', methods=['GET', 'POST'])
 @login_required
 def delete_entry(entry):
+    form = MovieSearchForm()
     song_data = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id == entry)
     if request.method == 'POST':
         db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id == entry).delete()
         db.session.commit()
         flash('Record was deleted')
-        name = current_user.name
-        profile_pic = current_user.profile_pic
-        return render_template('skitunes.html', name=name, profile_pic=profile_pic)
+        return render_template('skitunes.html', form=form)
     return render_template('delete_entry.html', song_data=song_data)
 
 @app.route('/bulkImport', methods=['GET', 'POST'])
