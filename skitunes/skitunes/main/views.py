@@ -561,26 +561,68 @@ def delete_entry(entry):
 def bulk_import():
     json_playlist = open('clean_data.json')
     json_playlist = json.load(json_playlist)
+    
+    success_count = 0
+    duplicate_count = 0
+    total_entries = len(json_playlist)
+    
+    print(f"Total entries to process: {total_entries}")
+    
     for track in json_playlist:
-        movie_name = track["Movie Name"]
-        movie_year = track["Movie Year"]
-        movie_co = track["Production Co."]
-        song_num = track["Song Number"]
-        song_artist = track["Artist"]
-        song_name = track["Song Name"]
-        song_album = track["Song Album"]
-        genres = str(track["Genres"])
-        spotify_link = track["Spotify Link"]
-        ski_type = track["Skiing type"]
-        skier_name = track["Skier Name(s)"]
-        location = track["Location"]
-        video_link  = 'Unknown'
-        if genres == "[]":
-            genres = "Unknown"
-        movie = Movie(movie_name=movie_name,movie_year=movie_year,movie_co=movie_co,movie_img_url='None')
-        movie_song_info = ski_movie_song_info(song_name = song_name, song_artist = song_artist, song_album = song_album, song_num=song_num, genres=genres, spotify_id=spotify_link, skier_name = skier_name, ski_type = ski_type, location=location, video_link = video_link)
-        movie_song_info.movie_details.append(movie)
-        db.session.add(movie_song_info)
-        db.session.commit()
-    flash('Bulk Import completed Successfully')
+        # For debugging, create the query separately
+        query = db.session.query(ski_movie_song_info)\
+            .join(ski_movie_song_info.movie_details)\
+            .filter(
+                ski_movie_song_info.song_name == track["Song Name"],
+                ski_movie_song_info.song_artist == track["Artist"],
+                ski_movie_song_info.song_album == track["Song Album"],
+                ski_movie_song_info.song_num == track["Song Number"],
+                ski_movie_song_info.genres == str(track["Genres"]) if track["Genres"] != "[]" else "Unknown",
+                ski_movie_song_info.spotify_id == track["Spotify Link"],
+                ski_movie_song_info.skier_name == track["Skier Name(s)"],
+                ski_movie_song_info.ski_type == track["Skiing type"],
+                ski_movie_song_info.location == track["Location"],
+                Movie.movie_name == track["Movie Name"],
+                Movie.movie_year == track["Movie Year"],
+                Movie.movie_co == track["Production Co."]
+            )
+        
+        existing_entry = query.first()
+        
+        if not existing_entry:
+            
+            movie = Movie(
+                movie_name=track["Movie Name"],
+                movie_year=track["Movie Year"],
+                movie_co=track["Production Co."],
+                movie_img_url='None'
+            )
+            
+            movie_song_info = ski_movie_song_info(
+                song_name=track["Song Name"],
+                song_artist=track["Artist"],
+                song_album=track["Song Album"],
+                song_num=track["Song Number"],
+                genres=str(track["Genres"]) if track["Genres"] != "[]" else "Unknown",
+                spotify_id=track["Spotify Link"],
+                skier_name=track["Skier Name(s)"],
+                ski_type=track["Skiing type"],
+                location=track["Location"],
+                video_link='Unknown'
+            )
+            
+            movie_song_info.movie_details.append(movie)
+            db.session.add(movie_song_info)
+            success_count += 1
+        else:
+            duplicate_count += 1
+    
+    db.session.commit()
+    
+    print(f"\nFinal counts:")
+    print(f"Total entries processed: {total_entries}")
+    print(f"Successful additions: {success_count}")
+    print(f"Duplicates skipped: {duplicate_count}")
+    
+    flash(f'Bulk Import completed: {success_count} entries added, {duplicate_count} duplicates skipped')
     return redirect(url_for('home'))
