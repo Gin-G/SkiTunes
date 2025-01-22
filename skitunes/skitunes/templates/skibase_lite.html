@@ -34,17 +34,20 @@
         <div id="navbar"></div>
         <br>
         {% if current_user.is_authenticated %}
-            <div class="mid-bold">Use the checkboxes, or the select all box, to pick songs you want in your playlist.<br>
-                Give the playlist the name, hit the Create Playlist button, and it will be added to your Spotify account.<br>
+            <div class="mid-bold"><p>Use the checkboxes, or the select all box, to pick songs you want in your playlist.<br>
+                Give the playlist a name, hit the Create Playlist button, and it will be added to your Spotify account.</p>
             </div>
-            <br>
+        <div class="signup-bubble">
             <form action="/skitunes/create_playlist" method="post">
-                Playlist Name : <input type="text" id="playlist_name" name="playlist_name" placeholder="My Awesome Playlist"><br>
-                <button type="submit" name="submit-button" value="Create">Create Playlist</button><br><br>
+                <div class="form-group mb-3">
+                    <input type="text" id="playlist_name" name="playlist_name" placeholder="Playlist Name" class="form-control">
+                </div>
+                <button type="submit" name="submit-button" value="Create" class="btn btn-primary">Create Playlist</button>
+        </div>
         {% endif %}
+        <h1>Ski Tunes Database</h1>
+        <div class="table-container">
             <table border="4">
-                <caption style="font-size: 150%;">Ski Tunes Database</caption>
-                
                 <thead>
                     <tr>
                         <th>Select</th>
@@ -108,6 +111,7 @@
                     {% endfor %}
                 </tbody>
             </table>
+            </div>
         </form>
     </body>
     </head>

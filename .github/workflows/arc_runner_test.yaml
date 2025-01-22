@@ -13,7 +13,7 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
         with:
-          ref: db-switch
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v4
