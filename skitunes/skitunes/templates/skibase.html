@@ -76,7 +76,9 @@
                     </label>
                 </th>
                 <th>
-                    <form action="/skitunes/filtersong"><input type="text" value="" placeholder="Filter Song Name" name="song_name"></form>
+                    <form action="/skitunes/filtersong">
+                        <input type="text" value="" placeholder="Filter Song Name" name="song_name">
+                    </form>
                 </th>
                 <th>        
                     <form action="/skitunes/filterartist">
@@ -133,7 +135,7 @@
                 <td>{{ track.song_name }}</td>
                 <td>{{ track.song_artist }}</td>
                 <td>{{ track.song_album }}</td>
-                <td>{{ track.genres }}</td>
+                <td>{{ track.genres|replace("'", "")|replace("[", "")|replace("]", "")|replace(",", ", ") }}</td>
                 {% for movie in track.movie_details %}
                     <td><a  href="{{url_for('ski_movie',  name=movie.movie_name)}}">{{ movie.movie_name }}</a></td>
                     <td><a  href="{{url_for('prod_co',  name=movie.movie_co)}}">{{ movie.movie_co }}</a></td>

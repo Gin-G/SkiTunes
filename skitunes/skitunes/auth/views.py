@@ -121,7 +121,7 @@ def register():
                     profile_pic=None,
                     pwd=form.password.data
                 )
-                
+
                 login_user(user)
                 flash('Your account has been created! You are now logged in.', 'success')
                 return redirect(url_for('home'))
@@ -222,6 +222,7 @@ def callback():
 @login_required
 def logout():
     logout_user()
+    session.clear()
     return redirect(url_for("home"))
 
 

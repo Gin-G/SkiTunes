@@ -32,7 +32,11 @@
         <img src="{{ current_user.profile_pic }}"> <br>
         <div class="mid-bold">{{ session.display_name }}</div><br>
         <div class="mid-bold">{{ current_user.email }}</div><br>
+    {% if not session.spotify_user_id %}
+        <a href="{{url_for('spotify_auth')}}">Login to Spotify</a>
+    {% else %}
         <div class="mid-bold">Spotify Username : {{ session.spotify_user_id }}</div><br>
+    {% endif %}
     {% if current_user.email in ['nickco7@gmail.com', 'sgmorgan16@gmail.com'] %}
         <a href="{{url_for('admin_users')}}">List all registered users</a>
     {% endif %}

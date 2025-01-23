@@ -85,9 +85,11 @@ def prod_co(name):
     movie_co = db.session.query(Movie).filter(Movie.movie_co == name).all()
     prod_list = []
     for id in movie_co:
-        filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
+        filter_info = db.session.query(ski_movie_song_info).filter(
+            ski_movie_song_info.db_id == id.parent_id 
+        ).all()
         prod_list.append(filter_info)
-    return render_template('movie_co.html', movie_co = prod_list)
+    return render_template('movie_co.html', movie_co=prod_list)
 
 @app.route('/skitunes/skibase/movie/year/<year>')
 @login_required
@@ -95,20 +97,33 @@ def year(year):
     movie_year = db.session.query(Movie).filter(Movie.movie_year == year).all()
     year_list = []
     for id in movie_year:
-        filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
+        filter_info = db.session.query(ski_movie_song_info).filter(
+            ski_movie_song_info.db_id == id.parent_id
+        ).all()
         year_list.append(filter_info)
-    return render_template('movie_year.html', movie_year = year_list)
+    return render_template('movie_year.html', movie_year=year_list)
 
 @app.route('/skitunes/skibase/movie/<name>')
 @login_required
 def ski_movie(name):
-    movie_info = db.session.query(Movie).filter(Movie.movie_name.contains(name)).all()
-    movie_co = db.session.query(Movie).filter(Movie.movie_name.contains(name)).first()
+    # Use exact matching instead of contains()
+    movie_info = db.session.query(Movie).filter(Movie.movie_name == name).all()
+    movie_co = db.session.query(Movie).filter(Movie.movie_name == name).first()
+    
     track_list = []
     for id in movie_info:
-        filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
+        # Also check if this filter should use exact matching
+        filter_info = db.session.query(ski_movie_song_info).filter(
+            ski_movie_song_info.db_id == id.parent_id  # Changed to exact matching
+        ).all()
         track_list.append(filter_info)
-    return render_template('movie_info.html', movie_info = track_list, movie_name = str(name), movie_co = movie_co)
+    
+    return render_template(
+        'movie_info.html',
+        movie_info=track_list,
+        movie_name=str(name),
+        movie_co=movie_co
+    )
 
 @app.route('/skitunes/skibase_lite')
 @login_required
@@ -397,14 +412,14 @@ def create_playlist_url():
         response = create_playlist(spotify_id, playlist_name)
     except AttributeError:
         flash('Issue creating playlist. Try logging back in to Spotify')
-        return redirect(url_for('skitunes'))
+        return redirect(url_for('home'))
     create_code = response.status_code
     response = response.json()
     try:
         new_playlist_uri = response['uri']
     except KeyError:
         flash('Issue creating playlist. Try logging back in to Spotify')
-        return redirect(url_for('skitunes'))
+        return redirect(url_for('home'))
     new_playlist_uri = new_playlist_uri.replace('spotify:playlist:','')
     print(track_list)
     print(len(track_list))
