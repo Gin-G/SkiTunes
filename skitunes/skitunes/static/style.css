@@ -20,7 +20,7 @@ body {
 /* Form container styles */
 .signup-bubble {
   margin: 20px auto;
-  width: 400px;  /* Fixed width instead of percentage for better control */
+  width: 75%;  /* Fixed width instead of percentage for better control */
   font-family: Arial, sans-serif;
   background-color: #FFFFFF;
   color: #454545;
