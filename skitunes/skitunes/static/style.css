@@ -20,7 +20,7 @@ body {
 /* Form container styles */
 .signup-bubble {
   margin: 20px auto;
-  width: 75%;  /* Fixed width instead of percentage for better control */
+  width: 400px;  /* Fixed width instead of percentage for better control */
   font-family: Arial, sans-serif;
   background-color: #FFFFFF;
   color: #454545;
@@ -250,7 +250,7 @@ input[type="checkbox"] {
     color: white;
     padding: 17px 6px;
     text-decoration: none;
-    margin-left: 1%;
+    margin-left: 2.5%;
   }
   
   /* The dropdown container */
@@ -267,7 +267,7 @@ input[type="checkbox"] {
     color: white;
     padding: -17px 6px;
     text-decoration: none;
-    margin-right: 1%;
+    margin-right: 2.5%;
     width: 100px;
   }
 
@@ -387,4 +387,19 @@ input[type="checkbox"] {
   padding: 0 10px;
   color: #666;
   font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+/* Registration Form Settings */
+/* Form container styles */
+.signup-bubble {
+  margin: 20px auto;
+  width: 75%;  /* Fixed width instead of percentage for better control */
+  font-family: Arial, sans-serif;
+  background-color: #FFFFFF;
+  color: #454545;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 }

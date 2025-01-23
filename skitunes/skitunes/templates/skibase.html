@@ -38,6 +38,52 @@
         <div class="mid-bold"><p>Use the checkboxes, or the select all box, to pick songs you want in your playlist.<br>
             Give the playlist a name, hit the Create Playlist button, and it will be added to your Spotify account.</p>
         </div>
+        <div class="table-container">
+        <table>
+            <tr>
+                <th>
+                    <form action="/skitunes/filtersong">
+                        <input type="text" value="" placeholder="Filter Song Name" name="song_name">
+                    </form>
+                </th>
+                <th>        
+                    <form action="/skitunes/filterartist">
+                        <input type="text" value="" placeholder="Filter Artist" name="song_artist">
+                    </form>
+                </th>
+                <th>  
+                    <form action="/skitunes/filteralbum">      
+                        <input type="text" value="" placeholder="Filter Album" name="song_album">
+                    </form>
+                </th>
+                <th>
+                    <form action="/skitunes/filtermovie">      
+                        <input type="text" value="" placeholder="Filter Movie Name" name="movie_name">
+                    </form>
+                </th>
+                <th>
+                    <form action="/skitunes/filtermovieco">
+                        <input type="text" value="" placeholder="Filter Production Co." name="movie_co">
+                    </form>
+                </th>
+                <th>
+                    <form action="/skitunes/filterskier">
+                        <input type="text" value="" placeholder="Filter Skier" name="skier_name">
+                    </form>
+                </th>
+                <th>
+                    <form action="/skitunes/filterlocation">
+                        <input type="text" value="" placeholder="Filter Location" name="location">
+                    </form>
+                </th>
+                <th>
+                    <form action="/skitunes/filtertype">
+                        <input type="text" value="" placeholder="Filter Segment Type" name="ski_type">
+                    </form>
+                </th>
+            </tr>
+        </table>
+        </div>
         <div class="signup-bubble">
         <form action="/skitunes/create_playlist" method="post">
             <div class="form-group mb-3">
@@ -51,7 +97,11 @@
     <table border="4" id="tblData">
         <thead>
             <tr>
-                <th>Select</th>
+                <th>Select All
+                    <label class="select_all" for="chkbxAll">
+                        <input onchange="selectAllChkboxes()" class="select_all" type="checkbox" id="chkbxAll"/>All
+                    </label>
+                </th>
                 <th>Song Name</th>
                 <th>Artist</th>
                 <th>Album</th>
@@ -69,58 +119,7 @@
         </thead>
 
         <tbody>
-            <tr>
-                <th>
-                    <label class="select_all" for="chkbxAll">
-                        <input onchange="selectAllChkboxes()" class="select_all" type="checkbox" id="chkbxAll"/>All
-                    </label>
-                </th>
-                <th>
-                    <form action="/skitunes/filtersong">
-                        <input type="text" value="" placeholder="Filter Song Name" name="song_name">
-                    </form>
-                </th>
-                <th>        
-                    <form action="/skitunes/filterartist">
-                        <input type="text" value="" placeholder="Filter Artist" name="song_artist">
-                    </form>
-                </th>
-                <th>  
-                    <form action="/skitunes/filteralbum">      
-                        <input type="text" value="" placeholder="Filter Album" name="song_album">
-                    </form>
-                </th>
-                <th></th>
-                <th>
-                    <form action="/skitunes/filtermovie">      
-                        <input type="text" value="" placeholder="Filter Movie Name" name="movie_name">
-                    </form>
-                </th>
-                <th>
-                    <form action="/skitunes/filtermovieco">
-                        <input type="text" value="" placeholder="Filter Production Co." name="movie_co">
-                    </form>
-                </th>
-                <th></th>
-                <th></th>
-                <th>
-                    <form action="/skitunes/filterskier">
-                        <input type="text" value="" placeholder="Filter Skier" name="skier_name">
-                    </form>
-                </th>
-                <th>
-                    <form action="/skitunes/filterlocation">
-                        <input type="text" value="" placeholder="Filter Location" name="location">
-                    </form>
-                </th>
-                <th>
-                    <form action="/skitunes/filtertype">
-                        <input type="text" value="" placeholder="Filter Segment Type" name="ski_type">
-                    </form>
-                </th>
-                <th></th>
-                <th></th>
-            </tr>
+
             {% for track in tracks %}
             <tr>
                 {% if 'Not Found' in track.spotify_id %}

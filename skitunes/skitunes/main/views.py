@@ -70,8 +70,8 @@ def create_playlist_js():
 
 @app.route('/skitunes')
 def skitunes():
-    tracks = ski_movie_song_info.query.all()
-    return render_template('skitunes.html', tracks = tracks)
+    form = MovieSearchForm()
+    return render_template('skitunes.html', form = form)
 
 @app.route('/skitunes/skibase')
 @login_required
@@ -336,6 +336,18 @@ def filter_movie():
         track_list.append(filter_info)
     return render_template('movie_co.html', movie_co = track_list)
 
+@app.route('/skitunes/filtermovielite')
+@login_required
+def filter_movie_lite():
+    name = request.args.get("movie_name")
+    movie_info = db.session.query(Movie).filter(Movie.movie_name.contains(name)).all()
+    #movie_co = db.session.query(Movie).filter(Movie.movie_name.contains(name)).first()
+    #track_list = []
+    #for id in movie_info:
+    #    filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
+    #    track_list.append(filter_info)
+    return render_template('skibase_lite.html', tracks = movie_info)
+
 @app.route('/skitunes/filterskier')
 @login_required
 def filter():
@@ -357,6 +369,21 @@ def filter_artist():
     filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_artist.contains(song_artist)).all()
     return render_template('skibase.html', tracks = filter_info)
 
+
+@app.route('/skitunes/filtersonglite')
+@login_required
+def filter_song_lite():
+    song_name = request.args.get("song_name")
+    filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_name.contains(song_name)).all()
+    return render_template('skibase_lite.html', tracks = filter_info)
+
+@app.route('/skitunes/filterartistlite')
+@login_required
+def filter_artist_lite():
+    song_artist = request.args.get("song_artist")
+    filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.song_artist.contains(song_artist)).all()
+    return render_template('skibase_lite.html', tracks = filter_info)
+
 @app.route('/skitunes/filteralbum')
 @login_required
 def filter_album():
@@ -374,6 +401,17 @@ def filter_movieco():
         filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
         prod_list.append(filter_info)
     return render_template('movie_co.html', movie_co = prod_list)
+
+@app.route('/skitunes/filtermoviecolite')
+@login_required
+def filter_movieco_lite():
+    name = request.args.get("movie_co")
+    movie_co = db.session.query(Movie).filter(Movie.movie_co.contains(name)).all()
+    prod_list = []
+    for id in movie_co:
+        filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
+        prod_list.append(filter_info)
+    return render_template('skibase_lite.html', tracks = movie_co)
 
 @app.route('/skitunes/filterlocation')
 @login_required

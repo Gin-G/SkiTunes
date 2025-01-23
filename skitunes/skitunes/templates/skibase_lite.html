@@ -10,25 +10,20 @@
         
           gtag('config', 'G-4L8K5WV7VD');
         </script>
-    <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}">
-    <script src="{{url_for('static',  filename='app.js')}}"></script>
-    <script src="{{url_for('static',  filename='export.js')}}"></script>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script>
-        $(function(){
-            $('#header').load("{{ url_for('header') }}")
-        })
-    </script>
-    <script>
-        $(function(){
-            $('#navbar').load("{{ url_for('navbar') }}")
-        })
-    </script>
-    <script>
-        $(function(){
-            $('#create_playlist').load("{{ url_for('create_playlist_js') }}")
-        })
-    </script>
+        <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}">
+        <script src="{{url_for('static',  filename='app.js')}}"></script>
+        <script src="{{url_for('static',  filename='export.js')}}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script>
+            $(function(){
+                $('#header').load("{{ url_for('header') }}")
+            })
+        </script>
+        <script>
+            $(function(){
+                $('#navbar').load("{{ url_for('navbar') }}")
+            })
+        </script>
     <body>
         <div id="header"></div>
         <div id="navbar"></div>
@@ -37,6 +32,30 @@
             <div class="mid-bold"><p>Use the checkboxes, or the select all box, to pick songs you want in your playlist.<br>
                 Give the playlist a name, hit the Create Playlist button, and it will be added to your Spotify account.</p>
             </div>
+        <div class="table-container">
+            <table border="4">
+                <tr>
+                    <th>
+                        <form action="/skitunes/filtersonglite"><input type="text" value="" placeholder="Filter Song Name" name="song_name"></form>
+                    </th>
+                    <th>        
+                        <form action="/skitunes/filterartistlite">
+                            <input type="text" value="" placeholder="Filter Artist" name="song_artist">
+                        </form>
+                    </th>
+                    <th>
+                        <form action="/skitunes/filtermovielite">      
+                            <input type="text" value="" placeholder="Filter Movie Name" name="movie_name">
+                        </form>
+                    </th>
+                    <th>
+                        <form action="/skitunes/filtermoviecolite">
+                            <input type="text" value="" placeholder="Filter Production Co." name="movie_co">
+                        </form>
+                    </th>
+                </tr>
+            </table>
+        </div>
         <div class="signup-bubble">
             <form action="/skitunes/create_playlist" method="post">
                 <div class="form-group mb-3">
@@ -50,7 +69,11 @@
             <table border="4">
                 <thead>
                     <tr>
-                        <th>Select</th>
+                        <th>Select All<br>
+                            <label class="select_all" for="chkbxAll">
+                                <input onchange="selectAllChkboxes()" class="select_all" type="checkbox" id="chkbxAll"/>
+                            </label>
+                        </th>
                         <th>Song Name</th>
                         <th>Artist</th>
                         <th>Movie Title</th>
@@ -60,31 +83,6 @@
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <th>
-                            <label class="select_all" for="chkbxAll">
-                                <input onchange="selectAllChkboxes()" class="select_all" type="checkbox" id="chkbxAll"/>All
-                            </label>
-                        </th>
-                        <th>
-                            <form action="/skitunes/filtersong"><input type="text" value="" placeholder="Filter Song Name" name="song_name"></form>
-                        </th>
-                        <th>        
-                            <form action="/skitunes/filterartist">
-                                <input type="text" value="" placeholder="Filter Artist" name="song_artist">
-                            </form>
-                        </th>
-                        <th>
-                            <form action="/skitunes/filtermovie">      
-                                <input type="text" value="" placeholder="Filter Movie Name" name="movie_name">
-                            </form>
-                        </th>
-                        <th>
-                            <form action="/skitunes/filtermovieco">
-                                <input type="text" value="" placeholder="Filter Production Co." name="movie_co">
-                            </form>
-                        </th>
-                    </tr>
                     {% for track in tracks %}
                     <tr>
                         {% if 'Not Found' in track.spotify_id %}
@@ -100,7 +98,7 @@
                         <th>{{ track.song_artist }}</th>
                             {% for movie in track.movie_details %}
                                 <th><a href="{{url_for('ski_movie',  name=movie.movie_name)}}">{{ movie.movie_name }}</a></th>
-                                <th>{{ movie.movie_co }}</th>
+                                <th><a  href="{{url_for('prod_co',  name=movie.movie_co)}}">{{ movie.movie_co }}</a></th>
                             {% endfor %}
                     {% if 'Not Found' in track.spotify_id %}
                         <th>{{ track.spotify_id }}</th>

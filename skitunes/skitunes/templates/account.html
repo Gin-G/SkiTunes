@@ -10,39 +10,42 @@
         
           gtag('config', 'G-4L8K5WV7VD');
         </script>
-    <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}">
-    <script src="static/app.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script>
-        $(function(){
-            $('#header').load("{{ url_for('header') }}")
-        })
-    </script>
-    <script>
-        $(function(){
-            $('#navbar').load("{{ url_for('navbar') }}")
-        })
-    </script>
+        <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}">
+        <script src="static/app.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script>
+            $(function(){
+                $('#header').load("{{ url_for('header') }}")
+            })
+        </script>
+        <script>
+            $(function(){
+                $('#navbar').load("{{ url_for('navbar') }}")
+            })
+        </script>
     <body>
         <div id="header"></div>
         <div id="navbar"></div>
-        <h1>
-            Account Information
-        </h1>
-        <img src="{{ current_user.profile_pic }}"> <br>
-        <div class="mid-bold">{{ session.display_name }}</div><br>
-        <div class="mid-bold">{{ current_user.email }}</div><br>
-    {% if not session.spotify_user_id %}
-        <a href="{{url_for('spotify_auth')}}">Login to Spotify</a>
-    {% else %}
-        <div class="mid-bold">Spotify Username : {{ session.spotify_user_id }}</div><br>
-    {% endif %}
-    {% if current_user.email in ['nickco7@gmail.com', 'sgmorgan16@gmail.com'] %}
-        <a href="{{url_for('admin_users')}}">List all registered users</a>
-    {% endif %}
-        <form action="/logout">
-            <input type="submit" value="Logout!">
-        </form>
+        <h1>Account Information</h1>
+        <div class="signup-bubble">
+            {% if not current_user.profile_pic %}
+            {% else %}
+                <img src="{{ current_user.profile_pic }}"> <br>
+            {% endif %}
+                <div class="mid-bold">{{ current_user.name }}</div><br>
+                <div class="mid-bold">Email : {{ current_user.email }}</div><br>
+            {% if not session.spotify_user_id %}
+                <hr><a href="{{url_for('spotify_auth')}}">Login to Spotify</a><hr>
+            {% else %}
+                <div class="mid-bold">Spotify Username : {{ session.spotify_user_id }}</div><br>
+            {% endif %}
+            {% if current_user.email in ['nickco7@gmail.com', 'sgmorgan16@gmail.com'] %}
+                <hr><a href="{{url_for('admin_users')}}">List all registered users</a><hr>
+            {% endif %}
+            <form action="/logout">
+                <input type="submit" value="Logout!" class="btn btn-primary">
+            </form>
+        </div>
     </body>
 </head>
 </html>
