@@ -328,25 +328,30 @@ def findmovie():
 @login_required
 def filter_movie():
     name = request.args.get("movie_name")
-    movie_info = db.session.query(Movie).filter(Movie.movie_name.contains(name)).all()
-    movie_co = db.session.query(Movie).filter(Movie.movie_name.contains(name)).first()
-    track_list = []
-    for id in movie_info:
-        filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
-        track_list.append(filter_info)
-    return render_template('movie_co.html', movie_co = track_list)
+    
+    # Query tracks associated with movies containing the search string
+    tracks = (
+        db.session.query(ski_movie_song_info)
+        .join(ski_movie_song_info.movie_details)
+        .filter(Movie.movie_name.contains(name))
+        .all()
+    )
+    return render_template('skibase.html', tracks = tracks)
 
 @app.route('/skitunes/filtermovielite')
 @login_required
 def filter_movie_lite():
     name = request.args.get("movie_name")
-    movie_info = db.session.query(Movie).filter(Movie.movie_name.contains(name)).all()
-    #movie_co = db.session.query(Movie).filter(Movie.movie_name.contains(name)).first()
-    #track_list = []
-    #for id in movie_info:
-    #    filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
-    #    track_list.append(filter_info)
-    return render_template('skibase_lite.html', tracks = movie_info)
+    
+    # Query tracks associated with movies containing the search string
+    tracks = (
+        db.session.query(ski_movie_song_info)
+        .join(ski_movie_song_info.movie_details)
+        .filter(Movie.movie_name.contains(name))
+        .all()
+    )
+    
+    return render_template('skibase_lite.html', tracks=tracks)
 
 @app.route('/skitunes/filterskier')
 @login_required
@@ -395,23 +400,31 @@ def filter_album():
 @login_required
 def filter_movieco():
     name = request.args.get("movie_co")
-    movie_co = db.session.query(Movie).filter(Movie.movie_co.contains(name)).all()
-    prod_list = []
-    for id in movie_co:
-        filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
-        prod_list.append(filter_info)
-    return render_template('movie_co.html', movie_co = prod_list)
+    
+    # Query tracks associated with movies from the specified production company
+    tracks = (
+        db.session.query(ski_movie_song_info)
+        .join(ski_movie_song_info.movie_details)
+        .filter(Movie.movie_co.contains(name))
+        .all()
+    )
+    
+    return render_template('skibase.html', tracks=tracks)
 
 @app.route('/skitunes/filtermoviecolite')
 @login_required
 def filter_movieco_lite():
     name = request.args.get("movie_co")
-    movie_co = db.session.query(Movie).filter(Movie.movie_co.contains(name)).all()
-    prod_list = []
-    for id in movie_co:
-        filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
-        prod_list.append(filter_info)
-    return render_template('skibase_lite.html', tracks = movie_co)
+    
+    # Query tracks associated with movies from the specified production company
+    tracks = (
+        db.session.query(ski_movie_song_info)
+        .join(ski_movie_song_info.movie_details)
+        .filter(Movie.movie_co.contains(name))
+        .all()
+    )
+    
+    return render_template('skibase_lite.html', tracks = tracks)
 
 @app.route('/skitunes/filterlocation')
 @login_required
