@@ -306,23 +306,30 @@ def spotify_auth():
 @app.route('/spotify/callback', methods=["GET", "POST"])
 def spotify_callback():
     code = request.args.get("code")
-    state =  request.args.get("state")
+    state = request.args.get("state")
     response = authorize(code)
+    
     try:
         access_token = response['access_token']
         session['spotify_access_token'] = access_token
         expires = response['expires_in']
         refresh_token = response['refresh_token']
         session['spotify_refresh_token'] = refresh_token
-    except KeyError:
-        pass
+    except Exception:
+        flash('Authentication failed. Please contact support.', 'error')
+        return redirect(url_for('home'))
+    
     user = get_user()
-    user = user.json()
+    
     try:
-        spotify_user_id = user['id']
-        display_name = user['display_name']
+        user_data = user.json()
+        spotify_user_id = user_data['id']
+        display_name = user_data['display_name']
         session['display_name'] = display_name
         session['spotify_user_id'] = spotify_user_id
-    except KeyError:
-        pass    
+    except Exception:
+        flash('User data retrieval failed', 'error')
+        flash('You need to be added as a user in the Spotify Developer Dashboard', 'error')
+        return redirect(url_for('home'))
+    
     return redirect(url_for('home'))
