@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4L8K5WV7VD"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-4L8K5WV7VD');
+        </script>
+        <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}">
+        <script src="{{url_for('static',  filename='app.js')}}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script>
+            $(function(){
+                $('#header').load("{{ url_for('header') }}")
+            })
+        </script>
+        <script>
+            $(function(){
+                $('#navbar').load("{{ url_for('navbar') }}")
+            })
+        </script>
+        {% block extra_head %}{% endblock %}
+    </head>
+    <body>
+        <div id="header"></div>
+        <div id="navbar"></div>
+        
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+                <div class="big-bold-italic">{{ message }}</div>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+        
+        {% block content %}{% endblock %}
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>About SkiTunes</h3>
+                    <p>A database of ski movie soundtracks curated with passion since {% block footer_year %}2021{% endblock %}.</p>
+                    <p>Created by Nick and Steve - connecting ski culture and music for mountain enthusiasts.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Support Our Work</h3>
+                    <p>Enjoying the database? Consider supporting our server costs and future development.</p>
+                    {% block donation_link %}
+                    <a href="#" class="donation-button">Donate</a>
+                    {% endblock %}
+                </div>
+                <div class="footer-section contact">
+                    <h3>Contact</h3>
+                    <p>Questions or suggestions?</p>
+                    <p>Email: <a href="mailto:contact@skimoviesongs.com">contact@skimoviesongs.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {% block copyright_year %}2025{% endblock %} SkiTunes. All rights reserved.</p>
+            </div>
+        </footer>
+    </body>
+</html>

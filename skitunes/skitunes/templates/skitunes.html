@@ -1,97 +1,61 @@
-<!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4L8K5WV7VD"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'G-4L8K5WV7VD');
-        </script>
-    <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}">
-    <script src="static/app.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script>
-        $(function(){
-            $('#header').load("{{ url_for('header') }}")
-        })
-    </script>
-    <script>
-        $(function(){
-            $('#navbar').load("{{ url_for('navbar') }}")
-        })
-    </script>
-    <body>
-        <div id="header"></div>
-        <div id="navbar"></div>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <ul class=flashes>
-            {% for message in messages %}
-                <div class="big-bold-italic">{{ message }}</div>
-            {% endfor %}
-            </ul>
-        {% endif %}
-        {% endwith %}
-        {{ data }}
-        <br>
-        <div class="big-bold"><p>Search our massive database of soundtracks for nearly every ski movie ever produced. </p></div>
-        <div class="signup-bubble">   
-            <form method="GET" action="{{ url_for('findmovie') }}">
-                {{ form.hidden_tag() }}
-                
-                <div class="form-group mb-3">
-                    {{ form.song_name(class="form-control") }}
-                    {% if form.song_name.errors %}
-                        <div class="text-danger">
-                            {% for error in form.song_name.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-                </div>
-        
-                <div class="form-group mb-3">
-                    {{ form.song_artist(class="form-control") }}
-                    {% if form.song_artist.errors %}
-                        <div class="text-danger">
-                            {% for error in form.song_artist.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-                </div>
-        
-                <div class="form-group mb-3">
-                    <div class="year-range">
-                        {{ form.movie_year(class="form-control") }}
-                        <span>to</span>
-                        {{ form.movie_year2(class="form-control") }}
-                    </div>
-                    {% if form.movie_year.errors or form.movie_year2.errors %}
-                        <div class="text-danger">
-                            {% for error in form.movie_year.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                            {% for error in form.movie_year2.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-                </div>
-        
-                <div class="form-group">
-                    {{ form.submit(class="btn btn-primary") }}
-                </div>
-            </form>
+{% extends "base.html" %}
 
-            {% if current_user.is_authenticated %}
-                <a href="{{url_for('skibase_lite')}}">View Small Database</a><br>
-                <a href="{{url_for('skibase')}}">View Full Database</a><br>
-            {% endif %}
-            </body>
-        </div>
-    </head>
-</html>
+{% block content %}
+    {{ data }}
+    <br>
+    <div class="big-bold"><p>Search our massive database of soundtracks for nearly every ski movie ever produced. </p></div>
+    <div class="signup-bubble">   
+        <form method="GET" action="{{ url_for('findmovie') }}">
+            {{ form.hidden_tag() }}
+            
+            <div class="form-group mb-3">
+                {{ form.song_name(class="form-control") }}
+                {% if form.song_name.errors %}
+                    <div class="text-danger">
+                        {% for error in form.song_name.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+    
+            <div class="form-group mb-3">
+                {{ form.song_artist(class="form-control") }}
+                {% if form.song_artist.errors %}
+                    <div class="text-danger">
+                        {% for error in form.song_artist.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+    
+            <div class="form-group mb-3">
+                <div class="year-range">
+                    {{ form.movie_year(class="form-control") }}
+                    <span>to</span>
+                    {{ form.movie_year2(class="form-control") }}
+                </div>
+                {% if form.movie_year.errors or form.movie_year2.errors %}
+                    <div class="text-danger">
+                        {% for error in form.movie_year.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                        {% for error in form.movie_year2.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+    
+            <div class="form-group">
+                {{ form.submit(class="btn btn-primary") }}
+            </div>
+        </form>
+
+        {% if current_user.is_authenticated %}
+            <a href="{{url_for('skibase_lite')}}">View Small Database</a><br>
+            <a href="{{url_for('skibase')}}">View Full Database</a><br>
+        {% endif %}
+    </div>
+{% endblock %}

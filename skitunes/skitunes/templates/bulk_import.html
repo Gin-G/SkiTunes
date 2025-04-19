@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4L8K5WV7VD"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-4L8K5WV7VD');
+        </script>
+        <link rel="stylesheet" href="{{url_for('static',  filename='style.css')}}">
+        <script src="{{url_for('static',  filename='export.js')}}"></script>
+        <script src="{{url_for('static',  filename='app.js')}}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script>
+            $(function(){
+                $('#header').load("{{ url_for('header') }}")
+            })
+        </script>
+        <script>
+            $(function(){
+                $('#navbar').load("{{ url_for('navbar') }}")
+            })
+        </script>
+    </head>
+
+    <body>
+        <div id="header"></div>
+        <div id="navbar"></div>
+        <br>
+
+        <h1>Bulk Import Options</h1>
+        
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+                <div class="big-bold-italic">{{ message }}</div>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+        <div class="bubble">
+            <div class="big-bold">Instructions</div>
+            <div class="mid-bold">CSV Upload Instructions:</div>
+            <ol>
+                <li>Download the CSV template using the button provided.</li>
+                <li>Fill in the template with your data, keeping the column headers intact.</li>
+                <li>Only fields marked with * are required (Song Name, Artist, Movie Name, Production Co.)</li>
+                <li>Leave other fields blank if information is not available.</li>
+                <li>Save the file as a CSV.</li>
+                <li>Upload the completed CSV file using the form.</li>
+            </ol>
+            
+            <div class="mid-bold">Manual Entry Instructions:</div>
+            <ol>
+                <li>Fill in all required fields (marked with *) in the form above.</li>
+                <li>Optional fields can be left blank and will be set to "Unknown".</li>
+                <li>Click Submit to add the entry to the database.</li>
+                <li>For multiple entries, submit the form repeatedly.</li>
+            </ol>
+            
+            <div class="mid-bold">Required Fields:</div>
+            <ul>
+                <li><strong>Song Name*</strong>: The name of the song</li>
+                <li><strong>Artist*</strong>: The artist of the song</li>
+                <li><strong>Movie Name*</strong>: The name of the ski movie</li>
+                <li><strong>Production Co.*</strong>: Production company</li>
+            </ul>
+            
+            <div class="mid-bold">Optional Fields:</div>
+            <ul>
+                <li><strong>Movie Year</strong>: Year the movie was released</li>
+                <li><strong>Song Album</strong>: The album the song is from</li>
+                <li><strong>Song Number</strong>: The track number</li>
+                <li><strong>Genres</strong>: Song genres as a list, e.g., ['Rock', 'Pop']</li>
+                <li><strong>Spotify Link</strong>: Spotify ID or full link</li>
+                <li><strong>Skier Name(s)</strong>: Name(s) of the skier(s)</li>
+                <li><strong>Skiing type</strong>: Type of skiing shown</li>
+                <li><strong>Location</strong>: Filming location</li>
+                <li><strong>Video Link</strong>: Link to video segment</li>
+            </ul>
+            <br>
+            <div class="big-bold-italic">
+                Note: The system will check for duplicate entries and will not add songs that 
+                already exist with the same artist in the same movie.
+            </div>
+        </div>
+
+        <div class="bubble">
+            <div class="big-bold">CSV Upload</div>
+            <p>Upload a CSV file with ski movie song information.</p>
+            
+            <a href="{{ url_for('download_csv_template') }}" class="btn btn-primary">
+                Download CSV Template
+            </a>
+            
+            <form method="POST" action="{{ url_for('process_csv_upload') }}" enctype="multipart/form-data">
+                {{ upload_form.hidden_tag() }}
+                
+                <p>
+                    {{ upload_form.csv_file.label }}
+                    {{ upload_form.csv_file() }}
+                    {% if upload_form.csv_file.errors %}
+                        <div class="text-danger">
+                            {% for error in upload_form.csv_file.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </p>
+                
+                <p>
+                    {{ upload_form.submit(class="btn btn-primary") }}
+                </p>
+            </form>
+        </div>
+        
+        <div class="bubble">
+            <div class="big-bold">Manual Entry Form</div>
+            <p>Enter the details for a new song entry below. Fields marked with * are required.</p>
+            
+            <form method="POST" action="{{ url_for('process_manual_entry') }}">
+                {{ manual_form.hidden_tag() }}
+                
+                <div class="form-group">
+                    <!-- Required fields -->
+                    <p><span class="required">Song Title</span>: {{ manual_form.song_name(placeholder="Song Name") }}</p>
+                    {% if manual_form.song_name.errors %}
+                        <div class="text-danger">
+                            {% for error in manual_form.song_name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                
+                    <p><span class="required">Artist</span>: {{ manual_form.song_artist(placeholder="Artist") }}</p>
+                    {% if manual_form.song_artist.errors %}
+                        <div class="text-danger">
+                            {% for error in manual_form.song_artist.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                
+                    <p><span class="required">Movie Title</span>: {{ manual_form.movie_name(placeholder="Movie Name") }}</p>
+                    {% if manual_form.movie_name.errors %}
+                        <div class="text-danger">
+                            {% for error in manual_form.movie_name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                
+                    <p><span class="required">Production Company</span>: {{ manual_form.movie_co(placeholder="Production Company") }}</p>
+                    {% if manual_form.movie_co.errors %}
+                        <div class="text-danger">
+                            {% for error in manual_form.movie_co.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    
+                    <!-- Optional fields -->
+                    <p>Movie Year: {{ manual_form.movie_year(placeholder="Year") }}</p>
+                    {% if manual_form.movie_year.errors %}
+                        <div class="text-danger">
+                            {% for error in manual_form.movie_year.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    
+                    <p>Album: {{ manual_form.song_album(placeholder="Album") }}</p>
+                    {% if manual_form.song_album.errors %}
+                        <div class="text-danger">
+                            {% for error in manual_form.song_album.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                
+                    <p>Song Number: {{ manual_form.song_num(placeholder="Song Number") }}</p>
+                    {% if manual_form.song_num.errors %}
+                        <div class="text-danger">
+                            {% for error in manual_form.song_num.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                
+                    <p>Genres: {{ manual_form.genres(placeholder="['Rock', 'Pop']") }}</p>
+                    {% if manual_form.genres.errors %}
+                        <div class="text-danger">
+                            {% for error in manual_form.genres.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                
+                    <p>Spotify Link: {{ manual_form.spotify_id(placeholder="https://open.spotify.com/track/...") }}</p>
+                    {% if manual_form.spotify_id.errors %}
+                        <div class="text-danger">
+                            {% for error in manual_form.spotify_id.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                
+                    <p>Skier Name(s): {{ manual_form.skier_name(placeholder="Skier Name") }}</p>
+                    {% if manual_form.skier_name.errors %}
+                        <div class="text-danger">
+                            {% for error in manual_form.skier_name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                
+                    <p>Primary Ski Style: {{ manual_form.ski_type(placeholder="Powder, Freestyle, etc.") }}</p>
+                    {% if manual_form.ski_type.errors %}
+                        <div class="text-danger">
+                            {% for error in manual_form.ski_type.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                
+                    <p>Location: {{ manual_form.location(placeholder="Location") }}</p>
+                    {% if manual_form.location.errors %}
+                        <div class="text-danger">
+                            {% for error in manual_form.location.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                
+                    <p>Video Link: {{ manual_form.video_link(placeholder="https://...") }}</p>
+                    {% if manual_form.video_link.errors %}
+                        <div class="text-danger">
+                            {% for error in manual_form.video_link.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                
+                <p>
+                    {{ manual_form.submit(class="btn btn-primary") }}
+                </p>
+            </form>
+        </div>
+    </body>
+</html>

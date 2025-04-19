@@ -23,5 +23,6 @@ login_manager.login_view = 'login_local'  # specify the login route
 
 from skitunes.main import views
 from skitunes.auth import views
+from skitunes.imports import views
 from skitunes.metrics import views
 #from skitunes.logs import views

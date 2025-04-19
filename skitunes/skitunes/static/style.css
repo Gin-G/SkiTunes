@@ -16,6 +16,42 @@ body {
   justify-content: space-between
 }
 
+/* Style for ordered lists in bubbles */
+.bubble ol, .bubble ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto;
+  padding-left: 2em;
+  width: 80%; /* Set width to control how much space the list takes */
+}
+
+/* Style for list items in bubbles */
+.bubble li {
+  margin-bottom: 8px;
+  text-align: left;
+  padding-left: 5px;
+}
+
+/* Add some padding to the instructions section for better readability */
+.bubble .mid-bold {
+  display: block;
+  margin: 15px 0 10px 0;
+  text-align: center;
+}
+
+/* Add some spacing between sections */
+.bubble .big-bold {
+  display: block;
+  margin: 20px 0 15px 0;
+  text-align: center;
+}
+
+/* Ensure instruction paragraphs stay centered */
+.bubble > p {
+  text-align: center;
+  margin: 15px auto;
+}
+
 /* Registration Form Settings */
 /* Form container styles */
 .signup-bubble {
@@ -387,6 +423,93 @@ input[type="checkbox"] {
   padding: 0 10px;
   color: #666;
   font-size: 14px;
+}
+
+/* Footer Styles */
+.site-footer {
+  background-color: #041931;
+  color: #fff;
+  padding: 40px 0 20px;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 20px;
+  padding: 0 15px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #87CEEB;
+  text-decoration: underline;
+}
+
+.donation-button {
+  display: inline-block;
+  background-color: #454545;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.donation-button:hover {
+  background-color: darkblue;
+  text-decoration: none !important;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 12px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+  
+  .footer-section {
+      width: 100%;
+      padding: 0 10px;
+      margin-bottom: 30px;
+  }
 }
 
 @media screen and (max-width: 768px) {
