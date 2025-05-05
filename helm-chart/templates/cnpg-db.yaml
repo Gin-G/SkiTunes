@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.webapp.name }}-pgdb
   namespace: {{ .Release.Namespace }}
 spec:  
-    instances: 3
+    instances: 1
     storage:
       size: 5Gi
     storageClass: rook-cephfs
