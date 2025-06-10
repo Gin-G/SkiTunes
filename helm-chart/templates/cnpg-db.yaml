@@ -4,9 +4,17 @@ metadata:
   name: {{ .Values.webapp.name }}-pgdb
   namespace: {{ .Release.Namespace }}
 spec:  
-    instances: 1
-    storage:
-        size: 5Gi
-    storageClass: rook-cephfs
-    nodeSelector: 
-        kubernetes.io/hostname: "gingmachine"
+  instances: 1
+  storage:
+    size: 5Gi
+  storageClass: rook-cephfs
+  nodeSelector: 
+    kubernetes.io/hostname: "gingmachine"
+
+  # Create a standard user from user_external_secret
+  bootstrap:
+    initdb:
+      database: {{ .Values.db.app.name }}
+      owner: {{ .Values.db.app.owner }}
+      secret:
+        name: {{ .Values.db.name }}-app-user
