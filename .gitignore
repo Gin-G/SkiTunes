@@ -3,6 +3,13 @@ skitunes.db
 skitunes/skitunes/spotify/spotify_config.py
 *client_secret*
 
+# Log files (directory kept via .gitkeep)
+skitunes/log/*
+!skitunes/log/.gitkeep
+
+# One-off scripts
+skitunes/migrate_data.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

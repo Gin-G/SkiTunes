@@ -131,11 +131,9 @@
                 <td>{{ track.song_artist }}</td>
                 <td>{{ track.song_album }}</td>
                 <td>{{ track.genres }}</td>
-                {% for movie in track.movie_details %}
-                    <td><a  href="{{url_for('ski_movie',  name=movie.movie_name)}}">{{ movie.movie_name }}</a></td>
-                    <td><a  href="{{url_for('prod_co',  name=movie.movie_co)}}">{{ movie.movie_co }}</a></td>
-                    <td><a  href="{{url_for('year',  year=movie.movie_year)}}">{{ movie.movie_year}}</a></td>
-                {% endfor %}
+                <td><a href="{{url_for('ski_movie', name=track.movie.movie_name)}}">{{ track.movie.movie_name }}</a></td>
+                <td><a href="{{url_for('prod_co', name=track.movie.movie_co)}}">{{ track.movie.movie_co }}</a></td>
+                <td><a href="{{url_for('year', year=track.movie.movie_year)}}">{{ track.movie.movie_year }}</a></td>
                 <td>{{ track.song_num }}</td>
                 <td>{{ track.skier_name }}</td>
                 <td>{{ track.location }}</td>

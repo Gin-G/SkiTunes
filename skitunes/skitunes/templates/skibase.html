@@ -137,11 +137,9 @@
                 <td>{{ track.song_artist }}</td>
                 <td>{{ track.song_album }}</td>
                 <td>{{ track.genres|replace("'", "")|replace("[", "")|replace("]", "")|replace(",", ", ") }}</td>
-                {% for movie in track.movie_details %}
-                    <td><a  href="{{url_for('ski_movie',  name=movie.movie_name)}}">{{ movie.movie_name }}</a></td>
-                    <td><a  href="{{url_for('prod_co',  name=movie.movie_co)}}">{{ movie.movie_co }}</a></td>
-                    <td><a  href="{{url_for('year',  year=movie.movie_year)}}">{{ movie.movie_year}}</a></td>
-                {% endfor %}
+                <td><a href="{{url_for('ski_movie', name=track.movie.movie_name)}}">{{ track.movie.movie_name }}</a></td>
+                <td><a href="{{url_for('prod_co', name=track.movie.movie_co)}}">{{ track.movie.movie_co }}</a></td>
+                <td><a href="{{url_for('year', year=track.movie.movie_year)}}">{{ track.movie.movie_year }}</a></td>
                 <td>{{ track.song_num }}</td>
                 <td>{{ track.skier_name }}</td>
                 <td>{{ track.location }}</td>
@@ -173,6 +171,17 @@
     </table>
     </div>
     </form>
+    {% if pagination %}
+    <div class="pagination" style="text-align:center; padding: 10px;">
+        {% if pagination.has_prev %}
+            <a href="{{ url_for('skibase', page=pagination.prev_num) }}">&laquo; Prev</a>
+        {% endif %}
+        <span>Page {{ pagination.page }} of {{ pagination.pages }} ({{ pagination.total }} songs)</span>
+        {% if pagination.has_next %}
+            <a href="{{ url_for('skibase', page=pagination.next_num) }}">Next &raquo;</a>
+        {% endif %}
+    </div>
+    {% endif %}
 </body>
 </head>
 </html>

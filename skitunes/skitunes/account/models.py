@@ -1,7 +1,7 @@
+import uuid
 from flask_login import UserMixin
 from skitunes import db
 from werkzeug.security import generate_password_hash, check_password_hash
-from sqlalchemy import func
 
 class User(db.Model, UserMixin):
     __tablename__ = 'Users'
@@ -32,39 +32,19 @@ class User(db.Model, UserMixin):
         return user
     
     @classmethod
-    def generate_next_user_id(cls):
-        # Find the maximum current user ID and increment
-        max_id = db.session.query(func.max(cls.user_id)).scalar()
-        
-        if max_id is None:
-            # First user
-            return '000001'
-        
-        # Increment the ID, padding with zeros
-        next_id = str(int(max_id) + 1).zfill(6)
-        return next_id
-
-    @classmethod
     def create(cls, user_id, name, email, profile_pic, pwd):
         # Remove the user_id generation since we're now passing it in
         existing_user = cls.query.filter_by(email=email).first()
         if existing_user:
             raise ValueError('Email already registered')
-        
-        print("Creating user with:")
-        print(f"User ID: {user_id}")
-        print(f"Email: {email}")
-        
+
         user = cls(
-            user_id=user_id, 
-            name=name, 
-            email=email, 
-            profile_pic=profile_pic, 
+            user_id=user_id,
+            name=name,
+            email=email,
+            profile_pic=profile_pic,
             pwd=pwd
         )
-        
-        print(f"Generated password hash: {user.pwd}")
-        
         db.session.add(user)
         db.session.commit()
         

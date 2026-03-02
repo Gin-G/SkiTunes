@@ -1,5 +1,6 @@
 Flask
 Flask-SQLAlchemy
+Flask-Migrate
 matplotlib
 Flask-Mail
 SQLAlchemy
@@ -11,3 +12,4 @@ Werkzeug
 flask-bcrypt
 Flask-WTF
 email-validator
+pandas

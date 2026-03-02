@@ -19,9 +19,9 @@ import json
 #log = logging.getLogger('werkzeug')
 #log.setLevel(logging.ERROR)
 
-@app.before_request
-def create_tables():
-    db.create_all()
+@app.route('/health')
+def health():
+    return {'status': 'ok'}, 200
 
 @app.route('/')
 def home():
@@ -49,20 +49,9 @@ def logo():
 
 @app.route('/templates/navbar.html')
 def navbar():
-    tracks = db.session.query(Movie.movie_co).all()
-    track_list = []
-    for track in tracks:
-        track = str(track)
-        track = track.replace("',","")
-        track = track.replace('",',"")
-        track = track.replace(')',"")
-        track = track.replace('"',"")
-        track = track.replace("('","")
-        track = track.replace('("',"")
-        if track not in track_list:
-            track_list.append(track)
-    track_list.sort()
-    return render_template('navbar.html', tracks = track_list)
+    rows = db.session.query(Movie.movie_co).distinct().order_by(Movie.movie_co).all()
+    track_list = [co for (co,) in rows if co]
+    return render_template('navbar.html', tracks=track_list)
 
 @app.route('/templates/create_playlist.html')
 def create_playlist_js():
@@ -76,60 +65,42 @@ def skitunes():
 @app.route('/skitunes/skibase')
 @login_required
 def skibase():
-    tracks = ski_movie_song_info.query.all()
-    return render_template('skibase.html', tracks = tracks)
+    page = request.args.get('page', 1, type=int)
+    pagination = ski_movie_song_info.query.paginate(page=page, per_page=50, error_out=False)
+    return render_template('skibase.html', tracks=pagination.items, pagination=pagination)
 
 @app.route('/skitunes/skibase/movie/company/<name>')
 @login_required
 def prod_co(name):
-    movie_co = db.session.query(Movie).filter(Movie.movie_co == name).all()
-    prod_list = []
-    for id in movie_co:
-        filter_info = db.session.query(ski_movie_song_info).filter(
-            ski_movie_song_info.db_id == id.parent_id 
-        ).all()
-        prod_list.append(filter_info)
+    movies = db.session.query(Movie).filter(Movie.movie_co == name).all()
+    prod_list = [movie.songs for movie in movies]
     return render_template('movie_co.html', movie_co=prod_list)
 
 @app.route('/skitunes/skibase/movie/year/<year>')
 @login_required
 def year(year):
-    movie_year = db.session.query(Movie).filter(Movie.movie_year == year).all()
-    year_list = []
-    for id in movie_year:
-        filter_info = db.session.query(ski_movie_song_info).filter(
-            ski_movie_song_info.db_id == id.parent_id
-        ).all()
-        year_list.append(filter_info)
+    movies = db.session.query(Movie).filter(Movie.movie_year == year).all()
+    year_list = [movie.songs for movie in movies]
     return render_template('movie_year.html', movie_year=year_list)
 
 @app.route('/skitunes/skibase/movie/<name>')
 @login_required
 def ski_movie(name):
-    # Use exact matching instead of contains()
-    movie_info = db.session.query(Movie).filter(Movie.movie_name == name).all()
-    movie_co = db.session.query(Movie).filter(Movie.movie_name == name).first()
-    
-    track_list = []
-    for id in movie_info:
-        # Also check if this filter should use exact matching
-        filter_info = db.session.query(ski_movie_song_info).filter(
-            ski_movie_song_info.db_id == id.parent_id  # Changed to exact matching
-        ).all()
-        track_list.append(filter_info)
-    
+    movie = db.session.query(Movie).filter(Movie.movie_name == name).first()
+    track_list = [movie.songs] if movie else []
     return render_template(
         'movie_info.html',
         movie_info=track_list,
         movie_name=str(name),
-        movie_co=movie_co
+        movie_co=movie
     )
 
 @app.route('/skitunes/skibase_lite')
 @login_required
 def skibase_lite():
-    tracks = ski_movie_song_info.query.all()
-    return render_template('skibase_lite.html', tracks = tracks)
+    page = request.args.get('page', 1, type=int)
+    pagination = ski_movie_song_info.query.paginate(page=page, per_page=50, error_out=False)
+    return render_template('skibase_lite.html', tracks=pagination.items, pagination=pagination)
 
 @app.route('/skitunes/findmovie')
 def findmovie():
@@ -168,26 +139,23 @@ def findmovie():
                         years = range(int(movie_year), int(movie_year2)+1, 1)
                         for year in years:
                             movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == year).all()
-                            for id in movie_filter_info:
-                                filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
-                                year_list.append(filter_info)
+                            for movie in movie_filter_info:
+                                year_list.append(movie.songs)
                         return render_template('movie_year_lite.html', movie_year = year_list)
                     elif int(movie_year) < int(movie_year2):
                         years = range(int(movie_year2), int(movie_year)+1, 1)
                         for year in years:
                             movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == year).all()
-                            for id in movie_filter_info:
-                                filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
-                                year_list.append(filter_info)
+                            for movie in movie_filter_info:
+                                year_list.append(movie.songs)
                         return render_template('movie_year_lite.html', movie_year = year_list)
                 else:
                     log_info = "SEARCH - MOVIE_YEAR : " + movie_year
                     # logger.info('%s', log_info)
                     movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == movie_year).all()
                     year_list = []
-                    for id in movie_filter_info:
-                        filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
-                        year_list.append(filter_info)
+                    for movie in movie_filter_info:
+                        year_list.append(movie.songs)
                     return render_template('movie_year_lite.html', movie_year = year_list)
             else:
                 log_info = "SEARCH - ALL"
@@ -230,26 +198,23 @@ def findmovie():
                         years = range(int(movie_year), int(movie_year2)+1, 1)
                         for year in years:
                             movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == year).all()
-                            for id in movie_filter_info:
-                                filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
-                                year_list.append(filter_info)
+                            for movie in movie_filter_info:
+                                year_list.append(movie.songs)
                         return render_template('movie_year_lite.html', movie_year = year_list)
                     elif int(movie_year) < int(movie_year2):
                         years = range(int(movie_year2), int(movie_year)+1, 1)
                         for year in years:
                             movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == year).all()
-                            for id in movie_filter_info:
-                                filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
-                                year_list.append(filter_info)
+                            for movie in movie_filter_info:
+                                year_list.append(movie.songs)
                         return render_template('movie_year_lite.html', movie_year = year_list)
                 else:
                     log_info = "SEARCH - MOVIE_YEAR : " + movie_year
                     # logger.info('%s', log_info)
                     movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == movie_year).all()
                     year_list = []
-                    for id in movie_filter_info:
-                        filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
-                        year_list.append(filter_info)
+                    for movie in movie_filter_info:
+                        year_list.append(movie.songs)
                     return render_template('movie_year_lite.html', movie_year = year_list)
             else:
                 log_info = "SEARCH - ALL"
@@ -292,26 +257,23 @@ def findmovie():
                         years = range(int(movie_year), int(movie_year2)+1, 1)
                         for year in years:
                             movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == year).all()
-                            for id in movie_filter_info:
-                                filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
-                                year_list.append(filter_info)
+                            for movie in movie_filter_info:
+                                year_list.append(movie.songs)
                         return render_template('movie_year_lite.html', movie_year = year_list)
                     elif int(movie_year) < int(movie_year2):
                         years = range(int(movie_year2), int(movie_year)+1, 1)
                         for year in years:
                             movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == year).all()
-                            for id in movie_filter_info:
-                                filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
-                                year_list.append(filter_info)
+                            for movie in movie_filter_info:
+                                year_list.append(movie.songs)
                         return render_template('movie_year_lite.html', movie_year = year_list)
                 else:
                     log_info = "SEARCH - MOVIE_YEAR : " + movie_year
                     # logger.info('%s', log_info)
                     movie_filter_info = db.session.query(Movie).filter(Movie.movie_year == movie_year).all()
                     year_list = []
-                    for id in movie_filter_info:
-                        filter_info = db.session.query(ski_movie_song_info).filter(ski_movie_song_info.db_id.contains(id.parent_id)).all()
-                        year_list.append(filter_info)
+                    for movie in movie_filter_info:
+                        year_list.append(movie.songs)
                     return render_template('movie_year.html', movie_year = year_list)
             else:
                 log_info = "SEARCH - ALL"
@@ -332,7 +294,7 @@ def filter_movie():
     # Query tracks associated with movies containing the search string
     tracks = (
         db.session.query(ski_movie_song_info)
-        .join(ski_movie_song_info.movie_details)
+        .join(ski_movie_song_info.movie)
         .filter(Movie.movie_name.contains(name))
         .all()
     )
@@ -346,7 +308,7 @@ def filter_movie_lite():
     # Query tracks associated with movies containing the search string
     tracks = (
         db.session.query(ski_movie_song_info)
-        .join(ski_movie_song_info.movie_details)
+        .join(ski_movie_song_info.movie)
         .filter(Movie.movie_name.contains(name))
         .all()
     )
@@ -404,7 +366,7 @@ def filter_movieco():
     # Query tracks associated with movies from the specified production company
     tracks = (
         db.session.query(ski_movie_song_info)
-        .join(ski_movie_song_info.movie_details)
+        .join(ski_movie_song_info.movie)
         .filter(Movie.movie_co.contains(name))
         .all()
     )
@@ -419,7 +381,7 @@ def filter_movieco_lite():
     # Query tracks associated with movies from the specified production company
     tracks = (
         db.session.query(ski_movie_song_info)
-        .join(ski_movie_song_info.movie_details)
+        .join(ski_movie_song_info.movie)
         .filter(Movie.movie_co.contains(name))
         .all()
     )
@@ -498,18 +460,39 @@ def create_playlist_url():
 @app.route('/new_entry', methods=['GET', 'POST'])
 @login_required
 def new_entry():
+    if current_user.email not in ['nickco7@gmail.com', 'sgmorgan16@gmail.com']:
+        flash('Unauthorized access')
+        return redirect(url_for('home'))
     if request.method == 'POST':
         if not request.form['song_name']:
             flash('Please enter all the fields', 'error')
         else:
             try:
-                movie_song_info = ski_movie_song_info(song_name = request.form['song_name'], song_artist = request.form['song_artist'], song_album = request.form['song_album'], song_num=request.form['song_num'], spotify_id=request.form['spotify_link'], skier_name = request.form['skier_name'], movie_name = request.form['movie_name'], movie_year=request.form['movie_year'], movie_co=request.form['movie_co'], ski_type = request.form['ski_type'], location=request.form['location'], video_link = request.form['video_link'])           
-                db.session.add(movie_song_info)
+                movie = Movie(
+                    movie_name=request.form['movie_name'],
+                    movie_year=request.form['movie_year'],
+                    movie_co=request.form['movie_co'],
+                    movie_img_url='None'
+                )
+                song = ski_movie_song_info(
+                    song_name=request.form['song_name'],
+                    song_artist=request.form['song_artist'],
+                    song_album=request.form['song_album'],
+                    song_num=request.form['song_num'],
+                    genres=request.form.get('genres', 'Unknown'),
+                    spotify_id=request.form['spotify_link'],
+                    skier_name=request.form['skier_name'],
+                    ski_type=request.form['ski_type'],
+                    location=request.form['location'],
+                    video_link=request.form['video_link']
+                )
+                song.movie = movie
+                db.session.add(song)
                 db.session.commit()
-
                 flash('Record was successfully added')
                 return redirect(url_for('skitunes'))
-            except:
+            except Exception:
+                db.session.rollback()
                 flash('There was an error adding the record. Make sure it does not already exist')
                 return redirect(url_for('skitunes'))
     return render_template('new_entry.html')
@@ -522,11 +505,24 @@ def edit_entry(entry):
         if not request.form['song_name']:
             flash('Please enter all the fields', 'error')
         else:
-            movie_song_info = ski_movie_song_info(song_name = request.form['song_name'], song_artist = request.form['song_artist'], song_album = request.form['song_album'], song_num=request.form['song_num'], spotify_id=request.form['spotify_link'], skier_name = request.form['skier_name'], movie_name = request.form['movie_name'], movie_year=request.form['movie_year'], movie_co=request.form['movie_co'], ski_type = request.form['ski_type'], location=request.form['location'], video_link = request.form['video_link'])           
-            db.session.add(movie_song_info)
-            db.session.commit()
-
-            flash('Record was successfully added')
+            song = song_data.first()
+            if song:
+                song.song_name = request.form['song_name']
+                song.song_artist = request.form['song_artist']
+                song.song_album = request.form['song_album']
+                song.song_num = request.form['song_num']
+                song.genres = request.form.get('genres', song.genres)
+                song.spotify_id = request.form['spotify_link']
+                song.skier_name = request.form['skier_name']
+                song.ski_type = request.form['ski_type']
+                song.location = request.form['location']
+                song.video_link = request.form['video_link']
+                if song.movie:
+                    song.movie.movie_name = request.form['movie_name']
+                    song.movie.movie_year = request.form['movie_year']
+                    song.movie.movie_co = request.form['movie_co']
+                db.session.commit()
+                flash('Record was successfully updated')
             return redirect(url_for('skitunes'))
     return render_template('edit_entry.html', song_data=song_data)
 
@@ -636,36 +632,23 @@ def bulk_import():
     print(f"Total entries to process: {total_entries}")
     
     for track in json_playlist:
-        # For debugging, create the query separately
-        query = db.session.query(ski_movie_song_info)\
-            .join(ski_movie_song_info.movie_details)\
+        existing_entry = db.session.query(ski_movie_song_info)\
+            .join(ski_movie_song_info.movie)\
             .filter(
                 ski_movie_song_info.song_name == track["Song Name"],
                 ski_movie_song_info.song_artist == track["Artist"],
-                ski_movie_song_info.song_album == track["Song Album"],
-                ski_movie_song_info.song_num == track["Song Number"],
-                ski_movie_song_info.genres == str(track["Genres"]) if track["Genres"] != "[]" else "Unknown",
-                ski_movie_song_info.spotify_id == track["Spotify Link"],
-                ski_movie_song_info.skier_name == track["Skier Name(s)"],
-                ski_movie_song_info.ski_type == track["Skiing type"],
-                ski_movie_song_info.location == track["Location"],
                 Movie.movie_name == track["Movie Name"],
                 Movie.movie_year == track["Movie Year"],
-                Movie.movie_co == track["Production Co."]
-            )
-        
-        existing_entry = query.first()
-        
+            ).first()
+
         if not existing_entry:
-            
             movie = Movie(
                 movie_name=track["Movie Name"],
                 movie_year=track["Movie Year"],
                 movie_co=track["Production Co."],
                 movie_img_url='None'
             )
-            
-            movie_song_info = ski_movie_song_info(
+            song = ski_movie_song_info(
                 song_name=track["Song Name"],
                 song_artist=track["Artist"],
                 song_album=track["Song Album"],
@@ -677,9 +660,8 @@ def bulk_import():
                 location=track["Location"],
                 video_link='Unknown'
             )
-            
-            movie_song_info.movie_details.append(movie)
-            db.session.add(movie_song_info)
+            song.movie = movie
+            db.session.add(song)
             success_count += 1
         else:
             duplicate_count += 1

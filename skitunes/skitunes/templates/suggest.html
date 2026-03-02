@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4L8K5WV7VD"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4L8K5WV7VD');
+        </script>
+        <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+        <script src="{{url_for('static', filename='export.js')}}"></script>
+        <script src="{{url_for('static', filename='app.js')}}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script>
+            $(function(){
+                $('#header').load("{{ url_for('header') }}")
+            })
+        </script>
+        <script>
+            $(function(){
+                $('#navbar').load("{{ url_for('navbar') }}")
+            })
+        </script>
+    </head>
+
+    <body>
+        <div id="header"></div>
+        <div id="navbar"></div>
+        <br>
+
+        <h1>Suggest a New Entry</h1>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+            {% for message in messages %}
+                <div class="big-bold-italic">{{ message }}</div>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+
+        <div class="bubble">
+            <div class="big-bold">Entry Submission</div>
+            <p>Fill in the details below. Fields marked with <span class="required">*</span> are required.
+               Your entry will be added to the live database once 5 other users confirm it.</p>
+
+            <form method="POST" action="{{ url_for('suggest_entry') }}">
+                {{ suggest_form.hidden_tag() }}
+
+                <div class="form-group">
+                    <p><span class="required">Song Name*</span>: {{ suggest_form.song_name(placeholder="Song Name") }}</p>
+                    {% if suggest_form.song_name.errors %}
+                        <div class="text-danger">
+                            {% for error in suggest_form.song_name.errors %}<span>{{ error }}</span>{% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <p>Artist: {{ suggest_form.song_artist(placeholder="Artist") }}</p>
+                    {% if suggest_form.song_artist.errors %}
+                        <div class="text-danger">
+                            {% for error in suggest_form.song_artist.errors %}<span>{{ error }}</span>{% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <p>Album: {{ suggest_form.song_album(placeholder="Album") }}</p>
+                    {% if suggest_form.song_album.errors %}
+                        <div class="text-danger">
+                            {% for error in suggest_form.song_album.errors %}<span>{{ error }}</span>{% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <p>Song Number: {{ suggest_form.song_num(placeholder="Song Number") }}</p>
+                    {% if suggest_form.song_num.errors %}
+                        <div class="text-danger">
+                            {% for error in suggest_form.song_num.errors %}<span>{{ error }}</span>{% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <p>Spotify Link: {{ suggest_form.spotify_id(placeholder="https://open.spotify.com/track/...") }}</p>
+                    {% if suggest_form.spotify_id.errors %}
+                        <div class="text-danger">
+                            {% for error in suggest_form.spotify_id.errors %}<span>{{ error }}</span>{% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <p>Skier Name(s): {{ suggest_form.skier_name(placeholder="Skier Name(s)") }}</p>
+                    {% if suggest_form.skier_name.errors %}
+                        <div class="text-danger">
+                            {% for error in suggest_form.skier_name.errors %}<span>{{ error }}</span>{% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <p><span class="required">Movie Name*</span>: {{ suggest_form.movie_name(placeholder="Movie Name") }}</p>
+                    {% if suggest_form.movie_name.errors %}
+                        <div class="text-danger">
+                            {% for error in suggest_form.movie_name.errors %}<span>{{ error }}</span>{% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <p><span class="required">Movie Year*</span>: {{ suggest_form.movie_year(placeholder="e.g. 2023") }}</p>
+                    {% if suggest_form.movie_year.errors %}
+                        <div class="text-danger">
+                            {% for error in suggest_form.movie_year.errors %}<span>{{ error }}</span>{% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <p><span class="required">Production Company*</span>: {{ suggest_form.movie_co(placeholder="Production Company") }}</p>
+                    {% if suggest_form.movie_co.errors %}
+                        <div class="text-danger">
+                            {% for error in suggest_form.movie_co.errors %}<span>{{ error }}</span>{% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <p>Ski Style: {{ suggest_form.ski_type(placeholder="Powder, Freestyle, etc.") }}</p>
+                    {% if suggest_form.ski_type.errors %}
+                        <div class="text-danger">
+                            {% for error in suggest_form.ski_type.errors %}<span>{{ error }}</span>{% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <p>Location: {{ suggest_form.location(placeholder="Location") }}</p>
+                    {% if suggest_form.location.errors %}
+                        <div class="text-danger">
+                            {% for error in suggest_form.location.errors %}<span>{{ error }}</span>{% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <p>Segment Link: {{ suggest_form.video_link(placeholder="https://...") }}</p>
+                    {% if suggest_form.video_link.errors %}
+                        <div class="text-danger">
+                            {% for error in suggest_form.video_link.errors %}<span>{{ error }}</span>{% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <p>{{ suggest_form.submit(class="btn btn-primary") }}</p>
+            </form>
+        </div>
+    </body>
+</html>

@@ -44,11 +44,21 @@ spec:
             secretKeyRef:
               name: skitunes-esos
               key: google-client-secret
+        - name: MAIL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: skitunes-esos
+              key: mail-password
+        - name: DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.db.name }}-app
+              key: uri
         image: {{ .Values.webapp.container.image }}
         imagePullPolicy: {{ .Values.webapp.container.imagePullPolicy }}
         ports:
         - containerPort: {{ .Values.webapp.container.port }}
         resources:
-          limits:
-            cpu: '0'
-            memory: '0'
+          requests:
+            cpu: 100m
+            memory: 128Mi

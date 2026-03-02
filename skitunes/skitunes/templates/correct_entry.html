@@ -40,11 +40,9 @@
                 <p>Song Number : <input type="text" name="orig_song_num" value="{{ entry.song_num }}"  readonly="readonly"/></p>
                 <p>Spotify Link : <input type="text" name="orig_spotify_id" value="{{ entry.spotify_id }}"  readonly="readonly"/></p>
                 <p>Skier Name : <input type="text" name="orig_skier_name" value="{{ entry.skier_name }}"  readonly="readonly"/></p>
-                {% for movie in entry.movie_details %}
-                    <p>Movie Title : <input type="text" name="orig_movie_name" value="{{ movie.movie_name }}"  readonly="readonly"/></p>
-                    <p>Movie Year : <input type="text" name="orig_movie_year" value="{{ movie.movie_year }}"  readonly="readonly"/></p>
-                    <p>Production Company : <input type="text" name="orig_movie_co" value="{{ movie.movie_co }}"  readonly="readonly"/></p>
-                {% endfor %}
+                <p>Movie Title : <input type="text" name="orig_movie_name" value="{{ entry.movie.movie_name }}"  readonly="readonly"/></p>
+                <p>Movie Year : <input type="text" name="orig_movie_year" value="{{ entry.movie.movie_year }}"  readonly="readonly"/></p>
+                <p>Production Company : <input type="text" name="orig_movie_co" value="{{ entry.movie.movie_co }}"  readonly="readonly"/></p>
                 <p>Primary Ski style : <input type="text" name="orig_ski_type" value="{{ entry.ski_type }}"  readonly="readonly"/></p>
                 <p>Location : <input type="text" name="orig_location" value="{{ entry.location }}"  readonly="readonly"/></p>
                 <p>Link to segment : <input type="text" name="orig_video_link" value="{{ entry.video_link }}"  readonly="readonly"/></p>
@@ -60,11 +58,9 @@
                 <p><input type="text" name="song_num" value="{{ entry.song_num }}"/></p>
                 <p><input type="text" name="spotify_id" value="{{ entry.spotify_id }}"/></p>
                 <p><input type="text" name="skier_name" value="{{ entry.skier_name }}"/></p>
-                {% for movie in entry.movie_details %}
-                    <p><input type="text" name="movie_name" value="{{ movie.movie_name }}"/></p>
-                    <p><input type="text" name="movie_year" value="{{ movie.movie_year }}"/></p>
-                    <p><input type="text" name="movie_co" value="{{ movie.movie_co }}"/></p>
-                {% endfor %}
+                <p><input type="text" name="movie_name" value="{{ entry.movie.movie_name }}"/></p>
+                <p><input type="text" name="movie_year" value="{{ entry.movie.movie_year }}"/></p>
+                <p><input type="text" name="movie_co" value="{{ entry.movie.movie_co }}"/></p>
                 <p><input type="text" name="ski_type" value="{{ entry.ski_type }}"/></p>
                 <p><input type="text" name="location" value="{{ entry.location }}"/></p>
                 <p><input type="text" name="video_link" value="{{ entry.video_link }}"/></p>

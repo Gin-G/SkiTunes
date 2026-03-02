@@ -39,3 +39,7 @@ spec:
     remoteRef:
       key: google       # Just the path without data/ prefix for v1
       property: client-secret
+  - secretKey: mail-password
+    remoteRef:
+      key: skitunes     # Just the path without data/ prefix for v1
+      property: mail-password

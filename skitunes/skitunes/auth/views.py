@@ -43,101 +43,47 @@ def login_url():
 def login_local():
     if current_user.is_authenticated:
         return redirect(url_for('home'))
-    
+
     form = LoginForm()
-    
-    if request.method == 'POST':
-        print("Login Form Submitted")
-        print("Form data:", request.form)
-        print("Form validate_on_submit():", form.validate_on_submit())
-        
-        if not form.validate_on_submit():
-            print("Form Errors:")
-            for field, errors in form.errors.items():
-                print(f"{field}: {errors}")
-        
-        if form.validate_on_submit():
-            # Debug: Check email exists
-            user = User.query.filter_by(email=form.email.data).first()
-            
-            if user:
-                print(f"User found: {user.email}")
-                print(f"User ID: {user.user_id}")
-                
-                # More detailed password verification
-                from werkzeug.security import check_password_hash
-                print("Manual password verification:")
-                print(f"Stored hash: {user.pwd}")
-                print(f"Attempted password: {form.password.data}")
-                manual_check = check_password_hash(user.pwd, form.password.data)
-                print(f"Manual check result: {manual_check}")
-                
-                # Test with different methods
-                print("Built-in method check:")
-                builtin_check = user.check_password(form.password.data)
-                print(f"Built-in check result: {builtin_check}")
-            else:
-                print(f"No user found with email: {form.email.data}")
-            
-            if user and user.check_password(form.password.data):
-                login_user(user)
-                flash('Login successful!', 'success')
-                return redirect(url_for('home'))
-            else:
-                print("Login failed: Invalid credentials")
-                flash('Invalid email or password.', 'danger')
-    
+
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        if user and user.check_password(form.password.data):
+            login_user(user)
+            flash('Login successful!', 'success')
+            return redirect(url_for('home'))
+        else:
+            flash('Invalid email or password.', 'danger')
+
     return render_template('login.html', form=form)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('home'))
-    
-    form = RegistrationForm()
-    
-    if request.method == 'POST':
-        print("Form submitted")
-        print("Form data:", sanitize_form_data(request.form))
-        print("Form validate_on_submit():", form.validate_on_submit())
-        
-        if not form.validate_on_submit():
-            print("Form Errors:")
-            for field, errors in form.errors.items():
-                if field not in ['password', 'confirm_password']:
-                    print(f"{field}: {errors}")
-                else:
-                    print(f"{field}: [REDACTED]")
-        
-        if form.validate_on_submit():
-            try:
-                # Generate user_id before creating user
-                user_id = User.generate_next_user_id()
-                
-                user = User.create(
-                    user_id=user_id,  # Pass the generated user_id
-                    name=form.name.data, 
-                    email=form.email.data, 
-                    profile_pic=None,
-                    pwd=form.password.data
-                )
 
-                login_user(user)
-                flash('Your account has been created! You are now logged in.', 'success')
-                return redirect(url_for('home'))
-            
-            except ValueError as e:
-                # Make sure error message doesn't contain password
-                safe_error = str(e)
-                if 'password' in safe_error.lower():
-                    safe_error = "An error occurred during registration"
-                flash(safe_error, 'danger')
-                return redirect(url_for('home'))  # Redirect to home with error message
-            except Exception as e:
-                # Handle any other unexpected errors
-                flash('An unexpected error occurred during registration. Please try again.', 'danger')
-                return redirect(url_for('home'))
-    
+    form = RegistrationForm()
+
+    if form.validate_on_submit():
+        try:
+            user = User.create(
+                user_id=str(uuid.uuid4()),
+                name=form.name.data,
+                email=form.email.data,
+                profile_pic=None,
+                pwd=form.password.data
+            )
+            login_user(user)
+            flash('Your account has been created! You are now logged in.', 'success')
+            return redirect(url_for('home'))
+        except ValueError as e:
+            safe_error = str(e)
+            if 'password' in safe_error.lower():
+                safe_error = "An error occurred during registration"
+            flash(safe_error, 'danger')
+        except Exception:
+            flash('An unexpected error occurred during registration. Please try again.', 'danger')
+
     return render_template('register.html', form=form)
 
 @app.route('/login')

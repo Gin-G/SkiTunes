@@ -3,14 +3,14 @@ import os
 # Flask secret key
 SECRET_KEY = os.environ.get('FLASK_SECRET')
 
-SQLALCHEMY_DATABASE_URI = 'sqlite:///skitunes.db'
+SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', 'sqlite:///skitunes.db')
 SQLALCHEMY_TRACK_MODIFICATIONS = False 
 
 MAIL_SERVER = 'smtp.gmail.com'
 MAIL_PORT = 465
 MAIL_USERNAME = 'NickCo7@gmail.com'
 MAIL_DEFAULT_SENDER = 'NickCo7@gmail.com'
-MAIL_PASSWORD = os.environ.get('PEANUT_BRITTLE')
+MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
 MAIL_USE_TLS = False
 MAIL_USE_SSL = True
 LOG_TYPE = "watched"

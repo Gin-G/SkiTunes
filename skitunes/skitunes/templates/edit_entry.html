@@ -37,11 +37,9 @@
                 <p>Song Number : <input type="text" name="song_num" value="{{ entry.song_num }}"/></p>
                 <p>Spotify Link : <input type="text" name="spotify_id" value="{{ entry.spotify_id }}"/></p>
                 <p>Skier Name : <input type="text" name="skier_name" value="{{ entry.skier_name }}"/></p>
-                {% for movie in entry.movie_details %}
-                    <p>Movie Title : <input type="text" name="movie_name" value="{{ movie.movie_name }}"/></p>
-                    <p>Movie Year : <input type="text" name="movie_year" value="{{ movie.movie_year }}"/></p>
-                    <p>Production Company : <input type="text" name="movie_co" value="{{ movie.movie_co }}"/></p>
-                {% endfor %}
+                <p>Movie Title : <input type="text" name="movie_name" value="{{ entry.movie.movie_name }}"/></p>
+                <p>Movie Year : <input type="text" name="movie_year" value="{{ entry.movie.movie_year }}"/></p>
+                <p>Production Company : <input type="text" name="movie_co" value="{{ entry.movie.movie_co }}"/></p>
                 <p>Primary Ski style : <input type="text" name="ski_type" value="{{ entry.ski_type }}"/></p>
                 <p>Location : <input type="text" name="location" value="{{ entry.location }}"/></p>
                 <p>Link to segment : <input type="text" name="video_link" value="{{ entry.video_link }}"/></p>

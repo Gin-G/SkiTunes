@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4L8K5WV7VD"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4L8K5WV7VD');
+        </script>
+        <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+        <script src="{{url_for('static', filename='export.js')}}"></script>
+        <script src="{{url_for('static', filename='app.js')}}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script>
+            $(function(){
+                $('#header').load("{{ url_for('header') }}")
+            })
+        </script>
+        <script>
+            $(function(){
+                $('#navbar').load("{{ url_for('navbar') }}")
+            })
+        </script>
+    </head>
+
+    <body>
+        <div id="header"></div>
+        <div id="navbar"></div>
+        <br>
+
+        <h1>Pending Entries</h1>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+            {% for message in messages %}
+                <div class="big-bold-italic">{{ message }}</div>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+
+        <div class="mid-bold">
+            <p>These entries have been submitted by community members and need {{ threshold }} confirmations to go live.
+               <a href="{{ url_for('suggest_entry') }}">Suggest a new entry</a></p>
+        </div>
+
+        {% if entries %}
+        <div class="table-container">
+        <table border="4">
+            <thead>
+                <tr>
+                    <th>Song Name</th>
+                    <th>Artist</th>
+                    <th>Movie</th>
+                    <th>Year</th>
+                    <th>Production Co.</th>
+                    <th>Submitted By</th>
+                    <th>Date</th>
+                    <th>Confirmations</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in entries %}
+                <tr>
+                    <td>{{ entry.song_name }}</td>
+                    <td>{{ entry.song_artist or '' }}</td>
+                    <td>{{ entry.movie_name }}</td>
+                    <td>{{ entry.movie_year or '' }}</td>
+                    <td>{{ entry.movie_co or '' }}</td>
+                    <td>{{ entry.submitter.name if entry.submitter else 'Unknown' }}</td>
+                    <td>{{ entry.submitted_at.strftime('%Y-%m-%d') if entry.submitted_at else '' }}</td>
+                    <td>{{ entry.votes | length }}/{{ threshold }}</td>
+                    <td>
+                        {% if is_submitter[entry.id] %}
+                            <em>Your submission</em>
+                        {% elif user_has_voted[entry.id] %}
+                            <em>Already confirmed</em>
+                        {% else %}
+                            <form method="POST" action="{{ url_for('vote_entry', entry_id=entry.id) }}" style="display:inline;">
+                                {{ action_form.hidden_tag() }}
+                                <button type="submit" class="btn btn-primary">Confirm</button>
+                            </form>
+                        {% endif %}
+
+                        {% if current_user.email in admin_emails %}
+                        &nbsp;
+                        <form method="POST" action="{{ url_for('approve_entry', entry_id=entry.id) }}" style="display:inline;">
+                            {{ action_form.hidden_tag() }}
+                            <button type="submit" class="btn btn-primary">Approve</button>
+                        </form>
+                        &nbsp;
+                        <form method="POST" action="{{ url_for('reject_entry', entry_id=entry.id) }}" style="display:inline;"
+                              onsubmit="return confirm('Reject and delete this entry?')">
+                            {{ action_form.hidden_tag() }}
+                            <button type="submit" class="btn btn-primary">Reject</button>
+                        </form>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div>
+        {% else %}
+            <div class="bubble"><p>No pending entries at this time.</p></div>
+        {% endif %}
+    </body>
+</html>

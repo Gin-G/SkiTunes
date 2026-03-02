@@ -48,25 +48,25 @@
             </thead>
         
         {% for item in movie_info %}
-            {% for movie in item%}
+            {% for song in item %}
             <tr>
-                <th>{{ movie.song_num }}</th>
-                <th>{{ movie.song_name }}</th>
-                <th>{{ movie.song_artist }}</th>
-                <th>{{ movie.song_album }}</th>
-                <th>{{ movie.genres }}</th>
-                <th>{{ movie.skier_name }}</th>
-                <th>{{ movie.location }}</th>
-                <th>{{ movie.skit_type }}</th>
-                {% if 'Not Found' in movie.spotify_id %}
-                    <th>{{ movie.spotify_id }}</th>
+                <th>{{ song.song_num }}</th>
+                <th>{{ song.song_name }}</th>
+                <th>{{ song.song_artist }}</th>
+                <th>{{ song.song_album }}</th>
+                <th>{{ song.genres }}</th>
+                <th>{{ song.skier_name }}</th>
+                <th>{{ song.location }}</th>
+                <th>{{ song.ski_type }}</th>
+                {% if 'Not Found' in song.spotify_id %}
+                    <th>{{ song.spotify_id }}</th>
                 {% else %}
-                <th><a  href={{ movie.spotify_id }}>Listen on Spotify</a></th>
+                <th><a href={{ song.spotify_id }}>Listen on Spotify</a></th>
                 {% endif %}
-                {% if 'Unknown' in movie.video_link %}
-                    <th>{{ movie.video_link }}</th>
+                {% if 'Unknown' in song.video_link %}
+                    <th>{{ song.video_link }}</th>
                 {% else %}
-                    <td><a href={{ movie.video_link }}>{{ movie.video_link }}</a></td>
+                    <td><a href={{ song.video_link }}>{{ song.video_link }}</a></td>
                 {% endif %}
             </tr>
             {% endfor %}

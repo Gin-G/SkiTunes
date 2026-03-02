@@ -96,10 +96,8 @@
                         {% endif %}
                         <th>{{ track.song_name }}</th>
                         <th>{{ track.song_artist }}</th>
-                            {% for movie in track.movie_details %}
-                                <th><a href="{{url_for('ski_movie',  name=movie.movie_name)}}">{{ movie.movie_name }}</a></th>
-                                <th><a  href="{{url_for('prod_co',  name=movie.movie_co)}}">{{ movie.movie_co }}</a></th>
-                            {% endfor %}
+                        <th><a href="{{url_for('ski_movie', name=track.movie.movie_name)}}">{{ track.movie.movie_name }}</a></th>
+                        <th><a href="{{url_for('prod_co', name=track.movie.movie_co)}}">{{ track.movie.movie_co }}</a></th>
                     {% if 'Not Found' in track.spotify_id %}
                         <th>{{ track.spotify_id }}</th>
                     {% else %}
@@ -111,6 +109,17 @@
             </table>
             </div>
         </form>
+    {% if pagination %}
+    <div class="pagination" style="text-align:center; padding: 10px;">
+        {% if pagination.has_prev %}
+            <a href="{{ url_for('skibase_lite', page=pagination.prev_num) }}">&laquo; Prev</a>
+        {% endif %}
+        <span>Page {{ pagination.page }} of {{ pagination.pages }} ({{ pagination.total }} songs)</span>
+        {% if pagination.has_next %}
+            <a href="{{ url_for('skibase_lite', page=pagination.next_num) }}">Next &raquo;</a>
+        {% endif %}
+    </div>
+    {% endif %}
     </body>
     </head>
 </html>

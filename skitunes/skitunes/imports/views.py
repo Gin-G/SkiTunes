@@ -184,7 +184,7 @@ def process_manual_entry():
                 video_link=record["Video Link"]
             )
             
-            movie_song_info.movie_details.append(movie)
+            movie_song_info.movie = movie
             db.session.add(movie_song_info)
             db.session.commit()
             
@@ -236,7 +236,7 @@ def process_bulk_records(records):
                 video_link='Unknown'
             )
             
-            movie_song_info.movie_details.append(movie)
+            movie_song_info.movie = movie
             db.session.add(movie_song_info)
             success_count += 1
         else:
@@ -262,7 +262,7 @@ def check_duplicate_entry(record):
     try:
         # First check for exact duplicate
         exact_duplicate = db.session.query(ski_movie_song_info)\
-            .join(ski_movie_song_info.movie_details)\
+            .join(ski_movie_song_info.movie)\
             .filter(
                 ski_movie_song_info.song_name == record["Song Name"],
                 ski_movie_song_info.song_artist == record["Artist"],

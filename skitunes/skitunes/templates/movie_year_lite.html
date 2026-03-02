@@ -96,10 +96,8 @@
                 {% endif %}
                 <th>{{ track.song_name }}</th>
                 <th>{{ track.song_artist }}</th>
-                    {% for movie in track.movie_details %}
-                        <th><a href="{{url_for('ski_movie',  name=movie.movie_name)}}">{{ movie.movie_name }}</a></th>
-                        <th>{{ movie.movie_co }}</th>
-                    {% endfor %}
+                <th><a href="{{url_for('ski_movie', name=track.movie.movie_name)}}">{{ track.movie.movie_name }}</a></th>
+                <th>{{ track.movie.movie_co }}</th>
             {% if 'Not Found' in track.spotify_id %}
                 <th>{{ track.spotify_id }}</th>
             {% else %}
