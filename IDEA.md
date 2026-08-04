@@ -1,226 +1,105 @@
 ---
-status: in-progress
+status: active
 progress: 70
 ---
 
 # SkiTunes
 
-A searchable database of the songs used in ski and snowboard films, with one-click
-export of any search result into a real Spotify playlist. Live at
-`skitunes.nickknows.net` (public domain: skimoviesongs.com).
+<!--
+IdeaBRD parses this file. It is the source of truth for this idea's tile:
+the app re-reads it on every open and commits its own edits back here, so
+the shape below matters more than it looks. Anything the parser
+(backend/app/ideafile.py) can't read is dropped silently.
 
-Users log in with Google or a local account, link their Spotify account, browse or
-filter the catalog by movie, year, production company, skier, song, artist, album,
-segment type, or location, tick the tracks they want, and the app creates the
-playlist on their Spotify account.
+  frontmatter  status: one of idea, active, paused, done. progress: 0-100.
+               Any other key is ignored.
+  # heading    The idea title (first H1).
+  prose        Everything outside the Todos section becomes the tile's
+               notes, shown on the board — so keep it short. Documentation
+               written here is published, not filed away.
+  ## Todos     That heading exactly (or "## To-Dos"); "## ToDo", "## TODO"
+               and "## Tasks" do not match and the whole list is lost.
+               Inside it, only "- [ ] open" / "- [x] done" lines survive:
+               sub-headings and blank-line grouping are discarded, and a
+               wrapped item is cut at the line break, so keep each to-do on
+               one line. The next "## " heading ends the list.
+  (#12)        A to-do ending in an issue reference is backed by that issue
+               in this repo. The issue wins: its title becomes the to-do's
+               text and its open/closed state the checkbox, both here and on
+               the board. Ticking the box in the app closes the issue.
 
----
+Working in this repo? This file is the to-do list — use it rather than
+starting a parallel one. Tick items off as you finish them, add new ones as
+you find them, and keep status/progress honest: a TODO.md, a plan in a chat
+window or a checklist in a commit message is invisible to everyone reading
+the board. For work worth assigning, discussing, or writing up at length,
+open a real issue and append its "(#12)" to the line — the item is then
+tracked by number instead of text, and the issue holds the detail this file
+has no room for (prose here is published to the board, not filed away).
 
-## Stack
+To-dos without an issue are matched to the board by exact text, so rewording
+one replaces it rather than editing it in place — expect a checked item to
+come back unchecked if you reword it. Issue-backed to-dos are matched by
+number instead, so keep the "(#12)" and reword freely; drop the reference and
+the item becomes an ordinary to-do again (the issue itself is left alone).
 
-| Layer | Choice |
-| --- | --- |
-| Backend | Python 3.10, Flask, SQLAlchemy ORM, Flask-Migrate |
-| Auth | Flask-Login + Google OAuth (oauthlib) + local email/password |
-| Third-party | Spotify OAuth + Web API (playlist create, track add, song search) |
-| Templates | Jinja2 + vanilla JS (`static/app.js`, `static/export.js`) |
-| Database | SQLite (dev) → PostgreSQL via CloudNativePG (prod) |
-| Packaging | Docker → Docker Hub (`ncging/skitunes-app`) |
-| Deploy | Kubernetes via Helm, Argo Rollouts blue/green, External Secrets ← OpenBao |
-| CI | GitHub Actions on a self-hosted ARC runner set |
+HTML comments are stripped on read, so this block never reaches the board.
+-->
 
-### Layout
+A searchable database of the songs used in ski and snowboard films, with
+one-click export of any search result into a real Spotify playlist. Live at
+skitunes.nickknows.net.
 
-```
-skitunes/wsgi.py                  entrypoint, port 8000
-skitunes/skitunes/__init__.py     app factory: Flask, SQLAlchemy, Migrate, Login
-skitunes/skitunes/config.py       config from env (DATABASE_URL, FLASK_SECRET, MAIL_PASSWORD)
-skitunes/skitunes/main/           home, browse, filter/search, playlist create, CRUD
-skitunes/skitunes/auth/           Google OAuth, local login/register, Spotify OAuth
-skitunes/skitunes/spotify/        Movie + ski_movie_song_info models, Spotify API calls
-skitunes/skitunes/account/        User model
-skitunes/skitunes/crowd/          PendingEntry + EntryVote, suggest/vote/approve queue
-skitunes/skitunes/imports/        CSV bulk import, template download, manual entry
-skitunes/skitunes/metrics/        health check (currently shadowed — see below)
-skitunes/skitunes/logs/           report viewer (not registered — see below)
-skitunes/migrations/              Alembic
-helm-chart/                       rollout, CNPG cluster, ExternalSecret, ingress, services
-```
+Flask and SQLAlchemy over Postgres, Google and Spotify OAuth, deployed to
+Kubernetes with Helm and Argo Rollouts blue/green. See README.md for the
+stack and module layout.
 
----
+## Todos
 
-## Done
-
-### Core product
-- Full catalog browse (`/skitunes/skibase`) plus a lightweight mobile variant
-  (`skibase_lite`), auto-selected by User-Agent.
-- Filter routes for movie, production company, year, skier, song, artist, album,
-  location, and segment type — each with a desktop and a `_lite` mobile variant.
-- Combined search form (song name / artist / year / year range) at `/skitunes/findmovie`.
-- Movie detail, movie-by-year, and movie-by-production-company views.
-- Select / select-all across a filtered result set, then **Create Playlist** →
-  builds the playlist on the user's Spotify account and adds the tracks,
-  chunked in batches of 100 to stay inside Spotify's per-request limit.
-- Deduplication of track URIs before submission.
-- Correction-suggestion form that diffs a user's edits against the stored record
-  and emails the changes for approval.
-- Admin CRUD: new entry, edit entry, delete entry, admin user list.
-
-### Data model
-- **Rebuilt from the original inverted schema.** `Movie` is now the parent and
-  `ski_movie_song_info` (songs) the child, joined by `songs.movie_id → movies.movie_id`.
-  Previously the song table was the parent, which made every movie-level query awkward.
-- `format()` on the song model resolves movie name / year / production company
-  through the relationship, so the JSON export survived the schema change.
-
-### Crowdsourced submissions (shipped Mar 2026)
-- `PendingEntry` and `EntryVote` tables with a unique constraint so a user can
-  only confirm a given entry once.
-- `/skitunes/suggest` — any logged-in user can propose a song/movie pair.
-- `/skitunes/pending` — queue showing confirmation counts.
-- Auto-promotion into the live catalog at **5 confirmations**; submitters cannot
-  vote for their own entry.
-- Admin approve / reject overrides.
-
-### Bulk import
-- CSV upload with a downloadable template, plus a JSON bulk importer that
-  skips duplicates on (song name, artist, movie name, movie year).
-
-### Infrastructure & hardening
-- **Flask-Migrate added**; the old `db.create_all()` on `before_request` removed.
-  Schema now comes from `flask db upgrade`.
-- `/health` endpoint added — the K8s readiness and liveness probes depend on it.
-- `DATABASE_URL` read from the environment (falls back to SQLite for local dev);
-  the CNPG-generated `skitunes-pgdb-app` secret supplies the URI in-cluster.
-- `MAIL_PASSWORD` replaces the old hardcoded `PEANUT_BRITTLE` value and is
-  injected from OpenBao through the ExternalSecret.
-- `OAUTHLIB_INSECURE_TRANSPORT` now only set when `FLASK_DEBUG=1`, instead of
-  unconditionally disabling TLS enforcement on OAuth in production.
-- **User IDs are UUIDs.** Local registration previously used `max(id)+1`, which
-  was both a race condition and a collision risk against Google's `sub` IDs.
-- Passwords hashed with Werkzeug `generate_password_hash` / `check_password_hash`.
-- Debug `print()` statements stripped from `auth/views.py` and `account/models.py`.
-- Registration errors no longer leak password-related internals to the user.
-- Pagination (50/page) on `skibase` and `skibase_lite`.
-- `edit_entry` fixed — it used to insert a duplicate row instead of updating.
-- `new_entry` restricted to admins.
-- K8s resource requests corrected from `0` to 100m CPU / 128Mi memory.
-- PostgreSQL migrated to a CloudNativePG-managed cluster.
-- Blue/green rollout with a preview service and ingress, auto-promoting after 30s.
-- ARC-runner CI: verifies the Flask app imports, builds with remote BuildKit,
-  pushes `skitunes-app:latest` and a dated tag, then rewrites `values.yaml`
-  with the new tag and pushes the commit back.
-- Log files removed from git tracking.
-
----
-
-## Remaining work
-
-### Broken — user-visible
-
-1. **Password reset is completely non-functional.** `/reset_password_request` and
-   `/reset_password/<token>` exist and are linked, but every dependency is missing:
-   - `User.generate_reset_token()` and `User.verify_reset_token()` are not
-     implemented (`account/models.py`)
-   - there are no `reset_token` / `reset_token_expiration` columns on `User`
-   - `bcrypt` is never imported in `auth/views.py:227`, so the handler would
-     `NameError` even if it got that far
-   - the templates `reset_password_request.html` and `reset_password.html`
-     don't exist
-   - the sender is hardcoded to the placeholder `your-email@gmail.com`
-     (`auth/views.py:193`)
-
-   Hitting either route today is a 500. Needs the token methods (itsdangerous or
-   a signed column), a migration, the two templates, and the import.
-
-2. **Year-range search silently returns nothing.** In `findmovie`
-   (`main/views.py:138`, `:197`, `:256`) the comparison and the range are
-   inverted in both branches — when `movie_year > movie_year2` it builds
-   `range(movie_year, movie_year2 + 1)`, which is empty, and the mirrored branch
-   has the same defect. No year range ever produces results.
-
-3. **`/correct_entry` is not login-gated** (`main/views.py:529`). Every other
-   mutating route has `@login_required`; this one lets an anonymous visitor
-   trigger outbound email through the app's SMTP credentials. Rate-limit or gate it.
-
-4. **Wrong original value in three correction diffs.** The ski_type, location,
-   and video_link messages all interpolate `orig_song_name`
-   (`main/views.py:591`, `:594`, `:597`), so correction emails report nonsense
-   for those fields.
-
-5. **Movie rows are duplicated on every insert.** `new_entry`
-   (`main/views.py:471`), `bulk_import` (`:645`), and the crowd promoter
-   (`crowd/views.py:14`) each construct a fresh `Movie` rather than looking one
-   up. Adding a second song from an existing film creates a second movie row,
-   which fragments the by-movie and by-year views. Needs a get-or-create keyed on
-   (name, year, company) — and a cleanup pass over whatever duplicates already exist.
-
-6. **`delete_entry` orphans the movie.** It deletes the song and leaves the
-   `Movie` row behind with no children.
-
-### Correctness / dead code
-
-7. **Two routes claim `/health`** — `main/views.py:22` and
-   `metrics/views.py:4`. `main` is imported first and wins; the entire `metrics`
-   module is dead. Delete one.
-
-8. **The `logs` blueprint is never imported** in `__init__.py`, so `/Reports`,
-   `/Reports/<filename>`, and `/Reports/download/<filename>` are unregistered
-   dead code. If they're ever wired up they need auth first — they read
-   arbitrary filenames out of the log directory with no access control.
-
-### Tech debt
-
-9. **`findmovie` is triplicated.** ~180 lines copy-pasted three times
-   (`main/views.py:105–287`) for iPhone / Android / desktop, differing only in
-   which template is rendered. One search implementation plus a template
-   selector would remove ~120 lines and mean bugs like #2 get fixed once.
-
-10. **The admin allowlist is hardcoded in four places** with two different
-    memberships — `main/views.py:463`, `main/views.py:684`, `crowd/views.py:10`,
-    and `imports/views.py` (which also grants `ncote@ucar.edu`). Needs an
-    `is_admin` column on `User` and a single decorator.
-
-11. **Contact email hardcoded** as `NickCo7@gmail.com` in `main/views.py:599`
-    and `config.py:11–12`. Move to config/env.
-
-12. **Filter routes have no pagination.** Only `skibase` and `skibase_lite` were
-    paginated; all fifteen filter and search routes still `.all()` the full
-    result set into memory and render it in one page.
-
-13. **The container runs the Flask development server.** `Dockerfile` ends with
-    `CMD ["python3", "wsgi.py", "--hot=0.0.0.0"]` — single-threaded, not
-    production-grade, and the `--hot` flag isn't a real argument. Should be
-    gunicorn behind the existing nginx config.
-
-14. **No migration step in the deploy.** The Helm chart never runs
-    `flask db upgrade`; schema changes have to be applied by hand against the
-    CNPG cluster. Wants an init container or a Helm pre-upgrade hook Job.
-
-15. **`rollout.yaml` reads the wrong values key.** Line 12 uses
-    `.Values.replicaCount`, but `values.yaml` defines `webapp.replicaCount` —
-    so `replicas:` renders empty and the rollout falls back to the default.
-
-16. **Redundant legacy CI workflow.** `build_image.yaml` fires on the same paths
-    as the ARC workflow and pushes to the stale `ncging/skitunes` repo (the
-    chart pulls `ncging/skitunes-app`). It also references
-    `steps.meta.output.labels`, a step that doesn't exist. Delete it.
-
-17. **No dependency pinning.** `requirements.txt` lists fifteen packages with no
-    versions, so any build can pull a breaking release.
-
-18. **No test suite.** `skitunes/test.py` is a one-off CSV-to-Spotify data
-    munging script, not tests. CI's only check is that the app imports.
-
-19. **Repo hygiene** — `helm-chart/templates/esos copy.yaml` is a stray
-    duplicate, several `.DS_Store` files are tracked, and raw data files
-    (`songs.csv`, `SkiMovieSongs.csv`, `Steve_data.csv`, `out.csv`,
-    `clean_data.json`, `playlist.json`, `instance/skitunes.db`) sit alongside
-    application code. `bulk_import` reads `clean_data.json` from a hardcoded
-    relative path.
-
-### Never built (from the original TODO)
-
-20. **Donation link / setup** — listed in `TODO`, no implementation.
-21. **Contribute page** — partially superseded by the crowdsourced suggestion
-    queue, but there's still no standalone contribute/about page.
+- [x] Browse the full catalog with pagination, plus a lightweight mobile variant
+- [x] Filter by movie, production company, year, skier, song, artist, album, location and segment type
+- [x] Combined song, artist and year search form
+- [x] Select tracks from any result set and create a Spotify playlist, batched 100 at a time
+- [x] Google OAuth and local email/password login on Flask-Login
+- [x] Spotify account linking, with a clear error for users not in the developer dashboard
+- [x] Correction-suggestion form that emails a field-level diff for approval
+- [x] Admin CRUD for entries plus an admin user list
+- [x] Rebuild the schema so Movie is the parent and songs the child
+- [x] Crowdsourced submission queue with five-vote auto-promotion and admin override
+- [x] CSV bulk import with a downloadable template, plus a JSON importer that skips duplicates
+- [x] Add Flask-Migrate and drop db.create_all() from before_request
+- [x] Add /health for the Kubernetes readiness and liveness probes
+- [x] Read DATABASE_URL, FLASK_SECRET and MAIL_PASSWORD from the environment
+- [x] Gate OAUTHLIB_INSECURE_TRANSPORT behind FLASK_DEBUG
+- [x] Switch user IDs to UUIDs, killing the max(id)+1 race and collision risk
+- [x] Fix edit_entry inserting a duplicate row instead of updating in place
+- [x] Move Postgres onto a CloudNativePG cluster with secrets from OpenBao
+- [x] Deploy blue/green with Argo Rollouts behind preview and active ingresses
+- [x] Set real CPU and memory requests instead of 0
+- [x] Move the build off the ARC runner to ubuntu-latest with GHA-cached buildx
+- [ ] Implement User.generate_reset_token and verify_reset_token — password reset 500s without them
+- [ ] Add reset_token and reset_token_expiration columns to User, with a migration
+- [ ] Import bcrypt in auth/views.py so reset_password stops raising NameError
+- [ ] Write the missing reset_password_request.html and reset_password.html templates
+- [ ] Replace the placeholder your-email@gmail.com reset sender in auth/views.py
+- [ ] Fix the inverted year-range comparison in findmovie — no range search ever returns results
+- [ ] Add @login_required to /correct_entry so anonymous visitors cannot trigger email
+- [ ] Fix the ski_type, location and video_link correction diffs that all interpolate orig_song_name
+- [ ] Get-or-create Movie on insert instead of creating a duplicate row for every song
+- [ ] Clean up the duplicate Movie rows already in the database
+- [ ] Delete the orphaned Movie row when delete_entry removes its last song
+- [ ] Remove the duplicate /health route — metrics/views.py is shadowed by main/views.py
+- [ ] Either register the logs blueprint behind auth or delete the dead /Reports routes
+- [ ] Collapse the triplicated findmovie iPhone, Android and desktop branches into one
+- [ ] Replace the four hardcoded admin allowlists with an is_admin column and a decorator
+- [ ] Move the hardcoded NickCo7@gmail.com contact address into config
+- [ ] Paginate the filter and search routes, which still load every match at once
+- [ ] Run gunicorn in the container instead of the Flask development server
+- [ ] Run flask db upgrade on deploy via a Helm hook or init container
+- [ ] Fix rollout.yaml reading .Values.replicaCount instead of .Values.webapp.replicaCount
+- [ ] Delete build_image.yaml, which duplicates every build and pushes to a stale repo
+- [ ] Pin dependency versions in requirements.txt
+- [ ] Add a test suite — CI only checks that the app imports
+- [ ] Remove esos copy.yaml, tracked .DS_Store files and the committed CSV and JSON data dumps
+- [ ] Add a donation link
+- [ ] Add a contribute page
